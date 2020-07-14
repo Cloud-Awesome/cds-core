@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.Core", "CloudAwesome.Xrm.Core\CloudAwesome.Xrm.Core.csproj", "{3D19C5EA-490A-4B1F-9F93-087500E912AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudAwesome.Xrm.Core.Tests", "CloudAwesome.Xrm.Core.Tests\CloudAwesome.Xrm.Core.Tests.csproj", "{6AB7A47C-FE8A-42B0-9D96-563BA73D77E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D19C5EA-490A-4B1F-9F93-087500E912AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D19C5EA-490A-4B1F-9F93-087500E912AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D19C5EA-490A-4B1F-9F93-087500E912AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D19C5EA-490A-4B1F-9F93-087500E912AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB7A47C-FE8A-42B0-9D96-563BA73D77E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB7A47C-FE8A-42B0-9D96-563BA73D77E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB7A47C-FE8A-42B0-9D96-563BA73D77E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB7A47C-FE8A-42B0-9D96-563BA73D77E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1519F886-D9A3-486B-AE5D-BC20D3F33853}
+	EndGlobalSection
+EndGlobal
