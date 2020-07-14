@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace CloudAwesome.Xrm.Core
 {
-    public class TracingHelper
+    class BasePlugin
     {
-        // Set info, warning, error, verbose, etc...
-
-        // Feed in either ITracing service, AppInsights, or both...
-
 
     }
 }
