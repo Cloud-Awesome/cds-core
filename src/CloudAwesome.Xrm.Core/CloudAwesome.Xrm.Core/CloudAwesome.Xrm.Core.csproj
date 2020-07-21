@@ -87,16 +87,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MetadataHelpers.cs" />
+    <Compile Include="PluginModel\EntityImage.cs" />
+    <Compile Include="PluginModel\PluginContext.cs" />
+    <Compile Include="PluginModel\PluginStepDefinition.cs" />
     <Compile Include="QueryHelpers.cs" />
     <Compile Include="FetchXmlHelpers.cs" />
     <Compile Include="BaseWorkflowActivity.cs" />
     <Compile Include="BasePlugin.cs" />
     <Compile Include="EntityExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TracingHelpers.cs" />
+    <Compile Include="TracingHelper.cs" />
+    <Compile Include="PluginModel\WorkflowActivityContext.cs" />
+    <Compile Include="XrmContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
