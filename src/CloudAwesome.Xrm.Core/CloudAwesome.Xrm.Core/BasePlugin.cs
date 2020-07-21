@@ -1,7 +1,9 @@
-﻿using Microsoft.Xrm.Sdk;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using Microsoft.Xrm.Sdk;
+
 using CloudAwesome.Xrm.Core.PluginModel;
 
 namespace CloudAwesome.Xrm.Core
@@ -31,6 +33,7 @@ namespace CloudAwesome.Xrm.Core
         {
             PluginContext ctx = new PluginContext(serviceProvider);
 
+            // TODO - review what is traced
             ctx.Trace($"Plugin Instantiated: {GetType()}");
             ctx.Trace($"Date/Time: {DateTime.Now.ToUniversalTime()}");
             ctx.Trace($"Primary Record: {ctx.PluginExecutionContext.PrimaryEntityName} {ctx.PluginExecutionContext.PrimaryEntityId}");
@@ -66,6 +69,9 @@ namespace CloudAwesome.Xrm.Core
         /// <summary>
         /// Associates an Action with a combination of Stage, Execution Mode and Message
         /// </summary>
+        /// <para>
+        /// TODO - document usage of all the input parameters, because they may not be too obvious ;)
+        /// </para>
         protected PluginStepDefinition RegisterStep(PluginStage stage, PluginExecutionMode mode, string message, Action<PluginContext> action, params EntityImage[] images)
         {
             PluginStepDefinition step = new PluginStepDefinition { Stage = stage, Mode = mode, Message = message, Action = action, Images = images };
@@ -76,6 +82,9 @@ namespace CloudAwesome.Xrm.Core
         /// <summary>
         /// Associates an Action with a combination of Stage, Execution Mode, Message and Entity Type
         /// </summary>
+        /// <para>
+        /// TODO - document usage of all the input parameters, because they may not be too obvious ;)
+        /// </para>
         protected PluginStepDefinition RegisterStep(PluginStage stage, PluginExecutionMode mode, string message, string entityType, Action<PluginContext> action, params EntityImage[] images)
         {
             PluginStepDefinition step = new PluginStepDefinition { Stage = stage, Mode = mode, Message = message, EntityType = entityType, Action = action, Images = images };
@@ -86,6 +95,9 @@ namespace CloudAwesome.Xrm.Core
         /// <summary>
         /// Associates an Action with a combination of Stage, Execution Mode, Message and Entity Type
         /// </summary>
+        /// <para>
+        /// TODO - document usage of all the input parameters, because they may not be too obvious ;)
+        /// </para>
         protected void RegisterStep(PluginStepDefinition pluginStepDefinition)
         {
             if (RegisteredSteps == null)
@@ -116,8 +128,9 @@ namespace CloudAwesome.Xrm.Core
             if (evDef == null)
             {
                 // Ensure the events are in source control and not registered manually/accidentally 
-                throw new InvalidPluginExecutionException(string.Format("Plugin '{0}' has been triggered on a non-registered event: {1} {2} {3} {4}",
-                    GetType().Name, ctx.PluginExecutionContext.PrimaryEntityName, ctx.PluginExecutionContext.MessageName, actualStage, actualMode));
+                throw new InvalidPluginExecutionException(
+                    $"Plugin '{GetType().Name}' has been triggered on a non-registered event: " +
+                    $"{ctx.PluginExecutionContext.PrimaryEntityName} {ctx.PluginExecutionContext.MessageName} {actualStage} {actualMode}");
             }
 
             evDef.Action.Invoke(ctx);

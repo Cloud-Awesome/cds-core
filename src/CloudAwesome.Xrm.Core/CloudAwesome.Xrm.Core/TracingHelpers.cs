@@ -4,13 +4,13 @@ using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Core
 {
-    public class TracingHelper: ITracingService
+    public class TracingHelpers: ITracingService
     {
-        // Set info, warning, error, verbose, etc...
-        // Feed in either ITracing service, AppInsights, or both...
+        // TODO - Set info, warning, error, verbose, etc...
+        // TODO - Feed in either ITracing service, AppInsights, or both...
 
 
-        public TracingHelper(ITracingService tracingService)
+        public TracingHelpers(ITracingService tracingService)
         {
             throw new NotImplementedException();
         }

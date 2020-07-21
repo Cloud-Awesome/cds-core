@@ -13,7 +13,7 @@ namespace CloudAwesome.Xrm.Core
             ServiceFactory = activityContext.GetExtension<IOrganizationServiceFactory>();
             ActivityContext = activityContext;
             WorkflowContext = activityContext.GetExtension<IWorkflowContext>();
-            TracingService = new TracingHelper(activityContext.GetExtension<ITracingService>());
+            TracingService = new TracingHelpers(activityContext.GetExtension<ITracingService>());
             EndpointService = activityContext.GetExtension<IServiceEndpointNotificationService>();
             ExecutionContext = WorkflowContext;
         }

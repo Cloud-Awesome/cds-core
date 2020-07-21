@@ -96,7 +96,7 @@
     <Compile Include="BasePlugin.cs" />
     <Compile Include="EntityExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TracingHelper.cs" />
+    <Compile Include="TracingHelpers.cs" />
     <Compile Include="PluginModel\WorkflowActivityContext.cs" />
     <Compile Include="XrmContext.cs" />
   </ItemGroup>

@@ -12,7 +12,7 @@ namespace CloudAwesome.Xrm.Core.PluginModel
         {
             ServiceFactory = ((IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory)));
             PluginExecutionContext = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
-            TracingService = new TracingHelper((ITracingService)serviceProvider.GetService(typeof(ITracingService)));
+            TracingService = new TracingHelpers((ITracingService)serviceProvider.GetService(typeof(ITracingService)));
             EndpointService = (IServiceEndpointNotificationService)serviceProvider.GetService(typeof(IServiceEndpointNotificationService));
             ExecutionContext = PluginExecutionContext;
         }
