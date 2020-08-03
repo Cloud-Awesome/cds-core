@@ -95,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFakeXrmTest.cs" />
+    <Compile Include="BasePluginTests\BasePluginConstructorTests.cs" />
+    <Compile Include="BasePluginTests\BasePluginExecuteTests.cs" />
+    <Compile Include="BasePluginTests\BasePluginRegisterStepsTests.cs" />
     <Compile Include="EntityExtensionsTests\CreateTests.cs" />
     <Compile Include="EntityExtensionsTests\RetrieveFromQueryTests.cs" />
     <Compile Include="EntityExtensionsTests\SetStateTests.cs" />
@@ -117,7 +120,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BasePluginTests\" />
     <Folder Include="BaseWorkflowActivityTests\" />
     <Folder Include="FetchXmlHelpersTests\" />
     <Folder Include="MetadataHelpersTests\" />

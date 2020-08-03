@@ -12,10 +12,10 @@ namespace CloudAwesome.Xrm.Core
     {
         public BasePlugin() { }
 
-        public BasePlugin(string unsecureConfig, string secureConfig)
+        public BasePlugin(string secureConfig, string unsecureConfig)
         {
-            this.unsecureConfig = unsecureConfig;
             this.secureConfig = secureConfig;
+            this.unsecureConfig = unsecureConfig;
         }
 
         public List<PluginStepDefinition> RegisteredSteps
