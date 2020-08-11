@@ -13,3 +13,6 @@ Core project for Dynamics 365/CDS extensions
 
 NuGet package, requirements, etc...
 
+## Example usage
+
+[[[ Include Gists to demo .Core in action ]]]
