@@ -33,7 +33,7 @@ namespace CloudAwesome.Xrm.Core
         {
             PluginContext ctx = new PluginContext(serviceProvider);
 
-            // TODO - review what is traced
+            // TODO - review what is traced, and make it a single string so that if AppInsights is used it isn't multiple calls
             ctx.Trace($"Plugin Instantiated: {GetType()}");
             ctx.Trace($"Date/Time: {DateTime.Now.ToUniversalTime()}");
             ctx.Trace($"Primary Record: {ctx.PluginExecutionContext.PrimaryEntityName} {ctx.PluginExecutionContext.PrimaryEntityId}");
