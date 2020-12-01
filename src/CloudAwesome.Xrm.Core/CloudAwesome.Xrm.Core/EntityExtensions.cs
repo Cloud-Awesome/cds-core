@@ -9,7 +9,6 @@ using Microsoft.Xrm.Sdk.Query;
 namespace CloudAwesome.Xrm.Core
 {
     // TODO - * Enum.TryParse wrapper?
-    // TODO - * QueryExpression.RetrieveMultiple
 
     public static class EntityExtensionsTests
     {
@@ -107,11 +106,5 @@ namespace CloudAwesome.Xrm.Core
             // Has this now been deprecated?
             throw new NotImplementedException("TODO");
         }
-
-        public static Entity RetrieveSingleRecord(this QueryBase query, IOrganizationService organizationService)
-        {
-            return QueryHelpers.RetrieveRecordFromQuery(organizationService, query);
-        }
-
     }
 }

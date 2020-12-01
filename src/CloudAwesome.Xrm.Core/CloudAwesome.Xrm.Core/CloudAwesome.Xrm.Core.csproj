@@ -87,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MetadataHelpers.cs" />
-    <Compile Include="QueryHelpers.cs" />
+    <Compile Include="QueryExtensions.cs" />
     <Compile Include="FetchXmlHelpers.cs" />
     <Compile Include="EntityExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
