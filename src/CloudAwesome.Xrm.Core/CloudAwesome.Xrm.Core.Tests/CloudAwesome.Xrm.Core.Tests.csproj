@@ -95,7 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFakeXrmTest.cs" />
+    <Compile Include="EntityExtensionsTests\AssociateTests.cs" />
     <Compile Include="EntityExtensionsTests\CreateTests.cs" />
+    <Compile Include="EntityExtensionsTests\DisassociateTests.cs" />
     <Compile Include="QueryHelperTests\QueryExtensionTests.cs" />
     <Compile Include="QueryHelperTests\RetrieveFromQueryTests.cs" />
     <Compile Include="EntityExtensionsTests\SetStateTests.cs" />
