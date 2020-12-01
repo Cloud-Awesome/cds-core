@@ -14,10 +14,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         [Test]
         public void BasicDeletionTest()
         {
-            var context = new XrmFakedContext
-            {
-                ProxyTypesAssembly = Assembly.GetAssembly(typeof(Account))
-            };
+            var context = new XrmFakedContext();
             var orgService = context.GetOrganizationService();
             
             var testAccount = new Account
@@ -30,7 +27,6 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             });
 
             testAccount.Delete(orgService);
-
             Assert.IsTrue(true);
         }
     }

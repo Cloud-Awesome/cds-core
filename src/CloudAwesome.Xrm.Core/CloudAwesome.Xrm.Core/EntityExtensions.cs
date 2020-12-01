@@ -1,16 +1,22 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
+
 namespace CloudAwesome.Xrm.Core
 {
+    // TODO - * Enum.TryParse wrapper?
+    // TODO - * QueryExpression.RetrieveMultiple
+
     public static class EntityExtensionsTests
     {
+        
         public static Guid Create(this Entity entity, IOrganizationService organizationService)
         {
-            // TODO - tracing
+            // TODO - tracing (and validation?)
             entity.Id = organizationService.Create(entity);
             return entity.Id;
         }
@@ -21,17 +27,10 @@ namespace CloudAwesome.Xrm.Core
             organizationService.Delete(entity.LogicalName, entity.Id);
         }
 
-        public static bool Update(IOrganizationService organizationService)
+        public static void Update(this Entity entity, IOrganizationService organizationService)
         {
-            // 1. Create new entity with only changed attributes, so doesn't flood the audit history
-            
-            // 2. Validate before update
-            
-            // 3. Update with OrgService
-            
-            // 4. Cleanup and report back
-
-            throw new NotImplementedException("TODO");
+            // TODO - tracing and validation
+            organizationService.Update(entity);
         }
 
         public static Guid ExecuteWorkflow(this Entity entity, 
@@ -45,41 +44,73 @@ namespace CloudAwesome.Xrm.Core
             })).Id;
         }
 
-        public static bool Retrieve(this Entity entity,
+        public static Entity Retrieve(this Entity entity,
             IOrganizationService organizationService, ColumnSet columnSet = null)
         {
-            throw new NotImplementedException("TODO");
+            if (Guid.Empty == entity.Id)
+            {
+                throw new Exception("Cannot retrieve Entity if ID is null or empty. Try a query instead.");
+            }
+            return organizationService.Retrieve(entity.LogicalName, entity.Id, columnSet?? new ColumnSet(true));
         }
 
-        public static void CloneFrom(this Entity entity, Entity otherEntity)
+        public static void CloneFrom(this Entity targetEntity, Entity sourceEntity, List<string> excludeAttributesList = null)
         {
-            if (entity.LogicalName != otherEntity.LogicalName)
+            if (targetEntity.LogicalName != sourceEntity.LogicalName)
             {
-                throw new Exception($"Other entity must also be '{entity.LogicalName}'.");
+                throw new Exception($"Source entity must also be '{targetEntity.LogicalName}'.");
             }
-            foreach (var attr in otherEntity.Attributes)
+            foreach (var attr in sourceEntity.Attributes)
             {
                 if (attr.Value is Guid id)
                 {
                     // Ignore Id Attribute
-                    if (id == otherEntity.Id) continue;
+                    if (id == sourceEntity.Id) continue;
                 }
-
-                // TODO
-                //SetValue(attr.Key, attr.Value);
+                if (excludeAttributesList != null && excludeAttributesList.Contains(attr.Key)) continue;
+                
+                targetEntity[attr.Key] = attr.Value;
             }
         }
 
-        public static bool RetrieveFromQuery<T>(this Entity entity,
-            IOrganizationService organizationService, T query) where T : QueryBase
+        public static void Associate(this Entity entity, IOrganizationService organizationService,
+            string relationshipName, IEnumerable<Entity> relatedEntities)
         {
-            throw new NotImplementedException("TODO");
+            organizationService.Associate(entity.LogicalName, entity.Id, new Relationship(relationshipName), 
+                new EntityReferenceCollection(relatedEntities.Select(e => e.ToEntityReference()).ToArray())); 
         }
 
+        public static void Associate(this Entity entity, IOrganizationService organizationService,
+            string relationshipName, EntityReferenceCollection relatedEntities)
+        {
+            organizationService.Associate(entity.LogicalName, entity.Id, 
+                new Relationship(relationshipName), relatedEntities);
+        }
+
+        public static void Disassociate(this Entity entity, IOrganizationService organizationService,
+            string relationshipName, IEnumerable<Entity> relatedEntities)
+        {
+            organizationService.Disassociate(entity.LogicalName, entity.Id, new Relationship(relationshipName),
+                new EntityReferenceCollection(relatedEntities.Select(e => e.ToEntityReference()).ToArray()));
+        }
+
+        public static void Disassociate(this Entity entity, IOrganizationService organizationService,
+            string relationshipName, EntityReferenceCollection relatedEntities)
+        {
+            organizationService.Disassociate(entity.LogicalName, entity.Id, 
+                new Relationship(relationshipName), relatedEntities);
+        }
+        
         public static void SetState(this Entity entity, 
             IOrganizationService organization, int stateCode, int statusCode)
         {
+            // Has this now been deprecated?
             throw new NotImplementedException("TODO");
+        }
+
+        public static Entity RetrieveSingleRecord(this QueryBase query, IOrganizationService organizationService)
+        {
+            return QueryHelpers.RetrieveRecordFromQuery(organizationService, query);
         }
 
     }

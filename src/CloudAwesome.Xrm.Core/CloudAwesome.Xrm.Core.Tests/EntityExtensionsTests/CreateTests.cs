@@ -22,7 +22,6 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             Console.WriteLine($"ID of created entity: {createdEntityId}");
             Assert.IsNotNull(createdEntityId);
             Assert.AreEqual("Test Account", testAccount.Name);
-
         }
 
         [Test]

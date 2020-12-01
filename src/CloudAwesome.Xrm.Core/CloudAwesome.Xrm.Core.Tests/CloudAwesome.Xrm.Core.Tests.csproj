@@ -95,11 +95,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFakeXrmTest.cs" />
-    <Compile Include="BasePluginTests\BasePluginConstructorTests.cs" />
-    <Compile Include="BasePluginTests\BasePluginExecuteTests.cs" />
-    <Compile Include="BasePluginTests\BasePluginRegisterStepsTests.cs" />
     <Compile Include="EntityExtensionsTests\CreateTests.cs" />
-    <Compile Include="EntityExtensionsTests\RetrieveFromQueryTests.cs" />
+    <Compile Include="QueryHelperTests\RetrieveFromQueryTests.cs" />
     <Compile Include="EntityExtensionsTests\SetStateTests.cs" />
     <Compile Include="EntityExtensionsTests\UpdateTests.cs" />
     <Compile Include="EntityExtensionsTests\ExecuteWorkflowTests.cs" />
@@ -120,10 +117,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BaseWorkflowActivityTests\" />
     <Folder Include="FetchXmlHelpersTests\" />
     <Folder Include="MetadataHelpersTests\" />
-    <Folder Include="QueryHelpersTests\" />
     <Folder Include="TracingHelpersTests\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
