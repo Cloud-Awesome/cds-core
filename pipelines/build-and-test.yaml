@@ -2,7 +2,12 @@ pool:
   vmImage: 'windows-latest'
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - src/*
 
 steps:
 
@@ -20,7 +25,11 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\*Tests.dll'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
     testRunTitle: '$(Build.BuildNumber)'
 
