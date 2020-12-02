@@ -11,7 +11,7 @@ namespace CloudAwesome.Xrm.Core
 {
     // TODO - * Enum.TryParse wrapper?
 
-    public static class EntityExtensionsTests
+    public static class EntityExtensions
     {
         public static Guid Create(this Entity entity, IOrganizationService organizationService)
         {
@@ -42,6 +42,7 @@ namespace CloudAwesome.Xrm.Core
             }
             else
             {
+                
                 entity.Id = result.Id;
                 entity.Update(organizationService);
             }

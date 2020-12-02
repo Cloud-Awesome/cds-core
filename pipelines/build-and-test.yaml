@@ -1,0 +1,27 @@
+pool:
+  vmImage: 'windows-latest'
+
+trigger:
+- master
+
+steps:
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    configuration: 'release'
+
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: '**\PipelineTesterWebApp.Tests\bin\Release\netcoreapp3.1\PipelineTesterWebApp.Tests.dll'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    testFiltercriteria: 'Category=Persona-Martin'
+    testRunTitle: '$(Build.BuildNumber)'
+
