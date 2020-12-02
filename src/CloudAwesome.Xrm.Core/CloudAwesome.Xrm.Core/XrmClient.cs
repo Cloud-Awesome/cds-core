@@ -32,5 +32,17 @@ namespace CloudAwesome.Xrm.Core
             return GetCrmServiceClient(connectionString);
         }
 
+        public static EntityReference GetRootBusinessUnit(IOrganizationService organizationService)
+        {
+            // TODO - GetRootBusinessUnit
+            throw FeatureRequestException.NotImplementedFeatureException("GetRootBusinessUnit");
+        }
+
+        public static EntityReference GetDefaultCurrency(IOrganizationService organizationService)
+        {
+            // TODO - GetDefaultCurrency
+            throw FeatureRequestException.NotImplementedFeatureException("GetDefaultCurrency");
+        }
+
     }
 }

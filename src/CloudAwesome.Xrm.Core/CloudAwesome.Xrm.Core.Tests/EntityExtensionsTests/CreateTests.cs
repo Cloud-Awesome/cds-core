@@ -40,13 +40,5 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             Assert.AreEqual("Test Account", testAccount["name"]);
         }
 
-        [Ignore("Reminder TODO")]
-        [Test]
-        public void CreateTestWithTracing()
-        {
-            // TODO - test standard tracing output in Create extension method
-
-            // TODO - if implemented, test AppInsights tracing?
-        }
     }
 }

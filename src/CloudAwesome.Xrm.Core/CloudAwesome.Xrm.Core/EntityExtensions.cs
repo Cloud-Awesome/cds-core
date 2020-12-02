@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
-
 
 namespace CloudAwesome.Xrm.Core
 {
@@ -12,7 +13,6 @@ namespace CloudAwesome.Xrm.Core
 
     public static class EntityExtensionsTests
     {
-        
         public static Guid Create(this Entity entity, IOrganizationService organizationService)
         {
             // TODO - tracing (and validation?)
@@ -32,15 +32,33 @@ namespace CloudAwesome.Xrm.Core
             organizationService.Update(entity);
         }
 
+        public static Guid CreateOrUpdate(this Entity entity, IOrganizationService organizationService,
+            QueryBase query)
+        {
+            var result = query.RetrieveSingleRecord(organizationService);
+            if (result == null)
+            {
+                entity.Id = entity.Create(organizationService);
+            }
+            else
+            {
+                entity.Id = result.Id;
+                entity.Update(organizationService);
+            }
+
+            return entity.Id;
+        }
+
         public static Guid ExecuteWorkflow(this Entity entity, 
             IOrganizationService organizationService, Guid workflowId)
         {
-            // TODO - Unit test
-            return ((ExecuteWorkflowResponse)organizationService.Execute(new ExecuteWorkflowRequest
-            {
-                EntityId = entity.Id, 
-                WorkflowId = workflowId
-            })).Id;
+            throw FeatureRequestException.PartiallyImplementedFeatureException(typeof(ExecuteWorkflowRequest).ToString());
+
+            //return ((ExecuteWorkflowResponse)organizationService.Execute(new ExecuteWorkflowRequest
+            //{
+            //    EntityId = entity.Id, 
+            //    WorkflowId = workflowId
+            //})).Id;
         }
 
         public static Entity Retrieve(this Entity entity,
@@ -89,22 +107,26 @@ namespace CloudAwesome.Xrm.Core
         public static void Disassociate(this Entity entity, IOrganizationService organizationService,
             string relationshipName, IEnumerable<Entity> relatedEntities)
         {
-            organizationService.Disassociate(entity.LogicalName, entity.Id, new Relationship(relationshipName),
-                new EntityReferenceCollection(relatedEntities.Select(e => e.ToEntityReference()).ToArray()));
+            throw FeatureRequestException.PartiallyImplementedFeatureException(typeof(DisassociateRequest).ToString());
+
+            //organizationService.Disassociate(entity.LogicalName, entity.Id, new Relationship(relationshipName),
+            //    new EntityReferenceCollection(relatedEntities.Select(e => e.ToEntityReference()).ToArray()));
         }
 
         public static void Disassociate(this Entity entity, IOrganizationService organizationService,
             string relationshipName, EntityReferenceCollection relatedEntities)
         {
-            organizationService.Disassociate(entity.LogicalName, entity.Id, 
-                new Relationship(relationshipName), relatedEntities);
+            throw FeatureRequestException.PartiallyImplementedFeatureException(typeof(DisassociateRequest).ToString());
+
+            //organizationService.Disassociate(entity.LogicalName, entity.Id,
+            //    new Relationship(relationshipName), relatedEntities);
         }
         
         public static void SetState(this Entity entity, 
             IOrganizationService organization, int stateCode, int statusCode)
         {
-            // Has this now been deprecated?
-            throw new NotImplementedException("TODO");
+            // Has SetState now been deprecated?
+            throw FeatureRequestException.NotImplementedFeatureException(typeof(SetStateRequest).ToString());
         }
     }
 }

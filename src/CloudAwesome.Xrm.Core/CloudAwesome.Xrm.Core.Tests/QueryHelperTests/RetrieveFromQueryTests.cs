@@ -42,6 +42,17 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
         }
 
+        [Test(Description = "QE describes no records so null is returned")]
+        public void QueryWithResultsReturnsNull()
+        {
+            var context = new XrmFakedContext();
+            var orgService = context.GetOrganizationService();
+
+            var retrievedAccount = (Account)QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleQueryExpression);
+
+            Assert.IsNull(retrievedAccount);
+        }
+
         [Test(Description = "If multiple results are returned in the QueryExpression, throw an exception as 'throwExceptionOnMultipleResults' defaults to true")]
         public void MultipleResultsThrowsExceptionByDefault()
         {

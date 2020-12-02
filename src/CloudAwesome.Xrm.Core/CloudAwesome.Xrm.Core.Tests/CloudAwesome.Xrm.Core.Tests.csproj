@@ -96,8 +96,11 @@
   <ItemGroup>
     <Compile Include="BaseFakeXrmTest.cs" />
     <Compile Include="EntityExtensionsTests\AssociateTests.cs" />
+    <Compile Include="EntityExtensionsTests\CreateOrUpdateTests.cs" />
     <Compile Include="EntityExtensionsTests\CreateTests.cs" />
     <Compile Include="EntityExtensionsTests\DisassociateTests.cs" />
+    <Compile Include="QueryHelperTests\DeleteAllResultsTests.cs" />
+    <Compile Include="QueryHelperTests\DeleteSingleRecordTests.cs" />
     <Compile Include="QueryHelperTests\QueryExtensionTests.cs" />
     <Compile Include="QueryHelperTests\RetrieveFromQueryTests.cs" />
     <Compile Include="EntityExtensionsTests\SetStateTests.cs" />

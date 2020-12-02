@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
@@ -16,6 +13,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         {
             var context = new XrmFakedContext();
             var orgService = context.GetOrganizationService();
+
             context.AddRelationship("account_primary_contact", new XrmFakedRelationship()
             {
                 RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany,
@@ -49,7 +47,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         }
 
         [Test]
-        public void BasicAssociateTestWithEnuerableRecords()
+        public void BasicAssociateTestWithEnumerableRecords()
         {
             var context = new XrmFakedContext();
             var orgService = context.GetOrganizationService();
