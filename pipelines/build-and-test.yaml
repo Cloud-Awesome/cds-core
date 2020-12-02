@@ -2,7 +2,12 @@ pool:
   vmImage: 'windows-latest'
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - src/*
 
 steps:
 
@@ -20,8 +25,11 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\PipelineTesterWebApp.Tests\bin\Release\netcoreapp3.1\PipelineTesterWebApp.Tests.dll'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
-    testFiltercriteria: 'Category=Persona-Martin'
+    codeCoverageEnabled: true
     testRunTitle: '$(Build.BuildNumber)'
 
