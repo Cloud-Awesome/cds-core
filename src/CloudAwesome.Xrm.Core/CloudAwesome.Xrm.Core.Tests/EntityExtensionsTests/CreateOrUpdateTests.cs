@@ -22,7 +22,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 AccountNumber = "GB123456"
             };
 
-            account.CreateOrUpdate(orgService, SampleQueryExpression);
+            account.CreateOrUpdate(orgService, SampleAccountQueryExpression);
 
             Assert.IsNotNull(TestAccount1.Id);
         }
@@ -38,7 +38,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 TestAccount1
             });
 
-            TestAccount1.CreateOrUpdate(orgService, SampleQueryExpression);
+            TestAccount1.CreateOrUpdate(orgService, SampleAccountQueryExpression);
 
             Assert.IsNotNull(TestAccount1.Id);
         }

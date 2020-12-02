@@ -111,6 +111,8 @@
     <Compile Include="EntityExtensionsTests\DeleteTests.cs" />
     <Compile Include="EarlyBoundClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XrmClientTests\GetBaseCurrencyTests.cs" />
+    <Compile Include="XrmClientTests\GetRootBusinessUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

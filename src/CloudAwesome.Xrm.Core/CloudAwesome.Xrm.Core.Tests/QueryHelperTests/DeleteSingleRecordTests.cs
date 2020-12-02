@@ -26,7 +26,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             Assert.AreEqual(1, preAccounts.Count);
             Assert.DoesNotThrow(
-                () => SampleQueryExpression.DeleteSingleRecord(orgService));
+                () => SampleAccountQueryExpression.DeleteSingleRecord(orgService));
 
             var postAccounts = (from a in context.CreateQuery<Account>()
                 select a).ToList();

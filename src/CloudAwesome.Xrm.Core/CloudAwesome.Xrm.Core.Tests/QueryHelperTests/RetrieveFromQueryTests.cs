@@ -20,7 +20,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1
             });
 
-            var retrievedAccount = (Account) QueryExtensions.RetrieveRecordFromQuery<QueryByAttribute>(orgService, SampleQueryByAttribute);
+            var retrievedAccount = (Account) QueryExtensions.RetrieveRecordFromQuery<QueryByAttribute>(orgService, SampleAccountQueryByAttribute);
 
             Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
             Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
@@ -36,7 +36,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1
             });
             
-            var retrievedAccount = (Account) QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleQueryExpression);
+            var retrievedAccount = (Account) QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression);
 
             Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
             Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
@@ -48,7 +48,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             var context = new XrmFakedContext();
             var orgService = context.GetOrganizationService();
 
-            var retrievedAccount = (Account)QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleQueryExpression);
+            var retrievedAccount = (Account)QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression);
 
             Assert.IsNull(retrievedAccount);
         }
@@ -65,7 +65,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             });
             
             Assert.Throws(typeof(Exception),
-                () => QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleQueryExpression));
+                () => QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression));
 
         }
 
@@ -81,7 +81,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             });
             
             Assert.DoesNotThrow(() => 
-                QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleQueryExpression, false));
+                QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression, false));
 
         }
 
@@ -95,7 +95,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1
             });
 
-            var fetchExpression = new FetchExpression(SampleFetchQuery);
+            var fetchExpression = new FetchExpression(SampleAccountFetchQuery);
             var retrievedAccount = (Account)QueryExtensions.RetrieveRecordFromQuery<FetchExpression>(orgService, fetchExpression);
 
             Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
@@ -113,7 +113,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1Duplicate
             });
 
-            var fetchExpression = new FetchExpression(SampleFetchQuery);
+            var fetchExpression = new FetchExpression(SampleAccountFetchQuery);
 
             Assert.Throws(typeof(Exception),
                 () => QueryExtensions.RetrieveRecordFromQuery<FetchExpression>(orgService, fetchExpression));

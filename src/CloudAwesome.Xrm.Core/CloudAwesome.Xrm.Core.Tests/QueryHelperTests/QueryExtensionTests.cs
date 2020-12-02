@@ -18,7 +18,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1
             });
 
-            var retrievedAccount = (Account)SampleQueryExpression.RetrieveSingleRecord(orgService);
+            var retrievedAccount = (Account)SampleAccountQueryExpression.RetrieveSingleRecord(orgService);
 
             Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
             Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
@@ -34,7 +34,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1
             });
 
-            var retrievedAccount = (Account)SampleQueryByAttribute.RetrieveSingleRecord(orgService);
+            var retrievedAccount = (Account)SampleAccountQueryByAttribute.RetrieveSingleRecord(orgService);
 
             Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
             Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
@@ -51,7 +51,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1Duplicate
             });
 
-            var retrievedAccounts = SampleQueryExpression.RetrieveMultiple(orgService);
+            var retrievedAccounts = SampleAccountQueryExpression.RetrieveMultiple(orgService);
 
             Assert.AreEqual(2, retrievedAccounts.Entities.Count);
         }
@@ -67,7 +67,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1Duplicate
             });
 
-            var retrievedAccounts = SampleQueryByAttribute.RetrieveMultiple(orgService);
+            var retrievedAccounts = SampleAccountQueryByAttribute.RetrieveMultiple(orgService);
 
             Assert.AreEqual(2, retrievedAccounts.Entities.Count);
         }

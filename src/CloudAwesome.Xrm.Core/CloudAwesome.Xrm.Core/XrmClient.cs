@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Tooling.Connector;
 
 namespace CloudAwesome.Xrm.Core
@@ -34,15 +35,31 @@ namespace CloudAwesome.Xrm.Core
 
         public static EntityReference GetRootBusinessUnit(IOrganizationService organizationService)
         {
-            // TODO - GetRootBusinessUnit
-            throw FeatureRequestException.NotImplementedFeatureException("GetRootBusinessUnit");
+            var rootBusinessUnit = new QueryExpression()
+            {
+                EntityName = "businessunit",
+                ColumnSet = new ColumnSet("name"),
+                Criteria = new FilterExpression()
+                {
+                    Conditions =
+                    {
+                        new ConditionExpression("parentbusinessunitid", ConditionOperator.Null)
+                    }
+                }
+            }.RetrieveSingleRecord(organizationService);
+
+            return rootBusinessUnit.ToEntityReference();
         }
 
-        public static EntityReference GetDefaultCurrency(IOrganizationService organizationService)
+        public static EntityReference GetBaseCurrency(IOrganizationService organizationService)
         {
-            // TODO - GetDefaultCurrency
-            throw FeatureRequestException.NotImplementedFeatureException("GetDefaultCurrency");
-        }
+            var baseCurrency = new QueryExpression()
+            {
+                EntityName = "organization",
+                ColumnSet = new ColumnSet("basecurrencyid")
+            }.RetrieveSingleRecord(organizationService).GetAttributeValue<EntityReference>("basecurrencyid");
 
+            return baseCurrency;
+        }
     }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using NUnit.Framework;
-using FakeXrmEasy;
-using CloudAwesome.Xrm.Core;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Core.Tests
@@ -11,8 +8,7 @@ namespace CloudAwesome.Xrm.Core.Tests
         // TODO - * setup and tear down this for each test, and extract out of each existing test
         //var context = new XrmFakedContext();
         //var orgService = context.GetOrganizationService();
-
-
+        
         // Any reporting set up and outputs..?
 
         #region Query definitions and test data
@@ -31,7 +27,7 @@ namespace CloudAwesome.Xrm.Core.Tests
             AccountNumber = "GB123456"
         };
 
-        public readonly string SampleFetchQuery =
+        public readonly string SampleAccountFetchQuery =
             @"<fetch version=""1.0"" output-format=""xml-platform"" mapping=""logical"" distinct=""false"">
                   <entity name=""account"">
                     <attribute name=""accountid"" />
@@ -44,7 +40,7 @@ namespace CloudAwesome.Xrm.Core.Tests
                   </entity>
                 </fetch>";
 
-        public readonly QueryExpression SampleQueryExpression = new QueryExpression()
+        public readonly QueryExpression SampleAccountQueryExpression = new QueryExpression()
         {
             EntityName = "account",
             ColumnSet = new ColumnSet("name", "accountnumber"),
@@ -57,7 +53,7 @@ namespace CloudAwesome.Xrm.Core.Tests
             }
         };
 
-        public readonly QueryByAttribute SampleQueryByAttribute = new QueryByAttribute()
+        public readonly QueryByAttribute SampleAccountQueryByAttribute = new QueryByAttribute()
         {
             EntityName = "account",
             ColumnSet = new ColumnSet("name", "accountnumber"),
@@ -68,6 +64,74 @@ namespace CloudAwesome.Xrm.Core.Tests
             Values =
             {
                 "GB123456"
+            }
+        };
+
+        public static readonly Contact JohnContact = new Contact()
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "John",
+            LastName = "Contact",
+            Address1_City = "London",
+            EMailAddress1 = "john@contact.test"
+        };
+
+        public static readonly Contact JamieContact = new Contact()
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Jamie",
+            LastName = "Contact",
+            Address1_City = "London",
+            EMailAddress1 = "Jamie@contact.test"
+        };
+
+        public static readonly Contact JackContact = new Contact()
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Jack",
+            LastName = "Contact",
+            Address1_City = "Edinburgh",
+            EMailAddress1 = "Jack@contact.test"
+        };
+
+        public static readonly Contact JamesContact = new Contact()
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "James",
+            LastName = "Contact",
+            Address1_City = "Newcastle",
+            EMailAddress1 = "James@contact.test"
+        };
+
+        public static readonly Contact JacobContact = new Contact()
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Jacob",
+            LastName = "Contact",
+            Address1_City = "London",
+            EMailAddress1 = "Jacob@contact.test"
+        };
+
+        public static readonly Contact JeremyContact = new Contact()
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Jeremy",
+            LastName = "Contact",
+            Address1_City = "London",
+            EMailAddress1 = "Jeremy@contact.test"
+        };
+
+        public readonly QueryByAttribute SampleLondonContactsQueryByAttribute = new QueryByAttribute()
+        {
+            EntityName = "contact",
+            ColumnSet = new ColumnSet("firstname", "lastname", "emailaddress1", "address1_city"),
+            Attributes =
+            {
+                "address1_city"
+            },
+            Values =
+            {
+                "London"
             }
         };
 
