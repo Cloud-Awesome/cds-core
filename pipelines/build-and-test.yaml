@@ -11,6 +11,14 @@ trigger:
 
 steps:
 
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'Core'
+    organization: 'cloud-awesome'
+    scannerMode: 'MSBuild'
+    projectKey: 'cds-core'
+    projectName: 'cds-core'
+
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
@@ -32,4 +40,3 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
     testRunTitle: '$(Build.BuildNumber)'
-
