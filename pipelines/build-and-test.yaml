@@ -12,6 +12,7 @@ trigger:
 steps:
 
 - task: SonarCloudPrepare@1
+  displayName: Prep SonarCloud
   inputs:
     SonarCloud: 'Core'
     organization: 'cloud-awesome'
@@ -20,17 +21,20 @@ steps:
     projectName: 'cds-core'
 
 - task: NuGetCommand@2
+  displayName: Restore NuGet
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
 
 - task: VSBuild@1
+  displayName: Build Solution
   inputs:
     solution: '**\*.sln'
     configuration: 'release'
 
 - task: VSTest@2
+  displayName: Execute Unit Tests
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
@@ -40,3 +44,11 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
     testRunTitle: '$(Build.BuildNumber)'
+
+- task: SonarCloudAnalyze@1
+  displayName: SonarCloud Analysis
+
+- task: SonarCloudPublish@1
+  displayName: Publish SonarCloud Results
+  inputs:
+    pollingTimeoutSec: '300'
