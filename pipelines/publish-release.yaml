@@ -1,3 +1,5 @@
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+
 pool:
   vmImage: 'windows-latest'
 
@@ -34,12 +36,14 @@ steps:
     testRunTitle: '$(Build.BuildNumber)'
 
 - task: NuGetCommand@2
+  displayName: Nuget Pack
   inputs:
     command: 'pack'
     packagesToPack: '**/CloudAwesome.Xrm.Core.csproj'
     versioningScheme: 'byBuildNumber'
 
 - task: NuGetCommand@2
+  displayName: Nuget Push
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
