@@ -40,6 +40,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/CloudAwesome.Xrm.Core.csproj'
+    configuration: 'release'
     versioningScheme: 'byBuildNumber'
 
 - task: NuGetCommand@2
