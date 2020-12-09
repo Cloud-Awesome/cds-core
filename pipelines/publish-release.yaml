@@ -1,3 +1,5 @@
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:r)
+
 pool:
   vmImage: 'windows-latest'
 
@@ -32,3 +34,19 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
     testRunTitle: '$(Build.BuildNumber)'
+
+- task: NuGetCommand@2
+  displayName: Nuget Pack
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/CloudAwesome.Xrm.Core.csproj'
+    configuration: 'release'
+    versioningScheme: 'byBuildNumber'
+
+- task: NuGetCommand@2
+  displayName: Nuget Push
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'cds.core'
