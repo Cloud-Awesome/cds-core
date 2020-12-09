@@ -1,0 +1,34 @@
+pool:
+  vmImage: 'windows-latest'
+
+trigger:
+  tags:
+    include:
+    - v*
+
+steps:
+
+- task: NuGetCommand@2
+  displayName: Restore NuGet
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+
+- task: VSBuild@1
+  displayName: Build Solution
+  inputs:
+    solution: '**\*.sln'
+    configuration: 'release'
+
+- task: VSTest@2
+  displayName: Execute Unit Tests
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+    testRunTitle: '$(Build.BuildNumber)'

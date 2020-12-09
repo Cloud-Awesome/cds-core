@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CloudAwesome.Xrm.Core")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Helpers and extension classes for Dynamics 365/Power Platform development")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Cloud Awesome Ltd")]
 [assembly: AssemblyProduct("CloudAwesome.Xrm.Core")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("Copyright © Cloud Awesome Limited 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
