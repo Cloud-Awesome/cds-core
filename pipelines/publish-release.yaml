@@ -33,10 +33,6 @@ steps:
     codeCoverageEnabled: true
     testRunTitle: '$(Build.BuildNumber)'
 
-- task: NuGetAuthenticate@0
-  inputs:
-    nuGetServiceConnections: 'cds.core'
-
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
