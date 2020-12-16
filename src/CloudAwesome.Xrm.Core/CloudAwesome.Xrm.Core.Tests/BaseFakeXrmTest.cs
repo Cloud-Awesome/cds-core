@@ -135,7 +135,7 @@ namespace CloudAwesome.Xrm.Core.Tests
             }
         };
 
-        #endregion #region Query definitions and test data
+        #endregion Query definitions and test data
 
     }
 }

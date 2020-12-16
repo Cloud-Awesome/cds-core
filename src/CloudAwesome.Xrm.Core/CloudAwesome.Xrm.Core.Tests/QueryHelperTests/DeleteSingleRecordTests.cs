@@ -9,8 +9,6 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
     [TestFixture]
     public class DeleteSingleRecordTests: BaseFakeXrmTest
     {
-        // TODO - What about if the query returns no results?
-
         [Test]
         public void DeleteSingleRecordTest()
         {
@@ -32,6 +30,17 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 select a).ToList();
 
             Assert.AreEqual(0, postAccounts.Count);
+        }
+
+        [Test]
+        public void DeleteWithNoQueryResultsThrowsNoError()
+        {
+            var context = new XrmFakedContext();
+            var orgService = context.GetOrganizationService();
+
+            Assert.DoesNotThrow(
+                () => SampleAccountQueryExpression.DeleteSingleRecord(orgService));
+
         }
     }
 }

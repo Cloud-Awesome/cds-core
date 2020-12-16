@@ -41,7 +41,7 @@ namespace CloudAwesome.Xrm.Core
         public static void DeleteSingleRecord(this QueryBase query, IOrganizationService organizationService)
         {
             var result = query.RetrieveSingleRecord(organizationService);
-            result.Delete(organizationService);
+            result?.Delete(organizationService);
         }
 
         public static bool DeleteAllResults(this QueryBase query, IOrganizationService organizationService,
