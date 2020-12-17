@@ -15,7 +15,7 @@ Core project for Dynamics 365/CDS extensions
 
 ## Installing and using Xrm.Core
 
-NuGet package, requirements, etc...
+Install the most recent version from NuGet here: https://www.nuget.org/packages/CloudAwesome.Xrm.Core/
 
 ## Example usage
 
