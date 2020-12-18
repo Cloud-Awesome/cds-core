@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="FeatureRequestException.cs" />
     <Compile Include="MetadataHelpers.cs" />
+    <Compile Include="Models\CdsConnection.cs" />
     <Compile Include="QueryExtensions.cs" />
     <Compile Include="FetchXmlHelpers.cs" />
     <Compile Include="EntityExtensions.cs" />
