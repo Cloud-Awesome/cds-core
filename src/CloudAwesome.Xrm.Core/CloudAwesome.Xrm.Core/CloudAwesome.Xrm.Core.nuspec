@@ -2,6 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>CloudAwesome.Xrm.Core</id>
+    <version>1.0.0</version>
     <authors>Arthur Nicholson-Gumuła (@arthur82)</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectUrl>https://github.com/Cloud-Awesome/cds-core</projectUrl>
@@ -10,7 +11,6 @@
     <copyright>Cloud Awesome Limited 2020</copyright>
     <tags>Dynamics365 PowerPlatform Xrm Plugin DataVerse Cds</tags>
     <repository type="GitHub" url="https://github.com/Cloud-Awesome/cds-core" />
-    <packageIcon>../../../documentation/assets/logo-transparent.png</packageIcon>
     <dependencies />
   </metadata>
 </package>
