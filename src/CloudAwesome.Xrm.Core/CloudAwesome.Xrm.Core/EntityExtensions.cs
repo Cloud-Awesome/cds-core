@@ -42,7 +42,6 @@ namespace CloudAwesome.Xrm.Core
             }
             else
             {
-                
                 entity.Id = result.Id;
                 entity.Update(organizationService);
             }

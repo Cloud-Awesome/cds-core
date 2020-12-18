@@ -12,12 +12,12 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-	<Authors>Arthur Nicholson-Gumuła (@arthur82)</Authors>
-	<Description>Helpers and extension classes for D365 extension</Description>
-	<PackageProjectUrl>https://github.com/Cloud-Awesome/cds-core</PackageProjectUrl>
+    <Authors>Arthur Nicholson-Gumuła (@arthur82)</Authors>
+    <Description>Helpers and extension classes for D365 extension</Description>
+    <PackageProjectUrl>https://github.com/Cloud-Awesome/cds-core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Cloud-Awesome/cds-core</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
-	<PackageReleaseNotes>See full release notes at https://github.com/Cloud-Awesome/cds-core/documentation/release-notes</PackageReleaseNotes>
+    <PackageReleaseNotes>See full release notes at https://github.com/Cloud-Awesome/cds-core/documentation/release-notes</PackageReleaseNotes>
     <PackageIcon>cloud-awesome.png</PackageIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="CloudAwesome.Xrm.Core.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
