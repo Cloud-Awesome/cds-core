@@ -13,11 +13,11 @@ namespace CloudAwesome.Xrm.Core
 
     public static class EntityExtensions
     {
-        public static Guid Create(this Entity entity, IOrganizationService organizationService)
+        public static EntityReference Create(this Entity entity, IOrganizationService organizationService)
         {
             // TODO - tracing (and validation?)
             entity.Id = organizationService.Create(entity);
-            return entity.Id;
+            return new EntityReference(entity.LogicalName, entity.Id);
         }
 
         public static void Delete(this Entity entity, IOrganizationService organizationService)
@@ -32,13 +32,13 @@ namespace CloudAwesome.Xrm.Core
             organizationService.Update(entity);
         }
 
-        public static Guid CreateOrUpdate(this Entity entity, IOrganizationService organizationService,
+        public static EntityReference CreateOrUpdate(this Entity entity, IOrganizationService organizationService,
             QueryBase query)
         {
             var result = query.RetrieveSingleRecord(organizationService);
             if (result == null)
             {
-                entity.Id = entity.Create(organizationService);
+                entity.Id = entity.Create(organizationService).Id;
             }
             else
             {
@@ -46,7 +46,7 @@ namespace CloudAwesome.Xrm.Core
                 entity.Update(organizationService);
             }
 
-            return entity.Id;
+            return entity.ToEntityReference();
         }
 
         public static Guid ExecuteWorkflow(this Entity entity, 

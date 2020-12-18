@@ -15,12 +15,12 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var orgService = context.GetOrganizationService();
 
             var testAccount = new Account { Name = "Test Account" };
-            var createdEntityId = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(orgService);
 
-            var retrieveAccount = new Account {Id = createdEntityId};
+            var retrieveAccount = new Account {Id = createdEntity.Id};
             var retrievedAccount = retrieveAccount.Retrieve(orgService, new ColumnSet("name"));
             
-            Assert.AreEqual(createdEntityId, retrievedAccount.Id);
+            Assert.AreEqual(createdEntity.Id, retrievedAccount.Id);
             Assert.AreEqual(testAccount.Name, retrievedAccount["name"]);
             Assert.AreEqual(2, retrievedAccount.Attributes.Count);
         }
@@ -32,12 +32,12 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var orgService = context.GetOrganizationService();
 
             var testAccount = new Account { Name = "Test Account" };
-            var createdEntityId = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(orgService);
 
-            var retrieveAccount = new Account { Id = createdEntityId };
+            var retrieveAccount = new Account { Id = createdEntity.Id };
             var retrievedAccount = retrieveAccount.Retrieve(orgService, new ColumnSet(true));
 
-            Assert.AreEqual(createdEntityId, retrievedAccount.Id);
+            Assert.AreEqual(createdEntity.Id, retrievedAccount.Id);
             Assert.IsNotNull(retrievedAccount["createdon"]);
         }
 

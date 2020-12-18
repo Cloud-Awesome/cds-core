@@ -10,6 +10,7 @@
     <copyright>Cloud Awesome Limited 2020</copyright>
     <tags>Dynamics365 PowerPlatform Xrm Plugin DataVerse Cds</tags>
     <repository type="GitHub" url="https://github.com/Cloud-Awesome/cds-core" />
+    <packageIcon>../../../documentation/assets/logo-transparent.png</packageIcon>
     <dependencies />
   </metadata>
 </package>
