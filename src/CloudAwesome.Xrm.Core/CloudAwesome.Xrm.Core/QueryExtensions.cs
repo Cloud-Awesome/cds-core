@@ -81,7 +81,7 @@ namespace CloudAwesome.Xrm.Core
             }
 
             var response = (ExecuteMultipleResponse) organizationService.Execute(request);
-            return response.IsFaulted;
+            return !response.IsFaulted;
         }
     }
 }

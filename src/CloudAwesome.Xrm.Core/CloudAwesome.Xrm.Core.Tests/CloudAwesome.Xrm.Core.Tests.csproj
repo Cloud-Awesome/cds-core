@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FetchXmlHelpersTests\" />
+    <Folder Include="LoggerTests\" />
     <Folder Include="MetadataHelpersTests\" />
     <Folder Include="TracingHelpersTests\" />
   </ItemGroup>
