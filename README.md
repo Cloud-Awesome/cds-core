@@ -7,7 +7,7 @@ Documentation in progress... Hold your horses until the first release! ;)
 
 Core project for Dynamics 365/CDS extensions
 
-- [Entity Extensions](/documentation/DataModel.md)
+- [Entity Extensions](/documentation/EntityExtensions.md)
 - [Query Helpers](/documentation/QueryHelper.md)
 - [FetchXML Helpers](/documentation/FetchXmlHelper.md)
 - [Metadata Helpers](/documentation/MetadataHelper.md)
