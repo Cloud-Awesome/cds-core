@@ -9,19 +9,30 @@ namespace CloudAwesome.Xrm.Core.Loggers
     public class AppInsightsLogger : ILogger
     {
         private readonly LogLevel _logLevel;
-        private readonly TelemetryClient _telemetryClient;
+        private readonly string _connectionString;
+        private TelemetryClient _telemetryClient;
 
         public AppInsightsLogger(LogLevel logLevel, string connectionString)
         {
-            var telemetryConfiguration = TelemetryConfiguration.CreateDefault();
-            telemetryConfiguration.ConnectionString = connectionString;
-
-            _telemetryClient = new TelemetryClient(telemetryConfiguration);
             _logLevel = logLevel;
+            _connectionString = connectionString;
         }
 
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
+            if (!IsEnabled(logLevel))
+            {
+                return;
+            }
+
+            if (_telemetryClient == null)
+            {
+                var telemetryConfiguration = TelemetryConfiguration.CreateDefault();
+                telemetryConfiguration.ConnectionString = _connectionString;
+
+                _telemetryClient = new TelemetryClient(telemetryConfiguration);
+            }
+
             switch (logLevel)
             {
                 case LogLevel.None:

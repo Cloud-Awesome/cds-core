@@ -12,8 +12,6 @@ namespace CloudAwesome.Xrm.Core
 
         public TracingHelper(LoggingConfiguration loggingConfiguration)
         {
-            // TODO - Should instantiate each strategy unless required #7
-            // (Maybe an initialise method instead of constructor level? Or just a different pattern here...
             _loggers.Add(LoggerConfigurationType.Console, new ConsoleLogger(loggingConfiguration.LogLevelToTrace));
             _loggers.Add(LoggerConfigurationType.ApplicationInsights, new AppInsightsLogger(loggingConfiguration.LogLevelToTrace, loggingConfiguration.ApplicationInsightsConnectionString));
             _loggers.Add(LoggerConfigurationType.TextFile, new TextFileLogger(loggingConfiguration.LogLevelToTrace, loggingConfiguration.TextFileOutputPath));
