@@ -1,4 +1,5 @@
 ﻿using System;
+using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk.Query;
@@ -48,7 +49,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var orgService = context.GetOrganizationService();
 
             var retrieveAccount = new Account { };
-            Assert.Throws(typeof(Exception), 
+            Assert.Throws(typeof(OperationPreventedException), 
                 () => retrieveAccount.Retrieve(orgService, new ColumnSet(true)));
         }
     }

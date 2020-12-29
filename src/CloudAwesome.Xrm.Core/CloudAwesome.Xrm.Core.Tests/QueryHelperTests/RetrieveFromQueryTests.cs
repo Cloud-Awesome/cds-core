@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CloudAwesome.Xrm.Core.Exceptions;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -64,7 +65,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1Duplicate
             });
             
-            Assert.Throws(typeof(Exception),
+            Assert.Throws(typeof(QueryBaseException),
                 () => QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression));
 
         }
@@ -115,7 +116,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var fetchExpression = new FetchExpression(SampleAccountFetchQuery);
 
-            Assert.Throws(typeof(Exception),
+            Assert.Throws(typeof(QueryBaseException),
                 () => QueryExtensions.RetrieveRecordFromQuery<FetchExpression>(orgService, fetchExpression));
         }
 

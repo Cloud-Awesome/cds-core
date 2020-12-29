@@ -4,17 +4,35 @@ using Microsoft.Extensions.Logging;
 
 namespace CloudAwesome.Xrm.Core.Loggers
 {
+    /// <summary>
+    /// Implements an basic Text File ILogger to be consumed in the TracingHelper class.
+    /// Requires LogLevel and a file path to be included in manifest or configuration
+    /// </summary>
     public class TextFileLogger: ILogger
     {
         private readonly LogLevel _logLevel;
         private readonly string _filePath;
 
+        /// <summary>
+        /// Constructor for AppInsights ILogger implementation
+        /// </summary>
+        /// <param name="logLevel">Microsoft.Extensions.Logging.LogLevel. Any traces below this level will be ignored</param>
+        /// <param name="filePath">.txt filepath to output the tracelogs</param>
         public TextFileLogger(LogLevel logLevel, string filePath)
         {
             _logLevel = logLevel;
             _filePath = filePath;
         }
 
+        /// <summary>
+        /// Regsiter a log entry to text file
+        /// </summary>
+        /// <typeparam name="TState"></typeparam>
+        /// <param name="logLevel"></param>
+        /// <param name="eventId"></param>
+        /// <param name="state"></param>
+        /// <param name="exception"></param>
+        /// <param name="formatter"></param>
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             if (!IsEnabled(logLevel))

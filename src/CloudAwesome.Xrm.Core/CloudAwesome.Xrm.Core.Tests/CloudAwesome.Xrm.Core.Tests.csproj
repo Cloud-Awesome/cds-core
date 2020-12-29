@@ -114,7 +114,6 @@
     <Compile Include="QueryHelperTests\DeleteSingleRecordTests.cs" />
     <Compile Include="QueryHelperTests\QueryExtensionTests.cs" />
     <Compile Include="QueryHelperTests\RetrieveFromQueryTests.cs" />
-    <Compile Include="EntityExtensionsTests\SetStateTests.cs" />
     <Compile Include="EntityExtensionsTests\UpdateTests.cs" />
     <Compile Include="EntityExtensionsTests\ExecuteWorkflowTests.cs" />
     <Compile Include="EntityExtensionsTests\RetrieveTests.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CloudAwesome.Xrm.Core.Exceptions;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
@@ -56,7 +57,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 JeremyContact
             });
 
-            Assert.Throws(Is.TypeOf<Exception>().And.Message.EqualTo(expectedExceptionMessage),
+            Assert.Throws(Is.TypeOf<QueryBaseException>().And.Message.EqualTo(expectedExceptionMessage),
                 () => SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService, 2)
             );
 
@@ -113,7 +114,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 JamesContact // James isn't in London
             });
 
-            Assert.Throws(Is.TypeOf<Exception>().And.Message.EqualTo(expectedExceptionMessage),
+            Assert.Throws(Is.TypeOf<OperationPreventedException>().And.Message.EqualTo(expectedExceptionMessage),
                 () => SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService, expectedResultsToDelete: 2)
             );
 

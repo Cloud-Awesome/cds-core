@@ -6,18 +6,36 @@ using Microsoft.Extensions.Logging;
 
 namespace CloudAwesome.Xrm.Core.Loggers
 {
+    /// <summary>
+    /// Implements an Azure Application Insights ILogger to be consumed in the TracingHelper class.
+    /// Requires LogLevel and AppInsights connection string to be included in manifest or configuration
+    /// </summary>
     public class AppInsightsLogger : ILogger
     {
         private readonly LogLevel _logLevel;
         private readonly string _connectionString;
         private TelemetryClient _telemetryClient;
 
+        /// <summary>
+        /// Constructor for AppInsights ILogger implementation
+        /// </summary>
+        /// <param name="logLevel">Microsoft.Extensions.Logging.LogLevel. Any traces below this level will be ignored</param>
+        /// <param name="connectionString">AppInsights connection string, including instrumentation key and target client</param>
         public AppInsightsLogger(LogLevel logLevel, string connectionString)
         {
             _logLevel = logLevel;
             _connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Register a log entry in AppInsights
+        /// </summary>
+        /// <typeparam name="TState"></typeparam>
+        /// <param name="logLevel"></param>
+        /// <param name="eventId"></param>
+        /// <param name="state"></param>
+        /// <param name="exception"></param>
+        /// <param name="formatter"></param>
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             if (!IsEnabled(logLevel))

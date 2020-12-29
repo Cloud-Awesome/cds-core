@@ -6,13 +6,28 @@ using Microsoft.Xrm.Tooling.Connector;
 
 namespace CloudAwesome.Xrm.Core
 {
+    /// <summary>
+    /// Wrapper around the Xrm.Tooling connector
+    /// </summary>
     public static class XrmClient
     {
-        public static CrmServiceClient GetCrmServiceClient(string connectionString)
+        /// <summary>
+        /// Creates a new CrmServiceClient given a valid connection string
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <returns>CrmServiceClient</returns>
+        public static IOrganizationService GetCrmServiceClient(string connectionString)
         {
             return new CrmServiceClient(connectionString);
         }
 
+        /// <summary>
+        /// Creates a new CrmServiceClient given a valid username, password and target url
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>CrmServiceClient</returns>
         public static IOrganizationService GetCrmServiceClientWithO365(string url, string username, string password)
         {
             var connectionString =
@@ -23,6 +38,13 @@ namespace CloudAwesome.Xrm.Core
             return GetCrmServiceClient(connectionString);
         }
 
+        /// <summary>
+        /// Creates a new CrmServiceClient given valid AAD app registration details
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="appId"></param>
+        /// <param name="appSecret"></param>
+        /// <returns>CrmServiceClient</returns>
         public static IOrganizationService GetCrmServiceClientWithClientSecret(string url, string appId, string appSecret)
         {
             var connectionString =
@@ -33,6 +55,11 @@ namespace CloudAwesome.Xrm.Core
             return GetCrmServiceClient(connectionString);
         }
 
+        /// <summary>
+        /// Creates a new CrmServiceClient from configuration passed through an XML manifest configuration
+        /// </summary>
+        /// <param name="cdsConnection"></param>
+        /// <returns>CrmServiceClient</returns>
         public static IOrganizationService GetCrmServiceClientFromManifestConfiguration(CdsConnection cdsConnection)
         {
             switch (cdsConnection.ConnectionType)
@@ -50,6 +77,11 @@ namespace CloudAwesome.Xrm.Core
             }
         }
 
+        /// <summary>
+        /// Gets a reference to the target environment's root business unit (usually the same name as the Org)
+        /// </summary>
+        /// <param name="organizationService"></param>
+        /// <returns>EntityReference of the root BusinessUnit</returns>
         public static EntityReference GetRootBusinessUnit(IOrganizationService organizationService)
         {
             var rootBusinessUnit = new QueryExpression()
@@ -68,6 +100,11 @@ namespace CloudAwesome.Xrm.Core
             return rootBusinessUnit.ToEntityReference();
         }
 
+        /// <summary>
+        /// Gets a reference to the target environment's base currency 
+        /// </summary>
+        /// <param name="organizationService"></param>
+        /// <returns>EntityReference of the BaseCurrency</returns>
         public static EntityReference GetBaseCurrency(IOrganizationService organizationService)
         {
             var baseCurrency = new QueryExpression()

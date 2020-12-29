@@ -7,7 +7,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectUrl>https://github.com/Cloud-Awesome/cds-core/issues</projectUrl>
     <description>Helpers and extension classes for Dynamics 365/Power Platform development</description>
-    <releaseNotes>See full release notes at https://github.com/Cloud-Awesome/cds-core/blob/master/documentation/release-notes/release-notes.md</releaseNotes>
+    <releaseNotes>See changelog at https://github.com/Cloud-Awesome/cds-core/releases</releaseNotes>
     <copyright>Cloud Awesome Limited 2020</copyright>
     <tags>Dynamics365 PowerPlatform Xrm Plugin DataVerse Cds</tags>
     <repository type="GitHub" url="https://github.com/Cloud-Awesome/cds-core" />

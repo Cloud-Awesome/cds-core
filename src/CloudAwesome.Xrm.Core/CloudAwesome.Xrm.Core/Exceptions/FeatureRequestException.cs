@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CloudAwesome.Xrm.Core
+namespace CloudAwesome.Xrm.Core.Exceptions
 {
     public class FeatureRequestException: Exception
     {

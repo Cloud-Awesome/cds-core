@@ -1,5 +1,5 @@
 ﻿using System;
-
+using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
 

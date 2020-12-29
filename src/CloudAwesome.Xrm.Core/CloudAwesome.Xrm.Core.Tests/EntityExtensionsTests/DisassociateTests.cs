@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CloudAwesome.Xrm.Core.Exceptions;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;

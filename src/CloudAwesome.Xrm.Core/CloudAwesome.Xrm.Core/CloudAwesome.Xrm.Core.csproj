@@ -119,7 +119,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FeatureRequestException.cs" />
+    <Compile Include="Exceptions\OperationPreventedException.cs" />
+    <Compile Include="Exceptions\FeatureRequestException.cs" />
+    <Compile Include="Exceptions\QueryBaseException.cs" />
     <Compile Include="Loggers\AppInsightsLogger.cs" />
     <Compile Include="Loggers\ConsoleLogger.cs" />
     <Compile Include="Loggers\TextFileLogger.cs" />
