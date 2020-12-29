@@ -43,6 +43,22 @@ steps:
     configuration: 'release'
     versioningScheme: 'byBuildNumber'
 
+- task: GitHubRelease@1
+  displayName: Create GitHub Release with ChangeLog
+  inputs:
+    gitHubConnection: 'GitHubReleaseConnection'
+    repositoryName: '$(Build.Repository.Name)'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'userSpecifiedTag'
+    tag: '$(Build.BuildNumber)'
+    title: '$(Build.BuildNumber)'
+    releaseNotesSource: 'inline'
+    #assets: $(Build.ArtifactStagingDirectory)/*
+    changeLogCompareToRelease: 'lastFullRelease'
+    changeLogType: 'issueBased'
+    changeLogLabels: '[{ "label" : "bug", "displayName" : "Bugs", "state" : "closed" }, { "label" : "enhancement", "displayName" : "New Functionality", "state" : "closed" }, { "label" : "documentation", "displayName" : "Documentation", "state" : "closed" }]'
+
 - task: NuGetCommand@2
   displayName: Nuget Push
   inputs:
