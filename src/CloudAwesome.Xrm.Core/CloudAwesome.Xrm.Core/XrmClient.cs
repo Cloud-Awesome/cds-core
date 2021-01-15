@@ -1,8 +1,8 @@
-﻿using System;
-using CloudAwesome.Xrm.Core.Models;
+﻿using CloudAwesome.Xrm.Core.Models;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Tooling.Connector;
+using System;
 
 namespace CloudAwesome.Xrm.Core
 {

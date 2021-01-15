@@ -6,7 +6,7 @@ namespace CloudAwesome.Xrm.Core.Exceptions
     /// Exception thrown in validation or expected results from a CRM Query
     /// (QueryExpression, FetchQuery or QueryByAttribute)
     /// </summary>
-    public class QueryBaseException: Exception
+    public class QueryBaseException : Exception
     {
         /// <summary>
         /// Exception thrown in validation or expected results from a CRM Query

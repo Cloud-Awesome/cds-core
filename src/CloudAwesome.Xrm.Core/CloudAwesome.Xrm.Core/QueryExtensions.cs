@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using CloudAwesome.Xrm.Core.Exceptions;
+﻿using CloudAwesome.Xrm.Core.Exceptions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
+using System.Linq;
 
 namespace CloudAwesome.Xrm.Core
 {
@@ -39,12 +39,12 @@ namespace CloudAwesome.Xrm.Core
         /// <param name="throwExceptionOnMultipleResults">Defaults to true and throws an exception if more than one result is thrown. If false, the FirstOrDefault result will be returned</param>
         /// <exception cref="QueryBaseException">Throws if throwExceptionOnMultipleResults == true and the query returns more than one record</exception>
         /// <returns>The single Entity record returned by the query</returns>
-        public static Entity RetrieveRecordFromQuery<T>(IOrganizationService organizationService, T query, 
+        public static Entity RetrieveRecordFromQuery<T>(IOrganizationService organizationService, T query,
             bool throwExceptionOnMultipleResults = true) where T : QueryBase
         {
             var queryResults = RetrieveMultipleFromQuery(organizationService, query);
             var entitiesReturned = queryResults.Entities.Count;
-            
+
             if (throwExceptionOnMultipleResults && entitiesReturned > 1)
             {
                 throw new QueryBaseException($"Query retrieved {entitiesReturned} records. " +
@@ -123,7 +123,7 @@ namespace CloudAwesome.Xrm.Core
                 request.Requests.Add(deleteRequest);
             }
 
-            var response = (ExecuteMultipleResponse) organizationService.Execute(request);
+            var response = (ExecuteMultipleResponse)organizationService.Execute(request);
             return !response.IsFaulted;
         }
     }

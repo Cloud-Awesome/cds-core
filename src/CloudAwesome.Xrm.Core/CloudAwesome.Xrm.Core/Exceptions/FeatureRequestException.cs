@@ -2,7 +2,7 @@
 
 namespace CloudAwesome.Xrm.Core.Exceptions
 {
-    public class FeatureRequestException: Exception
+    public class FeatureRequestException : Exception
     {
         public FeatureRequestException(string message) :
             base(

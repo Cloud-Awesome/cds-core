@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using CloudAwesome.Xrm.Core.Loggers;
+﻿using CloudAwesome.Xrm.Core.Loggers;
 using CloudAwesome.Xrm.Core.Models;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace CloudAwesome.Xrm.Core
 {

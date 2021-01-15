@@ -6,7 +6,7 @@ namespace CloudAwesome.Xrm.Core.Exceptions
     /// CRM message has been prevented from execution due to missing information, failed validation or
     /// prevented by configuration parameters in method call
     /// </summary>
-    public class OperationPreventedException: Exception
+    public class OperationPreventedException : Exception
     {
         /// <summary>
         /// CRM message has been prevented from execution due to missing information, failed validation or

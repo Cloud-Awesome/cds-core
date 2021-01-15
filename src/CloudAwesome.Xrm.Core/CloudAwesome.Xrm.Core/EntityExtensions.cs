@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CloudAwesome.Xrm.Core.Exceptions;
+﻿using CloudAwesome.Xrm.Core.Exceptions;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CloudAwesome.Xrm.Core
 {
@@ -84,7 +84,7 @@ namespace CloudAwesome.Xrm.Core
             return entity.ToEntityReference();
         }
 
-        public static Guid ExecuteWorkflow(this Entity entity, 
+        public static Guid ExecuteWorkflow(this Entity entity,
             IOrganizationService organizationService, Guid workflowId)
         {
             throw FeatureRequestException.PartiallyImplementedFeatureException(typeof(ExecuteWorkflowRequest).ToString());
@@ -112,7 +112,7 @@ namespace CloudAwesome.Xrm.Core
             {
                 throw new OperationPreventedException("Cannot retrieve Entity if ID is null or empty. Try a query instead.");
             }
-            return organizationService.Retrieve(entity.LogicalName, entity.Id, columnSet?? new ColumnSet(true));
+            return organizationService.Retrieve(entity.LogicalName, entity.Id, columnSet ?? new ColumnSet(true));
         }
 
 
@@ -138,7 +138,7 @@ namespace CloudAwesome.Xrm.Core
                     if (id == sourceEntity.Id) continue;
                 }
                 if (excludeAttributesList != null && excludeAttributesList.Contains(attr.Key)) continue;
-                
+
                 targetEntity[attr.Key] = attr.Value;
             }
 
@@ -148,14 +148,14 @@ namespace CloudAwesome.Xrm.Core
         public static void Associate(this Entity entity, IOrganizationService organizationService,
             string relationshipName, IEnumerable<Entity> relatedEntities)
         {
-            organizationService.Associate(entity.LogicalName, entity.Id, new Relationship(relationshipName), 
-                new EntityReferenceCollection(relatedEntities.Select(e => e.ToEntityReference()).ToArray())); 
+            organizationService.Associate(entity.LogicalName, entity.Id, new Relationship(relationshipName),
+                new EntityReferenceCollection(relatedEntities.Select(e => e.ToEntityReference()).ToArray()));
         }
 
         public static void Associate(this Entity entity, IOrganizationService organizationService,
             string relationshipName, EntityReferenceCollection relatedEntities)
         {
-            organizationService.Associate(entity.LogicalName, entity.Id, 
+            organizationService.Associate(entity.LogicalName, entity.Id,
                 new Relationship(relationshipName), relatedEntities);
         }
 
@@ -176,6 +176,6 @@ namespace CloudAwesome.Xrm.Core
             //organizationService.Disassociate(entity.LogicalName, entity.Id,
             //    new Relationship(relationshipName), relatedEntities);
         }
-        
+
     }
 }

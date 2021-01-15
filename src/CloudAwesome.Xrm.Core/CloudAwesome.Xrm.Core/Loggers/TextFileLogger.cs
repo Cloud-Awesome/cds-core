@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.IO;
-using Microsoft.Extensions.Logging;
 
 namespace CloudAwesome.Xrm.Core.Loggers
 {
@@ -8,7 +8,7 @@ namespace CloudAwesome.Xrm.Core.Loggers
     /// Implements an basic Text File ILogger to be consumed in the TracingHelper class.
     /// Requires LogLevel and a file path to be included in manifest or configuration
     /// </summary>
-    public class TextFileLogger: ILogger
+    public class TextFileLogger : ILogger
     {
         private readonly LogLevel _logLevel;
         private readonly string _filePath;
