@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.Extensions.Logging;
 
 namespace CloudAwesome.Xrm.Core.Models
 {
@@ -9,6 +10,7 @@ namespace CloudAwesome.Xrm.Core.Models
     /// All entry points take an ILogger parameter so these implementations can be used,
     /// a custom implementation, or no implementation at all (in which case, trace logs are ignored)
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class LoggingConfiguration
     {
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,7 @@ namespace CloudAwesome.Xrm.Core.Loggers
         private readonly LogLevel _logLevel;
         private readonly string _connectionString;
         private TelemetryClient _telemetryClient;
+        private readonly TelemetryConfiguration _telemetryConfiguration;
 
         /// <summary>
         /// Constructor for AppInsights ILogger implementation
@@ -25,6 +27,19 @@ namespace CloudAwesome.Xrm.Core.Loggers
         {
             _logLevel = logLevel;
             _connectionString = connectionString;
+
+            _telemetryConfiguration = TelemetryConfiguration.CreateDefault();
+        }
+
+        public AppInsightsLogger(LogLevel logLevel, string connectionString, ITelemetryChannel telemetryChannel)
+        {
+            _logLevel = logLevel;
+            _connectionString = connectionString;
+
+            _telemetryConfiguration = new TelemetryConfiguration
+            {
+                TelemetryChannel = telemetryChannel
+            };
         }
 
         /// <summary>
@@ -45,10 +60,8 @@ namespace CloudAwesome.Xrm.Core.Loggers
 
             if (_telemetryClient == null)
             {
-                var telemetryConfiguration = TelemetryConfiguration.CreateDefault();
-                telemetryConfiguration.ConnectionString = _connectionString;
-
-                _telemetryClient = new TelemetryClient(telemetryConfiguration);
+                _telemetryConfiguration.ConnectionString = _connectionString;
+                _telemetryClient = new TelemetryClient(_telemetryConfiguration);
             }
 
             switch (logLevel)

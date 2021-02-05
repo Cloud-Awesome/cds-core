@@ -13,6 +13,8 @@ namespace CloudAwesome.Xrm.Core
         private readonly ILogger _logger;
         private readonly Dictionary<LoggerConfigurationType, ILogger> _loggers = new Dictionary<LoggerConfigurationType, ILogger>();
 
+        public string LoggerImplementationType => _logger.GetType().Name;
+
         /// <summary>
         /// Construct trace logging with one of the pre-rolled loggers, included in the manifest's configuration
         /// </summary>

@@ -1,10 +1,13 @@
-﻿namespace CloudAwesome.Xrm.Core.Models
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace CloudAwesome.Xrm.Core.Models
 {
     public enum CdsConnectionType { AppRegistration, ConnectionString, UserNameAndPassword }
 
     /// <summary>
     /// Configuration for creating a connection to the Common Data Service (aka CDS, Dynamics365, DataVerse)
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class CdsConnection
     {
         /// <summary>
