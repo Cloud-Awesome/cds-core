@@ -73,7 +73,7 @@ namespace CloudAwesome.Xrm.Core
                     return GetCrmServiceClientWithO365(cdsConnection.CdsUrl, cdsConnection.CdsUserName,
                         cdsConnection.CdsPassword);
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException(nameof(cdsConnection), "Type of CdsConnection.ConnectionType not recognised");
             }
         }
 

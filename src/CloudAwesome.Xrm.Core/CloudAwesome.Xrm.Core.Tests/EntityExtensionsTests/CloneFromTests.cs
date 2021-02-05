@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
@@ -49,7 +50,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             };
             var targetContact = new Contact();
 
-            Assert.Throws(typeof(Exception), () => targetContact.CloneFrom(sourceAccount));
+            Assert.Throws(typeof(OperationPreventedException), () => targetContact.CloneFrom(sourceAccount));
         }
 
         [Test]

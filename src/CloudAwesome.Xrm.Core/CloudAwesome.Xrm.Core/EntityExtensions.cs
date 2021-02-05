@@ -36,7 +36,7 @@ namespace CloudAwesome.Xrm.Core
         /// <exception cref="OperationPreventedException">Throws when primary GUID of the record is null</exception>
         public static void Delete(this Entity entity, IOrganizationService organizationService)
         {
-            if (entity.Id == null)
+            if (entity.Id == Guid.Empty || entity.Id == null)
             {
                 throw new OperationPreventedException("Cannot delete a record if GUID is null");
             }
@@ -52,7 +52,7 @@ namespace CloudAwesome.Xrm.Core
         /// <returns>EntityReference of the updated record</returns>
         public static EntityReference Update(this Entity entity, IOrganizationService organizationService)
         {
-            if (entity.Id == null)
+            if (entity.Id == Guid.Empty || entity.Id == null)
             {
                 throw new OperationPreventedException("Cannot update a record if GUID is null");
             }
@@ -88,12 +88,6 @@ namespace CloudAwesome.Xrm.Core
             IOrganizationService organizationService, Guid workflowId)
         {
             throw FeatureRequestException.PartiallyImplementedFeatureException(typeof(ExecuteWorkflowRequest).ToString());
-
-            //return ((ExecuteWorkflowResponse)organizationService.Execute(new ExecuteWorkflowRequest
-            //{
-            //    EntityId = entity.Id, 
-            //    WorkflowId = workflowId
-            //})).Id;
         }
 
         /// <summary>
@@ -128,7 +122,7 @@ namespace CloudAwesome.Xrm.Core
         {
             if (targetEntity.LogicalName != sourceEntity.LogicalName)
             {
-                throw new Exception($"Source entity must also be '{targetEntity.LogicalName}'.");
+                throw new OperationPreventedException($"Source entity must also be '{targetEntity.LogicalName}'.");
             }
             foreach (var attr in sourceEntity.Attributes)
             {
@@ -163,18 +157,12 @@ namespace CloudAwesome.Xrm.Core
             string relationshipName, IEnumerable<Entity> relatedEntities)
         {
             throw FeatureRequestException.PartiallyImplementedFeatureException(typeof(DisassociateRequest).ToString());
-
-            //organizationService.Disassociate(entity.LogicalName, entity.Id, new Relationship(relationshipName),
-            //    new EntityReferenceCollection(relatedEntities.Select(e => e.ToEntityReference()).ToArray()));
         }
 
         public static void Disassociate(this Entity entity, IOrganizationService organizationService,
             string relationshipName, EntityReferenceCollection relatedEntities)
         {
             throw FeatureRequestException.PartiallyImplementedFeatureException(typeof(DisassociateRequest).ToString());
-
-            //organizationService.Disassociate(entity.LogicalName, entity.Id,
-            //    new Relationship(relationshipName), relatedEntities);
         }
 
     }
