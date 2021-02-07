@@ -17,6 +17,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var context = new XrmFakedContext();
             var orgService = context.GetOrganizationService();
 
+
             var sourceAccount = new Account()
             {
                 Name = "Source Account",
@@ -32,13 +33,13 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             targetAccount.CloneFrom(sourceAccount);
             var createdTargetAccountId = targetAccount.Create(orgService);
 
-            Assert.NotNull(createdTargetAccountId);
-            Assert.AreNotEqual(createdSourceAccountId, createdTargetAccountId);
+            Assert.That(createdTargetAccountId, Is.Not.Null);
+            Assert.That(createdSourceAccountId, Is.Not.EqualTo(createdTargetAccountId));
 
-            Assert.AreEqual(sourceAccount.Name, targetAccount.Name);
-            Assert.AreEqual(sourceAccount.AccountCategoryCode, targetAccount.AccountCategoryCode);
-            Assert.AreEqual(sourceAccount.LastOnHoldTime, targetAccount.LastOnHoldTime);
-            Assert.AreEqual(sourceAccount.NumberOfEmployees, targetAccount.NumberOfEmployees);
+            Assert.That(sourceAccount.Name, Is.EqualTo(targetAccount.Name));
+            Assert.That(sourceAccount.AccountCategoryCode, Is.EqualTo(targetAccount.AccountCategoryCode));
+            Assert.That(sourceAccount.LastOnHoldTime, Is.EqualTo(targetAccount.LastOnHoldTime));
+            Assert.That(sourceAccount.NumberOfEmployees, Is.EqualTo(targetAccount.NumberOfEmployees));
         }
 
         [Test]

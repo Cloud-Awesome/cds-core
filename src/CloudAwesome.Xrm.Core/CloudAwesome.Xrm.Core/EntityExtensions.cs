@@ -109,7 +109,6 @@ namespace CloudAwesome.Xrm.Core
             return organizationService.Retrieve(entity.LogicalName, entity.Id, columnSet ?? new ColumnSet(true));
         }
 
-
         /// <summary>
         /// Creates a copy of the source entity into the target entity. Always excludes the record's GUID and can exclude other fields listed
         /// </summary>

@@ -129,11 +129,9 @@
     <Compile Include="Loggers\AppInsightsLogger.cs" />
     <Compile Include="Loggers\ConsoleLogger.cs" />
     <Compile Include="Loggers\TextFileLogger.cs" />
-    <Compile Include="MetadataHelpers.cs" />
     <Compile Include="Models\CdsConnection.cs" />
     <Compile Include="Models\LoggingConfiguration.cs" />
     <Compile Include="QueryExtensions.cs" />
-    <Compile Include="FetchXmlHelpers.cs" />
     <Compile Include="EntityExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TracingHelper.cs" />
