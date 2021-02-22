@@ -1,0 +1,799 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.TracingHelper
+  commentId: T:CloudAwesome.Xrm.Core.TracingHelper
+  id: TracingHelper
+  parent: CloudAwesome.Xrm.Core
+  children:
+  - CloudAwesome.Xrm.Core.TracingHelper.#ctor(CloudAwesome.Xrm.Core.Models.LoggingConfiguration)
+  - CloudAwesome.Xrm.Core.TracingHelper.#ctor(Microsoft.Extensions.Logging.ILogger)
+  - CloudAwesome.Xrm.Core.TracingHelper.Critical(System.String)
+  - CloudAwesome.Xrm.Core.TracingHelper.Debug(System.String)
+  - CloudAwesome.Xrm.Core.TracingHelper.Error(System.String)
+  - CloudAwesome.Xrm.Core.TracingHelper.Info(System.String)
+  - CloudAwesome.Xrm.Core.TracingHelper.Log(Microsoft.Extensions.Logging.LogLevel,System.String)
+  - CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType
+  - CloudAwesome.Xrm.Core.TracingHelper.Trace(System.String)
+  - CloudAwesome.Xrm.Core.TracingHelper.Warning(System.String)
+  langs:
+  - csharp
+  - vb
+  name: TracingHelper
+  nameWithType: TracingHelper
+  fullName: CloudAwesome.Xrm.Core.TracingHelper
+  type: Class
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: TracingHelper
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 10
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nConsumes an ILogger implementation for logging output. If no ILogger is provided, all trace logs are ignored\n"
+  example: []
+  syntax:
+    content: public class TracingHelper
+    content.vb: Public Class TracingHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType
+  commentId: P:CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType
+  id: LoggerImplementationType
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: LoggerImplementationType
+  nameWithType: TracingHelper.LoggerImplementationType
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: LoggerImplementationType
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 15
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public string LoggerImplementationType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property LoggerImplementationType As String
+  overload: CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CloudAwesome.Xrm.Core.TracingHelper.#ctor(CloudAwesome.Xrm.Core.Models.LoggingConfiguration)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.#ctor(CloudAwesome.Xrm.Core.Models.LoggingConfiguration)
+  id: '#ctor(CloudAwesome.Xrm.Core.Models.LoggingConfiguration)'
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: TracingHelper(LoggingConfiguration)
+  nameWithType: TracingHelper.TracingHelper(LoggingConfiguration)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.TracingHelper(CloudAwesome.Xrm.Core.Models.LoggingConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: .ctor
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 21
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nConstruct trace logging with one of the pre-rolled loggers, included in the manifest&apos;s configuration\n"
+  example: []
+  syntax:
+    content: public TracingHelper(LoggingConfiguration loggingConfiguration)
+    parameters:
+    - id: loggingConfiguration
+      type: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+      description: Logging configuration with logger type and any required parameters for the type
+    content.vb: Public Sub New(loggingConfiguration As LoggingConfiguration)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.#ctor(Microsoft.Extensions.Logging.ILogger)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.#ctor(Microsoft.Extensions.Logging.ILogger)
+  id: '#ctor(Microsoft.Extensions.Logging.ILogger)'
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: TracingHelper(ILogger)
+  nameWithType: TracingHelper.TracingHelper(ILogger)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.TracingHelper(Microsoft.Extensions.Logging.ILogger)
+  type: Constructor
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: .ctor
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 34
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nConstruct trace logging with a custom ILogger implementation, not one of those provided with the .Core library\n"
+  example: []
+  syntax:
+    content: public TracingHelper(ILogger logger)
+    parameters:
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger
+      description: An ILogger implementation. If null, all logs are ignored
+    content.vb: Public Sub New(logger As ILogger)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Log(Microsoft.Extensions.Logging.LogLevel,System.String)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Log(Microsoft.Extensions.Logging.LogLevel,System.String)
+  id: Log(Microsoft.Extensions.Logging.LogLevel,System.String)
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: Log(LogLevel, String)
+  nameWithType: TracingHelper.Log(LogLevel, String)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Log(Microsoft.Extensions.Logging.LogLevel, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Log
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 47
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRegister a log entry\n"
+  example: []
+  syntax:
+    content: public void Log(LogLevel logLevel, string message)
+    parameters:
+    - id: logLevel
+      type: Microsoft.Extensions.Logging.LogLevel
+      description: ''
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Public Sub Log(logLevel As LogLevel, message As String)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.Log*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Debug(System.String)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Debug(System.String)
+  id: Debug(System.String)
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: Debug(String)
+  nameWithType: TracingHelper.Debug(String)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Debug(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Debug
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 56
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRegister a log entry with LogLevel of Debug\n"
+  example: []
+  syntax:
+    content: public void Debug(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Public Sub Debug(message As String)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.Debug*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Info(System.String)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Info(System.String)
+  id: Info(System.String)
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: Info(String)
+  nameWithType: TracingHelper.Info(String)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Info(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Info
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 65
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRegister a log entry with LogLevel of Information\n"
+  example: []
+  syntax:
+    content: public void Info(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Public Sub Info(message As String)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.Info*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Critical(System.String)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Critical(System.String)
+  id: Critical(System.String)
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: Critical(String)
+  nameWithType: TracingHelper.Critical(String)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Critical(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Critical
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 74
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRegister a log entry with LogLevel of Critical\n"
+  example: []
+  syntax:
+    content: public void Critical(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Public Sub Critical(message As String)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.Critical*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Error(System.String)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Error(System.String)
+  id: Error(System.String)
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: Error(String)
+  nameWithType: TracingHelper.Error(String)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Error(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Error
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 83
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRegister a log entry with LogLevel of Error\n"
+  example: []
+  syntax:
+    content: public void Error(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Public Sub Error(message As String)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.Error*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Trace(System.String)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Trace(System.String)
+  id: Trace(System.String)
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: Trace(String)
+  nameWithType: TracingHelper.Trace(String)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Trace(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Trace
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 92
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRegister a log entry with LogLevel of Trace\n"
+  example: []
+  syntax:
+    content: public void Trace(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Public Sub Trace(message As String)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.Trace*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Warning(System.String)
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Warning(System.String)
+  id: Warning(System.String)
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: Warning(String)
+  nameWithType: TracingHelper.Warning(String)
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Warning(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Warning
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 101
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRegister a log entry with LogLevel of Warning\n"
+  example: []
+  syntax:
+    content: public void Warning(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Public Sub Warning(message As String)
+  overload: CloudAwesome.Xrm.Core.TracingHelper.Warning*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CloudAwesome.Xrm.Core
+  commentId: N:CloudAwesome.Xrm.Core
+  name: CloudAwesome.Xrm.Core
+  nameWithType: CloudAwesome.Xrm.Core
+  fullName: CloudAwesome.Xrm.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType
+  name: LoggerImplementationType
+  nameWithType: TracingHelper.LoggerImplementationType
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.LoggerImplementationType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CloudAwesome.Xrm.Core.TracingHelper.#ctor*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.#ctor
+  name: TracingHelper
+  nameWithType: TracingHelper.TracingHelper
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.TracingHelper
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  commentId: T:CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  parent: CloudAwesome.Xrm.Core.Models
+  name: LoggingConfiguration
+  nameWithType: LoggingConfiguration
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+- uid: CloudAwesome.Xrm.Core.Models
+  commentId: N:CloudAwesome.Xrm.Core.Models
+  name: CloudAwesome.Xrm.Core.Models
+  nameWithType: CloudAwesome.Xrm.Core.Models
+  fullName: CloudAwesome.Xrm.Core.Models
+- uid: Microsoft.Extensions.Logging.ILogger
+  commentId: T:Microsoft.Extensions.Logging.ILogger
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  name: ILogger
+  nameWithType: ILogger
+  fullName: Microsoft.Extensions.Logging.ILogger
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Log*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.Log
+  name: Log
+  nameWithType: TracingHelper.Log
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Log
+- uid: Microsoft.Extensions.Logging.LogLevel
+  commentId: T:Microsoft.Extensions.Logging.LogLevel
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: Microsoft.Extensions.Logging.LogLevel
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Debug*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.Debug
+  name: Debug
+  nameWithType: TracingHelper.Debug
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Debug
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Info*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.Info
+  name: Info
+  nameWithType: TracingHelper.Info
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Info
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Critical*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.Critical
+  name: Critical
+  nameWithType: TracingHelper.Critical
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Critical
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Error*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.Error
+  name: Error
+  nameWithType: TracingHelper.Error
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Error
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Trace*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.Trace
+  name: Trace
+  nameWithType: TracingHelper.Trace
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Trace
+- uid: CloudAwesome.Xrm.Core.TracingHelper.Warning*
+  commentId: Overload:CloudAwesome.Xrm.Core.TracingHelper.Warning
+  name: Warning
+  nameWithType: TracingHelper.Warning
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.Warning

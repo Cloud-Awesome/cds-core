@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace CloudAwesome.Xrm.Core
 {
+    /// <summary>
+    /// Extensions and core helpers to the Xrm SDK QueryBase classes 
+    /// </summary>
     public static class QueryExtensions
     {
         /// <summary>

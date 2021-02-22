@@ -1,0 +1,41 @@
+### YamlMime:TableOfContent
+- uid: CloudAwesome.Xrm.Core
+  name: CloudAwesome.Xrm.Core
+  items:
+  - uid: CloudAwesome.Xrm.Core.EntityExtensions
+    name: EntityExtensions
+  - uid: CloudAwesome.Xrm.Core.QueryExtensions
+    name: QueryExtensions
+  - uid: CloudAwesome.Xrm.Core.TracingHelper
+    name: TracingHelper
+  - uid: CloudAwesome.Xrm.Core.XrmClient
+    name: XrmClient
+- uid: CloudAwesome.Xrm.Core.Exceptions
+  name: CloudAwesome.Xrm.Core.Exceptions
+  items:
+  - uid: CloudAwesome.Xrm.Core.Exceptions.FeatureRequestException
+    name: FeatureRequestException
+  - uid: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    name: OperationPreventedException
+  - uid: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    name: QueryBaseException
+- uid: CloudAwesome.Xrm.Core.Loggers
+  name: CloudAwesome.Xrm.Core.Loggers
+  items:
+  - uid: CloudAwesome.Xrm.Core.Loggers.AppInsightsLogger
+    name: AppInsightsLogger
+  - uid: CloudAwesome.Xrm.Core.Loggers.ConsoleLogger
+    name: ConsoleLogger
+  - uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+    name: TextFileLogger
+- uid: CloudAwesome.Xrm.Core.Models
+  name: CloudAwesome.Xrm.Core.Models
+  items:
+  - uid: CloudAwesome.Xrm.Core.Models.CdsConnection
+    name: CdsConnection
+  - uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+    name: CdsConnectionType
+  - uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+    name: LoggerConfigurationType
+  - uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+    name: LoggingConfiguration

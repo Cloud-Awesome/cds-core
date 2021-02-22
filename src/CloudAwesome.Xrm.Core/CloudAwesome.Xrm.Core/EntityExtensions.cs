@@ -9,6 +9,9 @@ using System.Linq;
 
 namespace CloudAwesome.Xrm.Core
 {
+    /// <summary>
+    /// Extensions to the Xrm SDK Entity class
+    /// </summary>
     public static class EntityExtensions
     {
         /// <summary>

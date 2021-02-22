@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  commentId: T:CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  id: CdsConnectionType
+  parent: CloudAwesome.Xrm.Core.Models
+  children:
+  - CloudAwesome.Xrm.Core.Models.CdsConnectionType.AppRegistration
+  - CloudAwesome.Xrm.Core.Models.CdsConnectionType.ConnectionString
+  - CloudAwesome.Xrm.Core.Models.CdsConnectionType.UserNameAndPassword
+  langs:
+  - csharp
+  - vb
+  name: CdsConnectionType
+  nameWithType: CdsConnectionType
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  type: Enum
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsConnectionType
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 4
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: public enum CdsConnectionType
+    content.vb: Public Enum CdsConnectionType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType.AppRegistration
+  commentId: F:CloudAwesome.Xrm.Core.Models.CdsConnectionType.AppRegistration
+  id: AppRegistration
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  langs:
+  - csharp
+  - vb
+  name: AppRegistration
+  nameWithType: CdsConnectionType.AppRegistration
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnectionType.AppRegistration
+  type: Field
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: AppRegistration
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 4
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: AppRegistration = 0
+    return:
+      type: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType.ConnectionString
+  commentId: F:CloudAwesome.Xrm.Core.Models.CdsConnectionType.ConnectionString
+  id: ConnectionString
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  langs:
+  - csharp
+  - vb
+  name: ConnectionString
+  nameWithType: CdsConnectionType.ConnectionString
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnectionType.ConnectionString
+  type: Field
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: ConnectionString
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 4
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: ConnectionString = 1
+    return:
+      type: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType.UserNameAndPassword
+  commentId: F:CloudAwesome.Xrm.Core.Models.CdsConnectionType.UserNameAndPassword
+  id: UserNameAndPassword
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  langs:
+  - csharp
+  - vb
+  name: UserNameAndPassword
+  nameWithType: CdsConnectionType.UserNameAndPassword
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnectionType.UserNameAndPassword
+  type: Field
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: UserNameAndPassword
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 4
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: UserNameAndPassword = 2
+    return:
+      type: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CloudAwesome.Xrm.Core.Models
+  commentId: N:CloudAwesome.Xrm.Core.Models
+  name: CloudAwesome.Xrm.Core.Models
+  nameWithType: CloudAwesome.Xrm.Core.Models
+  fullName: CloudAwesome.Xrm.Core.Models
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  commentId: T:CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  parent: CloudAwesome.Xrm.Core.Models
+  name: CdsConnectionType
+  nameWithType: CdsConnectionType
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnectionType

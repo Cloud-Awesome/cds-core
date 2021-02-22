@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core
+  commentId: N:CloudAwesome.Xrm.Core
+  id: CloudAwesome.Xrm.Core
+  children:
+  - CloudAwesome.Xrm.Core.EntityExtensions
+  - CloudAwesome.Xrm.Core.QueryExtensions
+  - CloudAwesome.Xrm.Core.TracingHelper
+  - CloudAwesome.Xrm.Core.XrmClient
+  langs:
+  - csharp
+  - vb
+  name: CloudAwesome.Xrm.Core
+  nameWithType: CloudAwesome.Xrm.Core
+  fullName: CloudAwesome.Xrm.Core
+  type: Namespace
+  assemblies:
+  - CloudAwesome.Xrm.Core
+references:
+- uid: CloudAwesome.Xrm.Core.QueryExtensions
+  commentId: T:CloudAwesome.Xrm.Core.QueryExtensions
+  name: QueryExtensions
+  nameWithType: QueryExtensions
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions
+- uid: CloudAwesome.Xrm.Core.EntityExtensions
+  commentId: T:CloudAwesome.Xrm.Core.EntityExtensions
+  name: EntityExtensions
+  nameWithType: EntityExtensions
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions
+- uid: CloudAwesome.Xrm.Core.TracingHelper
+  commentId: T:CloudAwesome.Xrm.Core.TracingHelper
+  name: TracingHelper
+  nameWithType: TracingHelper
+  fullName: CloudAwesome.Xrm.Core.TracingHelper
+- uid: CloudAwesome.Xrm.Core.XrmClient
+  commentId: T:CloudAwesome.Xrm.Core.XrmClient
+  name: XrmClient
+  nameWithType: XrmClient
+  fullName: CloudAwesome.Xrm.Core.XrmClient

@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  commentId: T:CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  id: LoggerConfigurationType
+  parent: CloudAwesome.Xrm.Core.Models
+  children:
+  - CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.ApplicationInsights
+  - CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.Console
+  - CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.TextFile
+  langs:
+  - csharp
+  - vb
+  name: LoggerConfigurationType
+  nameWithType: LoggerConfigurationType
+  fullName: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  type: Enum
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: LoggerConfigurationType
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 5
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: public enum LoggerConfigurationType
+    content.vb: Public Enum LoggerConfigurationType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.Console
+  commentId: F:CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.Console
+  id: Console
+  parent: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  langs:
+  - csharp
+  - vb
+  name: Console
+  nameWithType: LoggerConfigurationType.Console
+  fullName: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.Console
+  type: Field
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Console
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 5
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: Console = 0
+    return:
+      type: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.ApplicationInsights
+  commentId: F:CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.ApplicationInsights
+  id: ApplicationInsights
+  parent: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  langs:
+  - csharp
+  - vb
+  name: ApplicationInsights
+  nameWithType: LoggerConfigurationType.ApplicationInsights
+  fullName: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.ApplicationInsights
+  type: Field
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: ApplicationInsights
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 5
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: ApplicationInsights = 1
+    return:
+      type: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.TextFile
+  commentId: F:CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.TextFile
+  id: TextFile
+  parent: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  langs:
+  - csharp
+  - vb
+  name: TextFile
+  nameWithType: LoggerConfigurationType.TextFile
+  fullName: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType.TextFile
+  type: Field
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: TextFile
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 5
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  syntax:
+    content: TextFile = 2
+    return:
+      type: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CloudAwesome.Xrm.Core.Models
+  commentId: N:CloudAwesome.Xrm.Core.Models
+  name: CloudAwesome.Xrm.Core.Models
+  nameWithType: CloudAwesome.Xrm.Core.Models
+  fullName: CloudAwesome.Xrm.Core.Models
+- uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  commentId: T:CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  parent: CloudAwesome.Xrm.Core.Models
+  name: LoggerConfigurationType
+  nameWithType: LoggerConfigurationType
+  fullName: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType

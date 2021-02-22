@@ -1,0 +1,860 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.QueryExtensions
+  commentId: T:CloudAwesome.Xrm.Core.QueryExtensions
+  id: QueryExtensions
+  parent: CloudAwesome.Xrm.Core
+  children:
+  - CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService,System.Int32,System.Nullable{System.Int32})
+  - CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  - CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  - CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0)
+  - CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0,System.Boolean)
+  - CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  langs:
+  - csharp
+  - vb
+  name: QueryExtensions
+  nameWithType: QueryExtensions
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions
+  type: Class
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: QueryExtensions
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+    startLine: 8
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public static class QueryExtensions
+    content.vb: Public Module QueryExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  commentId: M:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  id: RetrieveSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.QueryExtensions
+  langs:
+  - csharp
+  - vb
+  name: RetrieveSingleRecord(QueryBase, IOrganizationService)
+  nameWithType: QueryExtensions.RetrieveSingleRecord(QueryBase, IOrganizationService)
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase, Microsoft.Xrm.Sdk.IOrganizationService)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: RetrieveSingleRecord
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+    startLine: 17
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nExecutes a Query expecting a single record to be returned\n"
+  example: []
+  syntax:
+    content: public static Entity RetrieveSingleRecord(this QueryBase query, IOrganizationService organizationService)
+    parameters:
+    - id: query
+      type: Microsoft.Xrm.Sdk.Query.QueryBase
+      description: QueryBase implementation (QueryExpression, QueryByAttribute, FetchQuery
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization implementation
+    return:
+      type: Microsoft.Xrm.Sdk.Entity
+      description: The single Entity record returned by the query
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function RetrieveSingleRecord(query As QueryBase, organizationService As IOrganizationService) As Entity
+  overload: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    description: Throws if the query returns more than one record
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  commentId: M:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  id: RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.QueryExtensions
+  langs:
+  - csharp
+  - vb
+  name: RetrieveMultiple(QueryBase, IOrganizationService)
+  nameWithType: QueryExtensions.RetrieveMultiple(QueryBase, IOrganizationService)
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase, Microsoft.Xrm.Sdk.IOrganizationService)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: RetrieveMultiple
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+    startLine: 28
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nExecutes a Query expecting 0-Many results\n"
+  example: []
+  syntax:
+    content: public static EntityCollection RetrieveMultiple(this QueryBase query, IOrganizationService organizationService)
+    parameters:
+    - id: query
+      type: Microsoft.Xrm.Sdk.Query.QueryBase
+      description: QueryBase implementation (QueryExpression, QueryByAttribute, FetchQuery
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization implementation
+    return:
+      type: Microsoft.Xrm.Sdk.EntityCollection
+      description: EntityCollection of all results returned
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function RetrieveMultiple(query As QueryBase, organizationService As IOrganizationService) As EntityCollection
+  overload: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0,System.Boolean)
+  commentId: M:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0,System.Boolean)
+  id: RetrieveRecordFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0,System.Boolean)
+  parent: CloudAwesome.Xrm.Core.QueryExtensions
+  langs:
+  - csharp
+  - vb
+  name: RetrieveRecordFromQuery<T>(IOrganizationService, T, Boolean)
+  nameWithType: QueryExtensions.RetrieveRecordFromQuery<T>(IOrganizationService, T, Boolean)
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery<T>(Microsoft.Xrm.Sdk.IOrganizationService, T, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: RetrieveRecordFromQuery
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+    startLine: 41
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nExecutes a Query expecting a single record to be returned\n"
+  example: []
+  syntax:
+    content: >-
+      public static Entity RetrieveRecordFromQuery<T>(IOrganizationService organizationService, T query, bool throwExceptionOnMultipleResults = true)
+
+          where T : QueryBase
+    parameters:
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization implementation
+    - id: query
+      type: '{T}'
+      description: QueryBase implementation (QueryExpression, QueryByAttribute, FetchQuery
+    - id: throwExceptionOnMultipleResults
+      type: System.Boolean
+      description: Defaults to true and throws an exception if more than one result is thrown. If false, the FirstOrDefault result will be returned
+    typeParameters:
+    - id: T
+    return:
+      type: Microsoft.Xrm.Sdk.Entity
+      description: The single Entity record returned by the query
+    content.vb: Public Shared Function RetrieveRecordFromQuery(Of T As QueryBase)(organizationService As IOrganizationService, query As T, throwExceptionOnMultipleResults As Boolean = True) As Entity
+  overload: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    description: Throws if throwExceptionOnMultipleResults == true and the query returns more than one record
+  nameWithType.vb: QueryExtensions.RetrieveRecordFromQuery(Of T)(IOrganizationService, T, Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery(Of T)(Microsoft.Xrm.Sdk.IOrganizationService, T, System.Boolean)
+  name.vb: RetrieveRecordFromQuery(Of T)(IOrganizationService, T, Boolean)
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0)
+  commentId: M:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0)
+  id: RetrieveMultipleFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0)
+  parent: CloudAwesome.Xrm.Core.QueryExtensions
+  langs:
+  - csharp
+  - vb
+  name: RetrieveMultipleFromQuery<T>(IOrganizationService, T)
+  nameWithType: QueryExtensions.RetrieveMultipleFromQuery<T>(IOrganizationService, T)
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery<T>(Microsoft.Xrm.Sdk.IOrganizationService, T)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: RetrieveMultipleFromQuery
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+    startLine: 62
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nExecutes a Query expecting 0-Many results\n"
+  example: []
+  syntax:
+    content: >-
+      public static EntityCollection RetrieveMultipleFromQuery<T>(IOrganizationService organizationService, T query)
+
+          where T : QueryBase
+    parameters:
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization implementation
+    - id: query
+      type: '{T}'
+      description: QueryBase implementation (QueryExpression, QueryByAttribute, FetchQuery
+    typeParameters:
+    - id: T
+    return:
+      type: Microsoft.Xrm.Sdk.EntityCollection
+      description: EntityCollection of all results returned
+    content.vb: Public Shared Function RetrieveMultipleFromQuery(Of T As QueryBase)(organizationService As IOrganizationService, query As T) As EntityCollection
+  overload: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery*
+  nameWithType.vb: QueryExtensions.RetrieveMultipleFromQuery(Of T)(IOrganizationService, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery(Of T)(Microsoft.Xrm.Sdk.IOrganizationService, T)
+  name.vb: RetrieveMultipleFromQuery(Of T)(IOrganizationService, T)
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  commentId: M:CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  id: DeleteSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.QueryExtensions
+  langs:
+  - csharp
+  - vb
+  name: DeleteSingleRecord(QueryBase, IOrganizationService)
+  nameWithType: QueryExtensions.DeleteSingleRecord(QueryBase, IOrganizationService)
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase, Microsoft.Xrm.Sdk.IOrganizationService)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: DeleteSingleRecord
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+    startLine: 73
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nDeletes a single record returned from this Query\n"
+  example: []
+  syntax:
+    content: public static void DeleteSingleRecord(this QueryBase query, IOrganizationService organizationService)
+    parameters:
+    - id: query
+      type: Microsoft.Xrm.Sdk.Query.QueryBase
+      description: QueryBase implementation (QueryExpression, QueryByAttribute, FetchQuery
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization implementation
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub DeleteSingleRecord(query As QueryBase, organizationService As IOrganizationService)
+  overload: CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    description: Throws if the query returns more than one record
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService,System.Int32,System.Nullable{System.Int32})
+  commentId: M:CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService,System.Int32,System.Nullable{System.Int32})
+  id: DeleteAllResults(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService,System.Int32,System.Nullable{System.Int32})
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.QueryExtensions
+  langs:
+  - csharp
+  - vb
+  name: DeleteAllResults(QueryBase, IOrganizationService, Int32, Nullable<Int32>)
+  nameWithType: QueryExtensions.DeleteAllResults(QueryBase, IOrganizationService, Int32, Nullable<Int32>)
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults(Microsoft.Xrm.Sdk.Query.QueryBase, Microsoft.Xrm.Sdk.IOrganizationService, System.Int32, System.Nullable<System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: DeleteAllResults
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
+    startLine: 89
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nDeletes all records returned by this Query. Executed in a single Bulk Delete request\n"
+  example: []
+  syntax:
+    content: public static bool DeleteAllResults(this QueryBase query, IOrganizationService organizationService, int maxRecordsToDelete = 50, int? expectedResultsToDelete = default(int? ))
+    parameters:
+    - id: query
+      type: Microsoft.Xrm.Sdk.Query.QueryBase
+      description: QueryBase implementation (QueryExpression, QueryByAttribute, FetchQuery
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization implementation
+    - id: maxRecordsToDelete
+      type: System.Int32
+      description: Set max number of records to allow deletion to prevent accidental deletion of too man records. Defaults to 50
+    - id: expectedResultsToDelete
+      type: System.Nullable{System.Int32}
+      description: Set the expected number of records to delete. If this exact number is not returned, no records are deleted
+    return:
+      type: System.Boolean
+      description: True if all records were deleted with no errors being thrown
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function DeleteAllResults(query As QueryBase, organizationService As IOrganizationService, maxRecordsToDelete As Integer = 50, expectedResultsToDelete As Integer? = Nothing) As Boolean
+  overload: CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+    description: Throws if the number of records returned byt eh query exceeds the maxRecordsToDelete parameter (default is 50)
+  - type: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    description: Throws if the number of records returned is not exactly the same as the expectedResultsToDelete parameter (if not null)
+  nameWithType.vb: QueryExtensions.DeleteAllResults(QueryBase, IOrganizationService, Int32, Nullable(Of Int32))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults(Microsoft.Xrm.Sdk.Query.QueryBase, Microsoft.Xrm.Sdk.IOrganizationService, System.Int32, System.Nullable(Of System.Int32))
+  name.vb: DeleteAllResults(QueryBase, IOrganizationService, Int32, Nullable(Of Int32))
+references:
+- uid: CloudAwesome.Xrm.Core
+  commentId: N:CloudAwesome.Xrm.Core
+  name: CloudAwesome.Xrm.Core
+  nameWithType: CloudAwesome.Xrm.Core
+  fullName: CloudAwesome.Xrm.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+  commentId: T:CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+  name: QueryBaseException
+  nameWithType: QueryBaseException
+  fullName: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord*
+  commentId: Overload:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord
+  name: RetrieveSingleRecord
+  nameWithType: QueryExtensions.RetrieveSingleRecord
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord
+- uid: Microsoft.Xrm.Sdk.Query.QueryBase
+  commentId: T:Microsoft.Xrm.Sdk.Query.QueryBase
+  parent: Microsoft.Xrm.Sdk.Query
+  isExternal: true
+  name: QueryBase
+  nameWithType: QueryBase
+  fullName: Microsoft.Xrm.Sdk.Query.QueryBase
+- uid: Microsoft.Xrm.Sdk.IOrganizationService
+  commentId: T:Microsoft.Xrm.Sdk.IOrganizationService
+  parent: Microsoft.Xrm.Sdk
+  isExternal: true
+  name: IOrganizationService
+  nameWithType: IOrganizationService
+  fullName: Microsoft.Xrm.Sdk.IOrganizationService
+- uid: Microsoft.Xrm.Sdk.Entity
+  commentId: T:Microsoft.Xrm.Sdk.Entity
+  parent: Microsoft.Xrm.Sdk
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Microsoft.Xrm.Sdk.Entity
+- uid: Microsoft.Xrm.Sdk.Query
+  commentId: N:Microsoft.Xrm.Sdk.Query
+  isExternal: true
+  name: Microsoft.Xrm.Sdk.Query
+  nameWithType: Microsoft.Xrm.Sdk.Query
+  fullName: Microsoft.Xrm.Sdk.Query
+- uid: Microsoft.Xrm.Sdk
+  commentId: N:Microsoft.Xrm.Sdk
+  isExternal: true
+  name: Microsoft.Xrm.Sdk
+  nameWithType: Microsoft.Xrm.Sdk
+  fullName: Microsoft.Xrm.Sdk
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple*
+  commentId: Overload:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple
+  name: RetrieveMultiple
+  nameWithType: QueryExtensions.RetrieveMultiple
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultiple
+- uid: Microsoft.Xrm.Sdk.EntityCollection
+  commentId: T:Microsoft.Xrm.Sdk.EntityCollection
+  parent: Microsoft.Xrm.Sdk
+  isExternal: true
+  name: EntityCollection
+  nameWithType: EntityCollection
+  fullName: Microsoft.Xrm.Sdk.EntityCollection
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery*
+  commentId: Overload:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery
+  name: RetrieveRecordFromQuery
+  nameWithType: QueryExtensions.RetrieveRecordFromQuery
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery*
+  commentId: Overload:CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery
+  name: RetrieveMultipleFromQuery
+  nameWithType: QueryExtensions.RetrieveMultipleFromQuery
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.RetrieveMultipleFromQuery
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord*
+  commentId: Overload:CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord
+  name: DeleteSingleRecord
+  nameWithType: QueryExtensions.DeleteSingleRecord
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.DeleteSingleRecord
+- uid: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+  commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+  name: OperationPreventedException
+  nameWithType: OperationPreventedException
+  fullName: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+- uid: CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults*
+  commentId: Overload:CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults
+  name: DeleteAllResults
+  nameWithType: QueryExtensions.DeleteAllResults
+  fullName: CloudAwesome.Xrm.Core.QueryExtensions.DeleteAllResults
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

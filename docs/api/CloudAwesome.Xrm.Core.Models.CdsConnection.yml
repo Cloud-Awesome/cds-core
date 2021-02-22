@@ -1,0 +1,658 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection
+  commentId: T:CloudAwesome.Xrm.Core.Models.CdsConnection
+  id: CdsConnection
+  parent: CloudAwesome.Xrm.Core.Models
+  children:
+  - CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId
+  - CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret
+  - CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString
+  - CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword
+  - CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl
+  - CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName
+  - CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType
+  langs:
+  - csharp
+  - vb
+  name: CdsConnection
+  nameWithType: CdsConnection
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection
+  type: Class
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsConnection
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 9
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nConfiguration for creating a connection to the Common Data Service (aka CDS, Dynamics365, DataVerse)\n"
+  example: []
+  syntax:
+    content: public class CdsConnection
+    content.vb: Public Class CdsConnection
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType
+  commentId: P:CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType
+  id: ConnectionType
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnection
+  langs:
+  - csharp
+  - vb
+  name: ConnectionType
+  nameWithType: CdsConnection.ConnectionType
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: ConnectionType
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 15
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nConnection type. Currently supports a connection string, an AAD App registration, or username and password (not recommended)\n"
+  example: []
+  syntax:
+    content: public CdsConnectionType ConnectionType { get; set; }
+    parameters: []
+    return:
+      type: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+    content.vb: Public Property ConnectionType As CdsConnectionType
+  overload: CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString
+  commentId: P:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString
+  id: CdsConnectionString
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnection
+  langs:
+  - csharp
+  - vb
+  name: CdsConnectionString
+  nameWithType: CdsConnection.CdsConnectionString
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsConnectionString
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 20
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nCDS Connection string, required if ConnectionType == ConnectionString\n"
+  example: []
+  syntax:
+    content: public string CdsConnectionString { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CdsConnectionString As String
+  overload: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl
+  commentId: P:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl
+  id: CdsUrl
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnection
+  langs:
+  - csharp
+  - vb
+  name: CdsUrl
+  nameWithType: CdsConnection.CdsUrl
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsUrl
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 25
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nBase URL for CDS environment. Required if ConnectionType == AppRegistration or UserNameAndPassword\n"
+  example: []
+  syntax:
+    content: public string CdsUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CdsUrl As String
+  overload: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName
+  commentId: P:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName
+  id: CdsUserName
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnection
+  langs:
+  - csharp
+  - vb
+  name: CdsUserName
+  nameWithType: CdsConnection.CdsUserName
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsUserName
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 30
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nRequired if ConnectionType == UserNAmeAndPassword\n"
+  example: []
+  syntax:
+    content: public string CdsUserName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CdsUserName As String
+  overload: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword
+  commentId: P:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword
+  id: CdsPassword
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnection
+  langs:
+  - csharp
+  - vb
+  name: CdsPassword
+  nameWithType: CdsConnection.CdsPassword
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsPassword
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 35
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nRequired if ConnectionType == UserNAmeAndPassword\n"
+  example: []
+  syntax:
+    content: public string CdsPassword { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CdsPassword As String
+  overload: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId
+  commentId: P:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId
+  id: CdsAppId
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnection
+  langs:
+  - csharp
+  - vb
+  name: CdsAppId
+  nameWithType: CdsConnection.CdsAppId
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsAppId
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 40
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nRequired if ConnectionType == AppRegistration\n"
+  example: []
+  syntax:
+    content: public string CdsAppId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CdsAppId As String
+  overload: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret
+  commentId: P:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret
+  id: CdsAppSecret
+  parent: CloudAwesome.Xrm.Core.Models.CdsConnection
+  langs:
+  - csharp
+  - vb
+  name: CdsAppSecret
+  nameWithType: CdsConnection.CdsAppSecret
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CdsAppSecret
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/CdsConnection.cs
+    startLine: 45
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nRequired if ConnectionType == AppRegistration\n"
+  example: []
+  syntax:
+    content: public string CdsAppSecret { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CdsAppSecret As String
+  overload: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CloudAwesome.Xrm.Core.Models
+  commentId: N:CloudAwesome.Xrm.Core.Models
+  name: CloudAwesome.Xrm.Core.Models
+  nameWithType: CloudAwesome.Xrm.Core.Models
+  fullName: CloudAwesome.Xrm.Core.Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType
+  name: ConnectionType
+  nameWithType: CdsConnection.ConnectionType
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.ConnectionType
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  commentId: T:CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  parent: CloudAwesome.Xrm.Core.Models
+  name: CdsConnectionType
+  nameWithType: CdsConnectionType
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString
+  name: CdsConnectionString
+  nameWithType: CdsConnection.CdsConnectionString
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsConnectionString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl
+  name: CdsUrl
+  nameWithType: CdsConnection.CdsUrl
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUrl
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName
+  name: CdsUserName
+  nameWithType: CdsConnection.CdsUserName
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsUserName
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword
+  name: CdsPassword
+  nameWithType: CdsConnection.CdsPassword
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsPassword
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId
+  name: CdsAppId
+  nameWithType: CdsConnection.CdsAppId
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppId
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret
+  name: CdsAppSecret
+  nameWithType: CdsConnection.CdsAppSecret
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection.CdsAppSecret

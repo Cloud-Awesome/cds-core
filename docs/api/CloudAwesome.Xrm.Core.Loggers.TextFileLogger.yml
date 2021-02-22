@@ -1,0 +1,1230 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  commentId: T:CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  id: TextFileLogger
+  parent: CloudAwesome.Xrm.Core.Loggers
+  children:
+  - CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor(Microsoft.Extensions.Logging.LogLevel,System.String)
+  - CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor(Microsoft.Extensions.Logging.LogLevel,System.String,System.IO.Abstractions.IFileSystem)
+  - CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope``1(``0)
+  - CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  - CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  langs:
+  - csharp
+  - vb
+  name: TextFileLogger
+  nameWithType: TextFileLogger
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  type: Class
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: TextFileLogger
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+    startLine: 10
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Loggers
+  summary: "\nImplements an basic Text File ILogger to be consumed in the TracingHelper class.\nRequires LogLevel and a file path to be included in manifest or configuration\n"
+  example: []
+  syntax:
+    content: 'public class TextFileLogger : ILogger'
+    content.vb: >-
+      Public Class TextFileLogger
+
+          Implements ILogger
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.Extensions.Logging.ILogger
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor(Microsoft.Extensions.Logging.LogLevel,System.String)
+  commentId: M:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor(Microsoft.Extensions.Logging.LogLevel,System.String)
+  id: '#ctor(Microsoft.Extensions.Logging.LogLevel,System.String)'
+  parent: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  langs:
+  - csharp
+  - vb
+  name: TextFileLogger(LogLevel, String)
+  nameWithType: TextFileLogger.TextFileLogger(LogLevel, String)
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.TextFileLogger(Microsoft.Extensions.Logging.LogLevel, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: .ctor
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+    startLine: 21
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Loggers
+  summary: "\nConstructor for Text File ILogger implementation\n"
+  example: []
+  syntax:
+    content: public TextFileLogger(LogLevel logLevel, string filePath)
+    parameters:
+    - id: logLevel
+      type: Microsoft.Extensions.Logging.LogLevel
+      description: Microsoft.Extensions.Logging.LogLevel. Any traces below this level will be ignored
+    - id: filePath
+      type: System.String
+      description: .txt filepath to output the trace logs
+    content.vb: Public Sub New(logLevel As LogLevel, filePath As String)
+  overload: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor(Microsoft.Extensions.Logging.LogLevel,System.String,System.IO.Abstractions.IFileSystem)
+  commentId: M:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor(Microsoft.Extensions.Logging.LogLevel,System.String,System.IO.Abstractions.IFileSystem)
+  id: '#ctor(Microsoft.Extensions.Logging.LogLevel,System.String,System.IO.Abstractions.IFileSystem)'
+  parent: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  langs:
+  - csharp
+  - vb
+  name: TextFileLogger(LogLevel, String, IFileSystem)
+  nameWithType: TextFileLogger.TextFileLogger(LogLevel, String, IFileSystem)
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.TextFileLogger(Microsoft.Extensions.Logging.LogLevel, System.String, System.IO.Abstractions.IFileSystem)
+  type: Constructor
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: .ctor
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+    startLine: 29
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Loggers
+  summary: "\nTest Constructor for Text File ILogger implementation\n"
+  example: []
+  syntax:
+    content: public TextFileLogger(LogLevel logLevel, string filePath, IFileSystem fileSystem)
+    parameters:
+    - id: logLevel
+      type: Microsoft.Extensions.Logging.LogLevel
+      description: Microsoft.Extensions.Logging.LogLevel. Any traces below this level will be ignored
+    - id: filePath
+      type: System.String
+      description: .txt filepath to output the trace logs
+    - id: fileSystem
+      type: System.IO.Abstractions.IFileSystem
+      description: ''
+    content.vb: Public Sub New(logLevel As LogLevel, filePath As String, fileSystem As IFileSystem)
+  overload: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  commentId: M:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  id: Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  parent: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  langs:
+  - csharp
+  - vb
+  name: Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
+  nameWithType: TextFileLogger.Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log<TState>(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func<TState, System.Exception, System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Log
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+    startLine: 45
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Loggers
+  summary: "\nRegister a log entry to text file\n"
+  example: []
+  syntax:
+    content: public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+    parameters:
+    - id: logLevel
+      type: Microsoft.Extensions.Logging.LogLevel
+      description: ''
+    - id: eventId
+      type: Microsoft.Extensions.Logging.EventId
+      description: ''
+    - id: state
+      type: '{TState}'
+      description: ''
+    - id: exception
+      type: System.Exception
+      description: ''
+    - id: formatter
+      type: System.Func{{TState},System.Exception,System.String}
+      description: ''
+    typeParameters:
+    - id: TState
+      description: ''
+    content.vb: Public Sub Log(Of TState)(logLevel As LogLevel, eventId As EventId, state As TState, exception As Exception, formatter As Func(Of TState, Exception, String))
+  overload: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log*
+  implements:
+  - Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,{TState},System.Exception,System.Func{{TState},System.Exception,System.String})
+  nameWithType.vb: TextFileLogger.Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log(Of TState)(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func(Of TState, System.Exception, System.String))
+  name.vb: Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  commentId: M:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  id: IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  parent: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  langs:
+  - csharp
+  - vb
+  name: IsEnabled(LogLevel)
+  nameWithType: TextFileLogger.IsEnabled(LogLevel)
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: IsEnabled
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+    startLine: 83
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Loggers
+  syntax:
+    content: public bool IsEnabled(LogLevel logLevel)
+    parameters:
+    - id: logLevel
+      type: Microsoft.Extensions.Logging.LogLevel
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsEnabled(logLevel As LogLevel) As Boolean
+  overload: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled*
+  implements:
+  - Microsoft.Extensions.Logging.ILogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope``1(``0)
+  commentId: M:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope``1(``0)
+  id: BeginScope``1(``0)
+  parent: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  langs:
+  - csharp
+  - vb
+  name: BeginScope<TState>(TState)
+  nameWithType: TextFileLogger.BeginScope<TState>(TState)
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope<TState>(TState)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: BeginScope
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Loggers/TextFileLogger.cs
+    startLine: 88
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Loggers
+  syntax:
+    content: public IDisposable BeginScope<TState>(TState state)
+    parameters:
+    - id: state
+      type: '{TState}'
+    typeParameters:
+    - id: TState
+    return:
+      type: System.IDisposable
+    content.vb: Public Function BeginScope(Of TState)(state As TState) As IDisposable
+  overload: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope*
+  implements:
+  - Microsoft.Extensions.Logging.ILogger.BeginScope``1({TState})
+  nameWithType.vb: TextFileLogger.BeginScope(Of TState)(TState)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope(Of TState)(TState)
+  name.vb: BeginScope(Of TState)(TState)
+references:
+- uid: CloudAwesome.Xrm.Core.Loggers
+  commentId: N:CloudAwesome.Xrm.Core.Loggers
+  name: CloudAwesome.Xrm.Core.Loggers
+  nameWithType: CloudAwesome.Xrm.Core.Loggers
+  fullName: CloudAwesome.Xrm.Core.Loggers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Microsoft.Extensions.Logging.ILogger
+  commentId: T:Microsoft.Extensions.Logging.ILogger
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  name: ILogger
+  nameWithType: ILogger
+  fullName: Microsoft.Extensions.Logging.ILogger
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor*
+  commentId: Overload:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.#ctor
+  name: TextFileLogger
+  nameWithType: TextFileLogger.TextFileLogger
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.TextFileLogger
+- uid: Microsoft.Extensions.Logging.LogLevel
+  commentId: T:Microsoft.Extensions.Logging.LogLevel
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: Microsoft.Extensions.Logging.LogLevel
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.IO.Abstractions.IFileSystem
+  commentId: T:System.IO.Abstractions.IFileSystem
+  parent: System.IO.Abstractions
+  isExternal: true
+  name: IFileSystem
+  nameWithType: IFileSystem
+  fullName: System.IO.Abstractions.IFileSystem
+- uid: System.IO.Abstractions
+  commentId: N:System.IO.Abstractions
+  isExternal: true
+  name: System.IO.Abstractions
+  nameWithType: System.IO.Abstractions
+  fullName: System.IO.Abstractions
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log*
+  commentId: Overload:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log
+  name: Log
+  nameWithType: TextFileLogger.Log
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.Log
+- uid: Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,{TState},System.Exception,System.Func{{TState},System.Exception,System.String})
+  commentId: M:Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  parent: Microsoft.Extensions.Logging.ILogger
+  definition: Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  name: Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
+  nameWithType: ILogger.Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
+  fullName: Microsoft.Extensions.Logging.ILogger.Log<TState>(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func<TState, System.Exception, System.String>)
+  nameWithType.vb: ILogger.Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+  fullName.vb: Microsoft.Extensions.Logging.ILogger.Log(Of TState)(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func(Of TState, System.Exception, System.String))
+  name.vb: Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+    name: Log<TState>
+    nameWithType: ILogger.Log<TState>
+    fullName: Microsoft.Extensions.Logging.ILogger.Log<TState>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Extensions.Logging.LogLevel
+    name: LogLevel
+    nameWithType: LogLevel
+    fullName: Microsoft.Extensions.Logging.LogLevel
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Extensions.Logging.EventId
+    name: EventId
+    nameWithType: EventId
+    fullName: Microsoft.Extensions.Logging.EventId
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+    name: Log(Of TState)
+    nameWithType: ILogger.Log(Of TState)
+    fullName: Microsoft.Extensions.Logging.ILogger.Log(Of TState)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Extensions.Logging.LogLevel
+    name: LogLevel
+    nameWithType: LogLevel
+    fullName: Microsoft.Extensions.Logging.LogLevel
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Extensions.Logging.EventId
+    name: EventId
+    nameWithType: EventId
+    fullName: Microsoft.Extensions.Logging.EventId
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Logging.EventId
+  commentId: T:Microsoft.Extensions.Logging.EventId
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  name: EventId
+  nameWithType: EventId
+  fullName: Microsoft.Extensions.Logging.EventId
+- uid: '{TState}'
+  commentId: '!:TState'
+  definition: TState
+  name: TState
+  nameWithType: TState
+  fullName: TState
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.Func{{TState},System.Exception,System.String}
+  commentId: T:System.Func{``0,System.Exception,System.String}
+  parent: System
+  definition: System.Func`3
+  name: Func<TState, Exception, String>
+  nameWithType: Func<TState, Exception, String>
+  fullName: System.Func<TState, System.Exception, System.String>
+  nameWithType.vb: Func(Of TState, Exception, String)
+  fullName.vb: System.Func(Of TState, System.Exception, System.String)
+  name.vb: Func(Of TState, Exception, String)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  commentId: M:Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  isExternal: true
+  name: Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
+  nameWithType: ILogger.Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
+  fullName: Microsoft.Extensions.Logging.ILogger.Log<TState>(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func<TState, System.Exception, System.String>)
+  nameWithType.vb: ILogger.Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+  fullName.vb: Microsoft.Extensions.Logging.ILogger.Log(Of TState)(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func(Of TState, System.Exception, System.String))
+  name.vb: Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+    name: Log<TState>
+    nameWithType: ILogger.Log<TState>
+    fullName: Microsoft.Extensions.Logging.ILogger.Log<TState>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Extensions.Logging.LogLevel
+    name: LogLevel
+    nameWithType: LogLevel
+    fullName: Microsoft.Extensions.Logging.LogLevel
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Extensions.Logging.EventId
+    name: EventId
+    nameWithType: EventId
+    fullName: Microsoft.Extensions.Logging.EventId
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+    name: Log(Of TState)
+    nameWithType: ILogger.Log(Of TState)
+    fullName: Microsoft.Extensions.Logging.ILogger.Log(Of TState)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Extensions.Logging.LogLevel
+    name: LogLevel
+    nameWithType: LogLevel
+    fullName: Microsoft.Extensions.Logging.LogLevel
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.Extensions.Logging.EventId
+    name: EventId
+    nameWithType: EventId
+    fullName: Microsoft.Extensions.Logging.EventId
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TState
+  name: TState
+  nameWithType: TState
+  fullName: TState
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled*
+  commentId: Overload:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled
+  name: IsEnabled
+  nameWithType: TextFileLogger.IsEnabled
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.IsEnabled
+- uid: Microsoft.Extensions.Logging.ILogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  commentId: M:Microsoft.Extensions.Logging.ILogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  parent: Microsoft.Extensions.Logging.ILogger
+  isExternal: true
+  name: IsEnabled(LogLevel)
+  nameWithType: ILogger.IsEnabled(LogLevel)
+  fullName: Microsoft.Extensions.Logging.ILogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+    name: IsEnabled
+    nameWithType: ILogger.IsEnabled
+    fullName: Microsoft.Extensions.Logging.ILogger.IsEnabled
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Extensions.Logging.LogLevel
+    name: LogLevel
+    nameWithType: LogLevel
+    fullName: Microsoft.Extensions.Logging.LogLevel
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+    name: IsEnabled
+    nameWithType: ILogger.IsEnabled
+    fullName: Microsoft.Extensions.Logging.ILogger.IsEnabled
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.Extensions.Logging.LogLevel
+    name: LogLevel
+    nameWithType: LogLevel
+    fullName: Microsoft.Extensions.Logging.LogLevel
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope*
+  commentId: Overload:CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope
+  name: BeginScope
+  nameWithType: TextFileLogger.BeginScope
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger.BeginScope
+- uid: Microsoft.Extensions.Logging.ILogger.BeginScope``1({TState})
+  commentId: M:Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+  parent: Microsoft.Extensions.Logging.ILogger
+  definition: Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+  name: BeginScope<TState>(TState)
+  nameWithType: ILogger.BeginScope<TState>(TState)
+  fullName: Microsoft.Extensions.Logging.ILogger.BeginScope<TState>(TState)
+  nameWithType.vb: ILogger.BeginScope(Of TState)(TState)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger.BeginScope(Of TState)(TState)
+  name.vb: BeginScope(Of TState)(TState)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+    name: BeginScope<TState>
+    nameWithType: ILogger.BeginScope<TState>
+    fullName: Microsoft.Extensions.Logging.ILogger.BeginScope<TState>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+    name: BeginScope(Of TState)
+    nameWithType: ILogger.BeginScope(Of TState)
+    fullName: Microsoft.Extensions.Logging.ILogger.BeginScope(Of TState)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+  commentId: M:Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+  isExternal: true
+  name: BeginScope<TState>(TState)
+  nameWithType: ILogger.BeginScope<TState>(TState)
+  fullName: Microsoft.Extensions.Logging.ILogger.BeginScope<TState>(TState)
+  nameWithType.vb: ILogger.BeginScope(Of TState)(TState)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger.BeginScope(Of TState)(TState)
+  name.vb: BeginScope(Of TState)(TState)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+    name: BeginScope<TState>
+    nameWithType: ILogger.BeginScope<TState>
+    fullName: Microsoft.Extensions.Logging.ILogger.BeginScope<TState>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger.BeginScope``1(``0)
+    name: BeginScope(Of TState)
+    nameWithType: ILogger.BeginScope(Of TState)
+    fullName: Microsoft.Extensions.Logging.ILogger.BeginScope(Of TState)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TState
+    nameWithType: TState
+    fullName: TState
+  - name: )
+    nameWithType: )
+    fullName: )

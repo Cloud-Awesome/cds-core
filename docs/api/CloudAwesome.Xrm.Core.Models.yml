@@ -1,0 +1,49 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Models
+  commentId: N:CloudAwesome.Xrm.Core.Models
+  id: CloudAwesome.Xrm.Core.Models
+  children:
+  - CloudAwesome.Xrm.Core.Models.CdsConnection
+  - CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  - CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  - CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  langs:
+  - csharp
+  - vb
+  name: CloudAwesome.Xrm.Core.Models
+  nameWithType: CloudAwesome.Xrm.Core.Models
+  fullName: CloudAwesome.Xrm.Core.Models
+  type: Namespace
+  assemblies:
+  - CloudAwesome.Xrm.Core
+references:
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  commentId: T:CloudAwesome.Xrm.Core.Models.CdsConnectionType
+  parent: CloudAwesome.Xrm.Core.Models
+  name: CdsConnectionType
+  nameWithType: CdsConnectionType
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnectionType
+- uid: CloudAwesome.Xrm.Core.Models.CdsConnection
+  commentId: T:CloudAwesome.Xrm.Core.Models.CdsConnection
+  parent: CloudAwesome.Xrm.Core.Models
+  name: CdsConnection
+  nameWithType: CdsConnection
+  fullName: CloudAwesome.Xrm.Core.Models.CdsConnection
+- uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  commentId: T:CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  parent: CloudAwesome.Xrm.Core.Models
+  name: LoggerConfigurationType
+  nameWithType: LoggerConfigurationType
+  fullName: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  commentId: T:CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  parent: CloudAwesome.Xrm.Core.Models
+  name: LoggingConfiguration
+  nameWithType: LoggingConfiguration
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+- uid: CloudAwesome.Xrm.Core.Models
+  commentId: N:CloudAwesome.Xrm.Core.Models
+  name: CloudAwesome.Xrm.Core.Models
+  nameWithType: CloudAwesome.Xrm.Core.Models
+  fullName: CloudAwesome.Xrm.Core.Models

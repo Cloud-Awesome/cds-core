@@ -1,0 +1,15 @@
+pool:
+  vmImage: 'windows-latest'
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - docs/*
+
+steps:
+
+# TODO - docfx build
+# TODO - AzCopy to Blob

@@ -1,0 +1,1199 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.EntityExtensions
+  commentId: T:CloudAwesome.Xrm.Core.EntityExtensions
+  id: EntityExtensions
+  parent: CloudAwesome.Xrm.Core
+  children:
+  - CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  - CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  - CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.Entity,System.Collections.Generic.List{System.String})
+  - CloudAwesome.Xrm.Core.EntityExtensions.Create(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  - CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.QueryBase)
+  - CloudAwesome.Xrm.Core.EntityExtensions.Delete(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  - CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  - CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  - CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.Guid)
+  - CloudAwesome.Xrm.Core.EntityExtensions.Retrieve(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.ColumnSet)
+  - CloudAwesome.Xrm.Core.EntityExtensions.Update(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  langs:
+  - csharp
+  - vb
+  name: EntityExtensions
+  nameWithType: EntityExtensions
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions
+  type: Class
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: EntityExtensions
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 11
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public static class EntityExtensions
+    content.vb: Public Module EntityExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Create(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Create(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  id: Create(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Create(Entity, IOrganizationService)
+  nameWithType: EntityExtensions.Create(Entity, IOrganizationService)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Create(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Create
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 20
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nCreate new record in CDS\n"
+  example: []
+  syntax:
+    content: public static EntityReference Create(this Entity entity, IOrganizationService organizationService)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Record to create. Can be a base entity or any early bound entity inheriting from Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization reference
+    return:
+      type: Microsoft.Xrm.Sdk.EntityReference
+      description: EntityReference of the created record
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function Create(entity As Entity, organizationService As IOrganizationService) As EntityReference
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Create*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    description: Throws when Logical Name of the record is null or empty
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Delete(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Delete(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  id: Delete(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Delete(Entity, IOrganizationService)
+  nameWithType: EntityExtensions.Delete(Entity, IOrganizationService)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Delete(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Delete
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 36
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nDelete the referenced record in CRM\n"
+  example: []
+  syntax:
+    content: public static void Delete(this Entity entity, IOrganizationService organizationService)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Record to delete. Can be a base entity or any early bound entity inheriting from Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization reference
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub Delete(entity As Entity, organizationService As IOrganizationService)
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Delete*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    description: Throws when primary GUID of the record is null
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Update(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Update(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  id: Update(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Update(Entity, IOrganizationService)
+  nameWithType: EntityExtensions.Update(Entity, IOrganizationService)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Update(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Update
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 52
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nUpdate the reference record in CRM\n"
+  example: []
+  syntax:
+    content: public static EntityReference Update(this Entity entity, IOrganizationService organizationService)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Record to update. Can be a base entity or any early bound entity inheriting from Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization reference
+    return:
+      type: Microsoft.Xrm.Sdk.EntityReference
+      description: EntityReference of the updated record
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function Update(entity As Entity, organizationService As IOrganizationService) As EntityReference
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Update*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    description: Throws when primary GUID of the record is null
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.QueryBase)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.QueryBase)
+  id: CreateOrUpdate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.QueryBase)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: CreateOrUpdate(Entity, IOrganizationService, QueryBase)
+  nameWithType: EntityExtensions.CreateOrUpdate(Entity, IOrganizationService, QueryBase)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, Microsoft.Xrm.Sdk.Query.QueryBase)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CreateOrUpdate
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 69
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nUpdate existing record or create new if doesn&apos;t already exist, based on QueryBase given\n"
+  example: []
+  syntax:
+    content: public static EntityReference CreateOrUpdate(this Entity entity, IOrganizationService organizationService, QueryBase query)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Record to create or update
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization reference
+    - id: query
+      type: Microsoft.Xrm.Sdk.Query.QueryBase
+      description: QueryBase implementation to determine if the record already exists. To update, method expects a single result to be returned
+    return:
+      type: Microsoft.Xrm.Sdk.EntityReference
+      description: EntityReference of updated or created record
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function CreateOrUpdate(entity As Entity, organizationService As IOrganizationService, query As QueryBase) As EntityReference
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.Guid)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.Guid)
+  id: ExecuteWorkflow(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.Guid)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: ExecuteWorkflow(Entity, IOrganizationService, Guid)
+  nameWithType: EntityExtensions.ExecuteWorkflow(Entity, IOrganizationService, Guid)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, System.Guid)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: ExecuteWorkflow
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 86
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public static Guid ExecuteWorkflow(this Entity entity, IOrganizationService organizationService, Guid workflowId)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+    - id: workflowId
+      type: System.Guid
+    return:
+      type: System.Guid
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ExecuteWorkflow(entity As Entity, organizationService As IOrganizationService, workflowId As Guid) As Guid
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Retrieve(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.ColumnSet)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Retrieve(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.ColumnSet)
+  id: Retrieve(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Query.ColumnSet)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Retrieve(Entity, IOrganizationService, ColumnSet)
+  nameWithType: EntityExtensions.Retrieve(Entity, IOrganizationService, ColumnSet)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Retrieve(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, Microsoft.Xrm.Sdk.Query.ColumnSet)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Retrieve
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 101
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nRetrieves an entity based on the current entity&apos;s primary ID.\nIf other query criteria are required used one of the QueryExtensions methods\n"
+  example: []
+  syntax:
+    content: public static Entity Retrieve(this Entity entity, IOrganizationService organizationService, ColumnSet columnSet = null)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Current record to retrieve, must have primary ID populated
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+      description: IOrganization reference
+    - id: columnSet
+      type: Microsoft.Xrm.Sdk.Query.ColumnSet
+      description: ColumnSet to retrieve. Pass null to retrieve all columns (not recommended in most cases)
+    return:
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Entity retrieved. Use entity.ToEntity&lt;>() to parse into an early bound entity type
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function Retrieve(entity As Entity, organizationService As IOrganizationService, columnSet As ColumnSet = Nothing) As Entity
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Retrieve*
+  exceptions:
+  - type: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+    description: Throws when primary GUID of the record is null
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.Entity,System.Collections.Generic.List{System.String})
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.Entity,System.Collections.Generic.List{System.String})
+  id: CloneFrom(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.Entity,System.Collections.Generic.List{System.String})
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: CloneFrom(Entity, Entity, List<String>)
+  nameWithType: EntityExtensions.CloneFrom(Entity, Entity, List<String>)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.Entity, System.Collections.Generic.List<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: CloneFrom
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 119
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nCreates a copy of the source entity into the target entity. Always excludes the record&apos;s GUID and can exclude other fields listed\n"
+  example: []
+  syntax:
+    content: public static Entity CloneFrom(this Entity targetEntity, Entity sourceEntity, List<string> excludeAttributesList = null)
+    parameters:
+    - id: targetEntity
+      type: Microsoft.Xrm.Sdk.Entity
+      description: New entity receive cloned attribute values
+    - id: sourceEntity
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Existing record to source attribute values
+    - id: excludeAttributesList
+      type: System.Collections.Generic.List{System.String}
+      description: Optional list of attribute schema names to ignore from clone
+    return:
+      type: Microsoft.Xrm.Sdk.Entity
+      description: Cloned Entity. Use entity.ToEntity&lt;>() to parse into an early bound entity type as required
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function CloneFrom(targetEntity As Entity, sourceEntity As Entity, excludeAttributesList As List(Of String) = Nothing) As Entity
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Throws a generic exception if the source and target entities are not of the same type (based on logical name)
+  nameWithType.vb: EntityExtensions.CloneFrom(Entity, Entity, List(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.Entity, System.Collections.Generic.List(Of System.String))
+  name.vb: CloneFrom(Entity, Entity, List(Of String))
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  id: Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Associate(Entity, IOrganizationService, String, IEnumerable<Entity>)
+  nameWithType: EntityExtensions.Associate(Entity, IOrganizationService, String, IEnumerable<Entity>)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, System.String, System.Collections.Generic.IEnumerable<Microsoft.Xrm.Sdk.Entity>)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Associate
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 140
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public static void Associate(this Entity entity, IOrganizationService organizationService, string relationshipName, IEnumerable<Entity> relatedEntities)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+    - id: relationshipName
+      type: System.String
+    - id: relatedEntities
+      type: System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub Associate(entity As Entity, organizationService As IOrganizationService, relationshipName As String, relatedEntities As IEnumerable(Of Entity))
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Associate*
+  nameWithType.vb: EntityExtensions.Associate(Entity, IOrganizationService, String, IEnumerable(Of Entity))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, System.String, System.Collections.Generic.IEnumerable(Of Microsoft.Xrm.Sdk.Entity))
+  name.vb: Associate(Entity, IOrganizationService, String, IEnumerable(Of Entity))
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  id: Associate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Associate(Entity, IOrganizationService, String, EntityReferenceCollection)
+  nameWithType: EntityExtensions.Associate(Entity, IOrganizationService, String, EntityReferenceCollection)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Associate(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, System.String, Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Associate
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 147
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public static void Associate(this Entity entity, IOrganizationService organizationService, string relationshipName, EntityReferenceCollection relatedEntities)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+    - id: relationshipName
+      type: System.String
+    - id: relatedEntities
+      type: Microsoft.Xrm.Sdk.EntityReferenceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub Associate(entity As Entity, organizationService As IOrganizationService, relationshipName As String, relatedEntities As EntityReferenceCollection)
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Associate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  id: Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity})
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Disassociate(Entity, IOrganizationService, String, IEnumerable<Entity>)
+  nameWithType: EntityExtensions.Disassociate(Entity, IOrganizationService, String, IEnumerable<Entity>)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, System.String, System.Collections.Generic.IEnumerable<Microsoft.Xrm.Sdk.Entity>)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Disassociate
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 154
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public static void Disassociate(this Entity entity, IOrganizationService organizationService, string relationshipName, IEnumerable<Entity> relatedEntities)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+    - id: relationshipName
+      type: System.String
+    - id: relatedEntities
+      type: System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub Disassociate(entity As Entity, organizationService As IOrganizationService, relationshipName As String, relatedEntities As IEnumerable(Of Entity))
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate*
+  nameWithType.vb: EntityExtensions.Disassociate(Entity, IOrganizationService, String, IEnumerable(Of Entity))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, System.String, System.Collections.Generic.IEnumerable(Of Microsoft.Xrm.Sdk.Entity))
+  name.vb: Disassociate(Entity, IOrganizationService, String, IEnumerable(Of Entity))
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  commentId: M:CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  id: Disassociate(Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.IOrganizationService,System.String,Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  isExtensionMethod: true
+  parent: CloudAwesome.Xrm.Core.EntityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Disassociate(Entity, IOrganizationService, String, EntityReferenceCollection)
+  nameWithType: EntityExtensions.Disassociate(Entity, IOrganizationService, String, EntityReferenceCollection)
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate(Microsoft.Xrm.Sdk.Entity, Microsoft.Xrm.Sdk.IOrganizationService, System.String, Microsoft.Xrm.Sdk.EntityReferenceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: Disassociate
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
+    startLine: 160
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  syntax:
+    content: public static void Disassociate(this Entity entity, IOrganizationService organizationService, string relationshipName, EntityReferenceCollection relatedEntities)
+    parameters:
+    - id: entity
+      type: Microsoft.Xrm.Sdk.Entity
+    - id: organizationService
+      type: Microsoft.Xrm.Sdk.IOrganizationService
+    - id: relationshipName
+      type: System.String
+    - id: relatedEntities
+      type: Microsoft.Xrm.Sdk.EntityReferenceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub Disassociate(entity As Entity, organizationService As IOrganizationService, relationshipName As String, relatedEntities As EntityReferenceCollection)
+  overload: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: CloudAwesome.Xrm.Core
+  commentId: N:CloudAwesome.Xrm.Core
+  name: CloudAwesome.Xrm.Core
+  nameWithType: CloudAwesome.Xrm.Core
+  fullName: CloudAwesome.Xrm.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+  commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+  name: OperationPreventedException
+  nameWithType: OperationPreventedException
+  fullName: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Create*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.Create
+  name: Create
+  nameWithType: EntityExtensions.Create
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Create
+- uid: Microsoft.Xrm.Sdk.Entity
+  commentId: T:Microsoft.Xrm.Sdk.Entity
+  parent: Microsoft.Xrm.Sdk
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Microsoft.Xrm.Sdk.Entity
+- uid: Microsoft.Xrm.Sdk.IOrganizationService
+  commentId: T:Microsoft.Xrm.Sdk.IOrganizationService
+  parent: Microsoft.Xrm.Sdk
+  isExternal: true
+  name: IOrganizationService
+  nameWithType: IOrganizationService
+  fullName: Microsoft.Xrm.Sdk.IOrganizationService
+- uid: Microsoft.Xrm.Sdk.EntityReference
+  commentId: T:Microsoft.Xrm.Sdk.EntityReference
+  parent: Microsoft.Xrm.Sdk
+  isExternal: true
+  name: EntityReference
+  nameWithType: EntityReference
+  fullName: Microsoft.Xrm.Sdk.EntityReference
+- uid: Microsoft.Xrm.Sdk
+  commentId: N:Microsoft.Xrm.Sdk
+  isExternal: true
+  name: Microsoft.Xrm.Sdk
+  nameWithType: Microsoft.Xrm.Sdk
+  fullName: Microsoft.Xrm.Sdk
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Delete*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.Delete
+  name: Delete
+  nameWithType: EntityExtensions.Delete
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Delete
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Update*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.Update
+  name: Update
+  nameWithType: EntityExtensions.Update
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Update
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate
+  name: CreateOrUpdate
+  nameWithType: EntityExtensions.CreateOrUpdate
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.CreateOrUpdate
+- uid: Microsoft.Xrm.Sdk.Query.QueryBase
+  commentId: T:Microsoft.Xrm.Sdk.Query.QueryBase
+  parent: Microsoft.Xrm.Sdk.Query
+  isExternal: true
+  name: QueryBase
+  nameWithType: QueryBase
+  fullName: Microsoft.Xrm.Sdk.Query.QueryBase
+- uid: Microsoft.Xrm.Sdk.Query
+  commentId: N:Microsoft.Xrm.Sdk.Query
+  isExternal: true
+  name: Microsoft.Xrm.Sdk.Query
+  nameWithType: Microsoft.Xrm.Sdk.Query
+  fullName: Microsoft.Xrm.Sdk.Query
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow
+  name: ExecuteWorkflow
+  nameWithType: EntityExtensions.ExecuteWorkflow
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.ExecuteWorkflow
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Retrieve*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.Retrieve
+  name: Retrieve
+  nameWithType: EntityExtensions.Retrieve
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Retrieve
+- uid: Microsoft.Xrm.Sdk.Query.ColumnSet
+  commentId: T:Microsoft.Xrm.Sdk.Query.ColumnSet
+  parent: Microsoft.Xrm.Sdk.Query
+  isExternal: true
+  name: ColumnSet
+  nameWithType: ColumnSet
+  fullName: Microsoft.Xrm.Sdk.Query.ColumnSet
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom
+  name: CloneFrom
+  nameWithType: EntityExtensions.CloneFrom
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.CloneFrom
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<String>
+  nameWithType: List<String>
+  fullName: System.Collections.Generic.List<System.String>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of System.String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Associate*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.Associate
+  name: Associate
+  nameWithType: EntityExtensions.Associate
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Associate
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity}
+  commentId: T:System.Collections.Generic.IEnumerable{Microsoft.Xrm.Sdk.Entity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Entity>
+  nameWithType: IEnumerable<Entity>
+  fullName: System.Collections.Generic.IEnumerable<Microsoft.Xrm.Sdk.Entity>
+  nameWithType.vb: IEnumerable(Of Entity)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Microsoft.Xrm.Sdk.Entity)
+  name.vb: IEnumerable(Of Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.Xrm.Sdk.Entity
+    name: Entity
+    nameWithType: Entity
+    fullName: Microsoft.Xrm.Sdk.Entity
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.Xrm.Sdk.Entity
+    name: Entity
+    nameWithType: Entity
+    fullName: Microsoft.Xrm.Sdk.Entity
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.Xrm.Sdk.EntityReferenceCollection
+  commentId: T:Microsoft.Xrm.Sdk.EntityReferenceCollection
+  parent: Microsoft.Xrm.Sdk
+  isExternal: true
+  name: EntityReferenceCollection
+  nameWithType: EntityReferenceCollection
+  fullName: Microsoft.Xrm.Sdk.EntityReferenceCollection
+- uid: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate*
+  commentId: Overload:CloudAwesome.Xrm.Core.EntityExtensions.Disassociate
+  name: Disassociate
+  nameWithType: EntityExtensions.Disassociate
+  fullName: CloudAwesome.Xrm.Core.EntityExtensions.Disassociate

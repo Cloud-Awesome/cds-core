@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Exceptions
+  commentId: N:CloudAwesome.Xrm.Core.Exceptions
+  id: CloudAwesome.Xrm.Core.Exceptions
+  children:
+  - CloudAwesome.Xrm.Core.Exceptions.FeatureRequestException
+  - CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+  - CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+  langs:
+  - csharp
+  - vb
+  name: CloudAwesome.Xrm.Core.Exceptions
+  nameWithType: CloudAwesome.Xrm.Core.Exceptions
+  fullName: CloudAwesome.Xrm.Core.Exceptions
+  type: Namespace
+  assemblies:
+  - CloudAwesome.Xrm.Core
+references:
+- uid: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+  commentId: T:CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+  name: OperationPreventedException
+  nameWithType: OperationPreventedException
+  fullName: CloudAwesome.Xrm.Core.Exceptions.OperationPreventedException
+- uid: CloudAwesome.Xrm.Core.Exceptions.FeatureRequestException
+  commentId: T:CloudAwesome.Xrm.Core.Exceptions.FeatureRequestException
+  parent: CloudAwesome.Xrm.Core.Exceptions
+  name: FeatureRequestException
+  nameWithType: FeatureRequestException
+  fullName: CloudAwesome.Xrm.Core.Exceptions.FeatureRequestException
+- uid: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+  commentId: T:CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+  name: QueryBaseException
+  nameWithType: QueryBaseException
+  fullName: CloudAwesome.Xrm.Core.Exceptions.QueryBaseException
+- uid: CloudAwesome.Xrm.Core.Exceptions
+  commentId: N:CloudAwesome.Xrm.Core.Exceptions
+  name: CloudAwesome.Xrm.Core.Exceptions
+  nameWithType: CloudAwesome.Xrm.Core.Exceptions
+  fullName: CloudAwesome.Xrm.Core.Exceptions

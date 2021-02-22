@@ -1,0 +1,542 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  commentId: T:CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  id: LoggingConfiguration
+  parent: CloudAwesome.Xrm.Core.Models
+  children:
+  - CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString
+  - CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType
+  - CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace
+  - CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath
+  langs:
+  - csharp
+  - vb
+  name: LoggingConfiguration
+  nameWithType: LoggingConfiguration
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  type: Class
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: LoggingConfiguration
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 12
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nConfiguration for pre-rolled telemetry and logging .Core implementations.\nAll entry points take an ILogger parameter so these implementations can be used,\na custom implementation, or no implementation at all (in which case, trace logs are ignored)\n"
+  example: []
+  syntax:
+    content: public class LoggingConfiguration
+    content.vb: Public Class LoggingConfiguration
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType
+  commentId: P:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType
+  id: LoggerConfigurationType
+  parent: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  langs:
+  - csharp
+  - vb
+  name: LoggerConfigurationType
+  nameWithType: LoggingConfiguration.LoggerConfigurationType
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: LoggerConfigurationType
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 18
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nType of pre-rolled ILogger implementation to user. Console, AppInsights and TextFile are currently supported\n"
+  example: []
+  syntax:
+    content: public LoggerConfigurationType LoggerConfigurationType { get; set; }
+    parameters: []
+    return:
+      type: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+    content.vb: Public Property LoggerConfigurationType As LoggerConfigurationType
+  overload: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString
+  commentId: P:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString
+  id: ApplicationInsightsConnectionString
+  parent: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ApplicationInsightsConnectionString
+  nameWithType: LoggingConfiguration.ApplicationInsightsConnectionString
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: ApplicationInsightsConnectionString
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 23
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nAzure Application insights connection string. Required if LoggerConfigurationType == ApplicationInsights\n"
+  example: []
+  syntax:
+    content: public string ApplicationInsightsConnectionString { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ApplicationInsightsConnectionString As String
+  overload: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath
+  commentId: P:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath
+  id: TextFileOutputPath
+  parent: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  langs:
+  - csharp
+  - vb
+  name: TextFileOutputPath
+  nameWithType: LoggingConfiguration.TextFileOutputPath
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: TextFileOutputPath
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 28
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nFilepath to .txt file for output. Required if LoggerConfigurationType == TextFile\n"
+  example: []
+  syntax:
+    content: public string TextFileOutputPath { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TextFileOutputPath As String
+  overload: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace
+  commentId: P:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace
+  id: LogLevelToTrace
+  parent: CloudAwesome.Xrm.Core.Models.LoggingConfiguration
+  langs:
+  - csharp
+  - vb
+  name: LogLevelToTrace
+  nameWithType: LoggingConfiguration.LogLevelToTrace
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace
+  type: Property
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: LogLevelToTrace
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Models/LoggingConfiguration.cs
+    startLine: 33
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core.Models
+  summary: "\nMicrosoft.Extensions.Logging.LogLevel. Any traces below this level will be ignored\n"
+  example: []
+  syntax:
+    content: public LogLevel LogLevelToTrace { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Extensions.Logging.LogLevel
+    content.vb: Public Property LogLevelToTrace As LogLevel
+  overload: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CloudAwesome.Xrm.Core.Models
+  commentId: N:CloudAwesome.Xrm.Core.Models
+  name: CloudAwesome.Xrm.Core.Models
+  nameWithType: CloudAwesome.Xrm.Core.Models
+  fullName: CloudAwesome.Xrm.Core.Models
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType
+  name: LoggerConfigurationType
+  nameWithType: LoggingConfiguration.LoggerConfigurationType
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LoggerConfigurationType
+- uid: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  commentId: T:CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+  parent: CloudAwesome.Xrm.Core.Models
+  name: LoggerConfigurationType
+  nameWithType: LoggerConfigurationType
+  fullName: CloudAwesome.Xrm.Core.Models.LoggerConfigurationType
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString
+  name: ApplicationInsightsConnectionString
+  nameWithType: LoggingConfiguration.ApplicationInsightsConnectionString
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.ApplicationInsightsConnectionString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath
+  name: TextFileOutputPath
+  nameWithType: LoggingConfiguration.TextFileOutputPath
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.TextFileOutputPath
+- uid: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace*
+  commentId: Overload:CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace
+  name: LogLevelToTrace
+  nameWithType: LoggingConfiguration.LogLevelToTrace
+  fullName: CloudAwesome.Xrm.Core.Models.LoggingConfiguration.LogLevelToTrace
+- uid: Microsoft.Extensions.Logging.LogLevel
+  commentId: T:Microsoft.Extensions.Logging.LogLevel
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: Microsoft.Extensions.Logging.LogLevel
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging

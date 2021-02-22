@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudAwesome.Xrm.Core.Loggers
+  commentId: N:CloudAwesome.Xrm.Core.Loggers
+  id: CloudAwesome.Xrm.Core.Loggers
+  children:
+  - CloudAwesome.Xrm.Core.Loggers.AppInsightsLogger
+  - CloudAwesome.Xrm.Core.Loggers.ConsoleLogger
+  - CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  langs:
+  - csharp
+  - vb
+  name: CloudAwesome.Xrm.Core.Loggers
+  nameWithType: CloudAwesome.Xrm.Core.Loggers
+  fullName: CloudAwesome.Xrm.Core.Loggers
+  type: Namespace
+  assemblies:
+  - CloudAwesome.Xrm.Core
+references:
+- uid: CloudAwesome.Xrm.Core.Loggers.AppInsightsLogger
+  commentId: T:CloudAwesome.Xrm.Core.Loggers.AppInsightsLogger
+  name: AppInsightsLogger
+  nameWithType: AppInsightsLogger
+  fullName: CloudAwesome.Xrm.Core.Loggers.AppInsightsLogger
+- uid: CloudAwesome.Xrm.Core.Loggers.ConsoleLogger
+  commentId: T:CloudAwesome.Xrm.Core.Loggers.ConsoleLogger
+  name: ConsoleLogger
+  nameWithType: ConsoleLogger
+  fullName: CloudAwesome.Xrm.Core.Loggers.ConsoleLogger
+- uid: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  commentId: T:CloudAwesome.Xrm.Core.Loggers.TextFileLogger
+  name: TextFileLogger
+  nameWithType: TextFileLogger
+  fullName: CloudAwesome.Xrm.Core.Loggers.TextFileLogger
