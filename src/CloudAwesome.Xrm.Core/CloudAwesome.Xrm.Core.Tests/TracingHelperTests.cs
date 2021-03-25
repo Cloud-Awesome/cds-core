@@ -38,6 +38,13 @@ namespace CloudAwesome.Xrm.Core.Tests
         }
 
         [Test]
+        public void EmptyConstructorSilentlyDisregardsTraces()
+        {
+            var t = new TracingHelper();
+            Assert.DoesNotThrow(() => t.Log(LogLevel.Debug, _logMessage));
+        }
+
+        [Test]
         [TestCase(LogLevel.Debug)]
         [TestCase(LogLevel.Critical)]
         [TestCase(LogLevel.Error)]

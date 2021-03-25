@@ -39,6 +39,13 @@ namespace CloudAwesome.Xrm.Core
                 _logger = logger;
             }
         }
+        
+        /// <summary>
+        /// Used to silently throw away any logs
+        /// If no traces/logs are required for whatever reason in the consuming application,
+        /// construct an empty TracingHelper where one is required 
+        /// </summary>
+        public TracingHelper() { }
 
         /// <summary>
         /// Register a log entry
