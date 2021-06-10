@@ -7,6 +7,16 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 {
     public class QueryExtensionTests: BaseFakeXrmTest
     {
+        [Test(Description = "If no results are found for the expected single record, NULL is returned instead. No exception is thrown")]
+        public void IfNoResultsAreFoundReturnsNull()
+        {
+            var context = new XrmFakedContext();
+            var orgService = context.GetOrganizationService();
+            
+            var retrievedAccount = (Account)SampleAccountQueryExpression.RetrieveSingleRecord(orgService);
+            
+            Assert.IsNull(retrievedAccount);
+        }
 
         [Test(Description = "Extension method to retrieve single record from QueryBase (QueryExpression test)")]
         public void QueryExpressionSingleRecordExtensionMethod()
