@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using CloudAwesome.Xrm.Core.Exceptions;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 {
@@ -23,8 +25,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var retrievedAccount = (Account) QueryExtensions.RetrieveRecordFromQuery<QueryByAttribute>(orgService, SampleAccountQueryByAttribute);
 
-            Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
-            Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
+            retrievedAccount.Id.Should().Be(TestAccount1.Id);
+            retrievedAccount.Name.Should().Be(TestAccount1.Name);
         }
 
         [Test(Description = "Happy path for RetrieveByQueryExpression. QE describes a single record which is retrieved")]
@@ -39,8 +41,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             
             var retrievedAccount = (Account) QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression);
 
-            Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
-            Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
+            retrievedAccount.Id.Should().Be(TestAccount1.Id);
+            retrievedAccount.Name.Should().Be(TestAccount1.Name);
         }
 
         [Test(Description = "QE describes no records so null is returned")]
@@ -51,7 +53,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var retrievedAccount = (Account)QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression);
 
-            Assert.IsNull(retrievedAccount);
+            retrievedAccount.Should().BeNull();
         }
 
         [Test(Description = "If multiple results are returned in the QueryExpression, throw an exception as 'throwExceptionOnMultipleResults' defaults to true")]
@@ -65,8 +67,9 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1Duplicate
             });
             
-            Assert.Throws(typeof(QueryBaseException),
-                () => QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression));
+            Action action = () =>
+                QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression);
+            action.Should().Throw<QueryBaseException>();
 
         }
 
@@ -81,9 +84,10 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 TestAccount1Duplicate
             });
             
-            Assert.DoesNotThrow(() => 
-                QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression, false));
-
+            Action action = () =>
+                QueryExtensions.RetrieveRecordFromQuery<QueryExpression>(orgService, SampleAccountQueryExpression,
+                    false);
+            action.Should().NotThrow();
         }
 
         [Test(Description = "Happy path for RetrieveByFetchExpression. FE describes a single record which is retrieved")]
@@ -99,8 +103,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             var fetchExpression = new FetchExpression(SampleAccountFetchQuery);
             var retrievedAccount = (Account)QueryExtensions.RetrieveRecordFromQuery<FetchExpression>(orgService, fetchExpression);
 
-            Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
-            Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
+            retrievedAccount.Id.Should().Be(TestAccount1.Id);
+            retrievedAccount.Name.Should().Be(TestAccount1.Name);
         }
 
         [Test(Description = "If multiple results are returned in the FetchExpression, throw an exception as 'throwExceptionOnMultipleResults' defaults to true")]
@@ -116,8 +120,9 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var fetchExpression = new FetchExpression(SampleAccountFetchQuery);
 
-            Assert.Throws(typeof(QueryBaseException),
-                () => QueryExtensions.RetrieveRecordFromQuery<FetchExpression>(orgService, fetchExpression));
+            Action action = () => 
+                QueryExtensions.RetrieveRecordFromQuery<FetchExpression>(orgService, fetchExpression);
+            action.Should().Throw<QueryBaseException>();
         }
 
     }

@@ -2,6 +2,7 @@
 using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
+using FluentAssertions;
 
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 {
@@ -17,10 +18,10 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var workflowId = Guid.NewGuid();
 
             var testAccount = new Account { Name = "Test Account" };
-            var createdEntityId = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(orgService);
 
-            Assert.Throws<FeatureRequestException>(
-                () => testAccount.ExecuteWorkflow(orgService, workflowId));
+            Action action = () => testAccount.ExecuteWorkflow(orgService, workflowId);
+            action.Should().Throw<FeatureRequestException>();
         }
     }
 }

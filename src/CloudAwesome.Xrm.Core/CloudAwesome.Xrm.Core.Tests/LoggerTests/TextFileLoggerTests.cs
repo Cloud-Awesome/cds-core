@@ -2,6 +2,7 @@
 using System.IO.Abstractions;
 using System.IO.Abstractions.TestingHelpers;
 using CloudAwesome.Xrm.Core.Loggers;
+using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
@@ -32,9 +33,9 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
             var logFile = mockFileSystem.GetFile(_filePath);
             var fileContents = logFile.TextContents.ToLower();
 
-            Assert.IsTrue(logLevel == LogLevel.None
-                ? fileContents.Contains($"{_logMessage}")
-                : fileContents.Contains($"{logLevel.ToString().ToLower()}: {_logMessage}"));
+            fileContents.Should().Contain(logLevel == LogLevel.None
+                ? _logMessage
+                : $"{logLevel.ToString().ToLower()}: {_logMessage}");
         }
 
         [Test]
@@ -48,12 +49,9 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
 
             var logFile = mockFileSystem.GetFile(_filePath);
             var fileContents = logFile.TextContents.ToLower();
-            
-            Assert.IsTrue(
-                fileContents.Contains($"{LogLevel.Critical.ToString().ToLower()}: {_logMessage}"));
 
-            Assert.IsFalse(
-                fileContents.Contains($"{LogLevel.Debug.ToString().ToLower()}: {_logMessage}"));
+            fileContents.Should().Contain($"{LogLevel.Critical.ToString().ToLower()}: {_logMessage}");
+            fileContents.Should().NotContain($"{LogLevel.Debug.ToString().ToLower()}: {_logMessage}");
         }
 
         [Test]
@@ -61,14 +59,16 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
         {
             var mockFileSystem = new MockFileSystem();
             var logger = new TextFileLogger(LogLevel.Information, _filePath, mockFileSystem);
-            Assert.Throws<NotImplementedException>(() => logger.BeginScope("tester"));
+
+            Action action = () => logger.BeginScope("tester");
+            action.Should().Throw<NotImplementedException>();
         }
 
         [Test]
         public void StandardConstructorHappyPath()
         {
             var sut = new TextFileLogger(LogLevel.None, "../test.txt");
-            Assert.IsNotNull(sut);
+            sut.Should().NotBeNull();
         }
     }
 }

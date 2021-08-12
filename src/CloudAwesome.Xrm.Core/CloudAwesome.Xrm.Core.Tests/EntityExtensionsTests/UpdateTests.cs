@@ -2,7 +2,7 @@
 using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
-
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
@@ -17,25 +17,27 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var orgService = context.GetOrganizationService();
 
             var testAccount = new Account { Name = "Test Account" };
-            var createdEntityId = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(orgService);
 
             testAccount.Name = "Updated Account";
             testAccount.Update(orgService);
 
-            Console.WriteLine($"ID of created entity: {createdEntityId}");
-            Assert.IsNotNull(createdEntityId);
-            Assert.AreEqual("Updated Account", testAccount.Name);
+            Console.WriteLine($"ID of created entity: {createdEntity.Id}");
+            
+            createdEntity.Id.Should().NotBeEmpty();
+            testAccount.Name.Should().Be("Updated Account");
         }
 
         [Test]
-        public void FailUpdateAndThrowValidExeptionIfPrimaryGuidIsEmpty()
+        public void FailUpdateAndThrowValidExceptionIfPrimaryGuidIsEmpty()
         {
             var context = new XrmFakedContext();
             var orgService = context.GetOrganizationService();
             
             var testAccount = new Account { Name = "Test Account" };
 
-            Assert.Throws<OperationPreventedException>(() => testAccount.Update(orgService));
+            Action action = () => testAccount.Update(orgService);
+            action.Should().Throw<OperationPreventedException>();
         }
 
         [Test]
@@ -46,13 +48,14 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 
             var testAccount = new Entity("account");
             testAccount["name"] = "Test Account";
-            var createdEntityId = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(orgService);
 
             testAccount["name"] = "Updated Account";
 
-            Console.WriteLine($"ID of created entity: {createdEntityId}");
-            Assert.IsNotNull(createdEntityId);
-            Assert.AreEqual("Updated Account", testAccount["name"]);
+            Console.WriteLine($"ID of created entity: {createdEntity.Id}");
+            
+            createdEntity.Id.Should().NotBeEmpty();
+            testAccount["name"].Should().Be("Updated Account");
         }
     }
 }

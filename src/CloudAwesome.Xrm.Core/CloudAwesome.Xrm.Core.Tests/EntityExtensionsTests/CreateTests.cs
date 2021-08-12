@@ -2,7 +2,7 @@
 using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
-
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
@@ -17,11 +17,12 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var orgService = context.GetOrganizationService();
 
             var testAccount = new Account {Name = "Test Account"};
-            var createdEntityId = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(orgService);
 
-            Console.WriteLine($"ID of created entity: {createdEntityId}");
-            Assert.IsNotNull(createdEntityId);
-            Assert.AreEqual("Test Account", testAccount.Name);
+            Console.WriteLine($"ID of created entity: {createdEntity.Id}");
+
+            createdEntity.Id.Should().NotBeEmpty();
+            testAccount.Name.Should().Be("Test Account");
         }
 
         [Test]
@@ -33,7 +34,8 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var testSomething = new Entity();
             testSomething["name"] = "Unknown Entity";
 
-            Assert.Throws<OperationPreventedException>(() => testSomething.Create(orgService));
+            Action action = () => testSomething.Create(orgService);
+            action.Should().Throw<OperationPreventedException>();
         }
 
         [Test]
@@ -45,11 +47,12 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var testAccount = new Entity("account");
             testAccount["name"] = "Test Account";
 
-            var createdEntityId = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(orgService);
 
-            Console.WriteLine($"ID of created entity: {createdEntityId}");
-            Assert.IsNotNull(createdEntityId);
-            Assert.AreEqual("Test Account", testAccount["name"]);
+            Console.WriteLine($"ID of created entity: {createdEntity.Id}");
+            
+            createdEntity.Id.Should().NotBeEmpty();
+            testAccount["name"].Should().Be("Test Account");
         }
 
     }

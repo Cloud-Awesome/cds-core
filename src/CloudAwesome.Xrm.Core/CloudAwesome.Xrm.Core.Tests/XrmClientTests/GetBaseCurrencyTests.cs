@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
@@ -29,8 +30,8 @@ namespace CloudAwesome.Xrm.Core.Tests.XrmClientTests
             });
 
             var retrievedBaseCurrency = XrmClient.GetBaseCurrency(orgService);
-
-            Assert.AreEqual(baseCurrencyId, retrievedBaseCurrency.Id);
+            
+            retrievedBaseCurrency.Id.Should().Be(baseCurrencyId);
         }
     }
 }

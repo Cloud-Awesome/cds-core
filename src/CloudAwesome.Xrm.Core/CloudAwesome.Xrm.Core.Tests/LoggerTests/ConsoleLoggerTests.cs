@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using CloudAwesome.Xrm.Core.Loggers;
+using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
@@ -40,7 +41,7 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
             var logger = new ConsoleLogger(LogLevel.Trace);
             logger.Log(logLevel, _logMessage);
 
-            Assert.IsTrue(_testConsole.ToString().Contains($"{_logMessage}"));
+            _testConsole.ToString().Should().Contain(_logMessage);
         }
 
         [Test]
@@ -50,18 +51,17 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
             logger.Log(LogLevel.Debug, $"Debug - {_logMessage}");
             logger.Log(LogLevel.Critical, $"Critical - {_logMessage}");
             
-            Assert.IsTrue(
-                _testConsole.ToString().Contains("Critical"));
-
-            Assert.IsFalse(
-                _testConsole.ToString().Contains("Debug"));
+            _testConsole.ToString().Should().Contain("Critical");
+            _testConsole.ToString().Should().NotContain("Debug");
         }
 
         [Test]
         public void BeginScopeIsNotImplemented()
         {
             var logger = new ConsoleLogger(LogLevel.Information);
-            Assert.Throws<NotImplementedException>(() => logger.BeginScope("tester"));
+
+            Action action = () => logger.BeginScope("tester");
+            action.Should().Throw<NotImplementedException>();
         }
     }
 }

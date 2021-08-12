@@ -2,6 +2,7 @@
 using CloudAwesome.Xrm.Core.Loggers;
 using CloudAwesome.Xrm.Core.Models;
 using CloudAwesome.Xrm.Core.Tests.Stubs;
+using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 
@@ -21,7 +22,7 @@ namespace CloudAwesome.Xrm.Core.Tests
             var logger = new ConsoleLogger(LogLevel.None);
             var t = new TracingHelper(logger);
 
-            Assert.AreEqual(nameof(ConsoleLogger), t.LoggerImplementationType);
+            t.LoggerImplementationType.Should().Be(nameof(ConsoleLogger));
         }
 
         [Test]
@@ -34,14 +35,16 @@ namespace CloudAwesome.Xrm.Core.Tests
             };
             var t = new TracingHelper(loggingConfiguration);
 
-            Assert.AreEqual(nameof(ConsoleLogger), t.LoggerImplementationType);
+            t.LoggerImplementationType.Should().Be(nameof(ConsoleLogger));
         }
 
         [Test]
         public void EmptyConstructorSilentlyDisregardsTraces()
         {
             var t = new TracingHelper();
-            Assert.DoesNotThrow(() => t.Log(LogLevel.Debug, _logMessage));
+
+            Action action = () => t.Log(LogLevel.Debug, _logMessage);
+            action.Should().NotThrow();
         }
 
         [Test]
@@ -59,8 +62,8 @@ namespace CloudAwesome.Xrm.Core.Tests
 
             t.Log(logLevel, _logMessage);
 
-            Assert.AreEqual(_logMessage, loggerStub.ResponseMessage);
-            Assert.AreEqual(logLevel, loggerStub.ResponseLogLevel);
+            loggerStub.ResponseMessage.Should().Be(_logMessage);
+            loggerStub.ResponseLogLevel.Should().Be(logLevel);
         }
 
         [Test]
@@ -71,8 +74,8 @@ namespace CloudAwesome.Xrm.Core.Tests
 
             t.Trace(_logMessage);
 
-            Assert.AreEqual(_logMessage, loggerStub.ResponseMessage);
-            Assert.AreEqual(LogLevel.Trace, loggerStub.ResponseLogLevel);
+            loggerStub.ResponseMessage.Should().Be(_logMessage);
+            loggerStub.ResponseLogLevel.Should().Be(LogLevel.Trace);
         }
 
         [Test]
@@ -83,8 +86,8 @@ namespace CloudAwesome.Xrm.Core.Tests
 
             t.Debug(_logMessage);
 
-            Assert.AreEqual(_logMessage, loggerStub.ResponseMessage);
-            Assert.AreEqual(LogLevel.Debug, loggerStub.ResponseLogLevel);
+            loggerStub.ResponseMessage.Should().Be(_logMessage);
+            loggerStub.ResponseLogLevel.Should().Be(LogLevel.Debug);
         }
 
         [Test]
@@ -95,8 +98,8 @@ namespace CloudAwesome.Xrm.Core.Tests
 
             t.Critical(_logMessage);
 
-            Assert.AreEqual(_logMessage, loggerStub.ResponseMessage);
-            Assert.AreEqual(LogLevel.Critical, loggerStub.ResponseLogLevel);
+            loggerStub.ResponseMessage.Should().Be(_logMessage);
+            loggerStub.ResponseLogLevel.Should().Be(LogLevel.Critical);
         }
 
         [Test]
@@ -107,8 +110,8 @@ namespace CloudAwesome.Xrm.Core.Tests
 
             t.Error(_logMessage);
 
-            Assert.AreEqual(_logMessage, loggerStub.ResponseMessage);
-            Assert.AreEqual(LogLevel.Error, loggerStub.ResponseLogLevel);
+            loggerStub.ResponseMessage.Should().Be(_logMessage);
+            loggerStub.ResponseLogLevel.Should().Be(LogLevel.Error);
         }
 
         [Test]
@@ -119,8 +122,8 @@ namespace CloudAwesome.Xrm.Core.Tests
 
             t.Warning(_logMessage);
 
-            Assert.AreEqual(_logMessage, loggerStub.ResponseMessage);
-            Assert.AreEqual(LogLevel.Warning, loggerStub.ResponseLogLevel);
+            loggerStub.ResponseMessage.Should().Be(_logMessage);
+            loggerStub.ResponseLogLevel.Should().Be(LogLevel.Warning);
         }
 
         [Test]
@@ -131,8 +134,8 @@ namespace CloudAwesome.Xrm.Core.Tests
 
             t.Info(_logMessage);
 
-            Assert.AreEqual(_logMessage, loggerStub.ResponseMessage);
-            Assert.AreEqual(LogLevel.Information, loggerStub.ResponseLogLevel);
+            loggerStub.ResponseMessage.Should().Be(_logMessage);
+            loggerStub.ResponseLogLevel.Should().Be(LogLevel.Information);
         }
 
     }

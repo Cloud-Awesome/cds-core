@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CloudAwesome.Xrm.Core.Exceptions;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
@@ -36,8 +37,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             var postContacts = (from a in context.CreateQuery<Contact>()
                 where a.Address1_City == "London"
                 select a).ToList();
-
-            Assert.AreEqual(0, postContacts.Count);
+            
+            postContacts.Count.Should().Be(0);
         }
 
         [Test(Description = "The threshold of how many records to delete is exceeded in the results returned by the query. Exception is thrown.")]
@@ -65,8 +66,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             var postContacts = (from a in context.CreateQuery<Contact>()
                 where a.Address1_City == "London"
                 select a).ToList();
-
-            Assert.AreEqual(4, postContacts.Count);
+            
+            postContacts.Count.Should().Be(4);
         }
 
         [Test(Description = "The expected number of records are returned in the query. All are deleted.")]
@@ -86,15 +87,16 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 where a.Address1_City == "London"
                 select a).ToList();
 
-            Assert.AreEqual(2, preContacts.Count);
-            Assert.DoesNotThrow(
-                () => SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService, expectedResultsToDelete: 2));
+            preContacts.Count.Should().Be(2);
+            Action preAction = () =>
+                SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService, expectedResultsToDelete: 2);
+            preAction.Should().NotThrow();
 
             var postContacts = (from a in context.CreateQuery<Contact>()
                 where a.Address1_City == "London"
                 select a).ToList();
-
-            Assert.AreEqual(0, postContacts.Count);
+            
+            postContacts.Count.Should().Be(0);
         }
 
         [Test(Description = "The expected number of records is not returned in the query. Nothing deleted and exception is thrown.")]
@@ -114,16 +116,16 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
                 JamesContact // James isn't in London
             });
 
-            Assert.Throws(Is.TypeOf<OperationPreventedException>().And.Message.EqualTo(expectedExceptionMessage),
-                () => SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService, expectedResultsToDelete: 2)
-            );
+            Action action = () =>
+                SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService, expectedResultsToDelete: 2);
+            action.Should().Throw<OperationPreventedException>().WithMessage(expectedExceptionMessage);
 
             // Assert that nothing's been deleted
             var postContacts = (from a in context.CreateQuery<Contact>()
                 where a.Address1_City == "London"
                 select a).ToList();
 
-            Assert.AreEqual(3, postContacts.Count);
+            postContacts.Count.Should().Be(3);
         }
 
         [Test(Description = "No records are returned by the query. Nothing happens.")]
@@ -132,7 +134,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             var context = new XrmFakedContext();
             var orgService = context.GetOrganizationService();
 
-            Assert.DoesNotThrow(() => SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService));
+            Action action = () => SampleLondonContactsQueryByAttribute.DeleteAllResults(orgService);
+            action.Should().NotThrow();
         }
 
     }

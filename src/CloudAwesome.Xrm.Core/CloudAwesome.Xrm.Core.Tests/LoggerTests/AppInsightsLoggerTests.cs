@@ -1,6 +1,7 @@
 ﻿using System;
 using CloudAwesome.Xrm.Core.Loggers;
 using CloudAwesome.Xrm.Core.Tests.Stubs;
+using FluentAssertions;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.Extensions.Logging;
 using NUnit.Framework;
@@ -30,9 +31,7 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
 
         [Test]
         [TestCase(LogLevel.None, SeverityLevel.Information)]
-        //[TestCase(LogLevel.Trace, SeverityLevel.Information)]
         [TestCase(LogLevel.Debug, SeverityLevel.Information)]
-        //[TestCase(LogLevel.Information, SeverityLevel.Information)]
         [TestCase(LogLevel.Warning, SeverityLevel.Warning)]
         [TestCase(LogLevel.Error, SeverityLevel.Error)]
         [TestCase(LogLevel.Critical, SeverityLevel.Critical)]
@@ -43,9 +42,9 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
 
             _stubTelemetryChannel.Flush();
 
-            Assert.AreEqual(_logMessage, _stubTelemetryChannel.ResponseText);
-            Assert.IsNotNull(_stubTelemetryChannel.ResponseSeverityLevel);
-            Assert.AreEqual(expectedSeverity, _stubTelemetryChannel.ResponseSeverityLevel);
+            _stubTelemetryChannel.ResponseText.Should().Be(_logMessage);
+            _stubTelemetryChannel.ResponseSeverityLevel.Should().NotBeNull();
+            _stubTelemetryChannel.ResponseSeverityLevel.Should().Be(expectedSeverity);
         }
 
         [Test]
@@ -57,23 +56,24 @@ namespace CloudAwesome.Xrm.Core.Tests.LoggerTests
 
             _stubTelemetryChannel.Flush();
 
-            Assert.AreEqual(_logMessage, _stubTelemetryChannel.ResponseText);
-            Assert.AreEqual(SeverityLevel.Critical, _stubTelemetryChannel.ResponseSeverityLevel);
-
+            _stubTelemetryChannel.ResponseText.Should().Be(_logMessage);
+            _stubTelemetryChannel.ResponseSeverityLevel.Should().Be(SeverityLevel.Critical);
         }
 
         [Test]
         public void BeginScopeIsNotImplemented()
         {
             var logger = new AppInsightsLogger(LogLevel.Information, _connString, _stubTelemetryChannel);
-            Assert.Throws<NotImplementedException>(() => logger.BeginScope("tester"));
+
+            Action action = () => logger.BeginScope("tester");
+            action.Should().Throw<NotImplementedException>();
         }
 
         [Test]
         public void StandardConstructorHappyPath()
         {
             var sut = new AppInsightsLogger(LogLevel.None, _connString);
-            Assert.IsNotNull(sut);
+            sut.Should().NotBeNull();
         }
 
     }

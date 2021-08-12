@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
@@ -41,9 +43,9 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 TestAccount1Duplicate.ToEntityReference()
             };
 
-            Assert.DoesNotThrow(() =>
-                contact.Associate(orgService, "account_primary_contact", accountCollection));
-
+            Action associationAction = () => contact.Associate(orgService, "account_primary_contact", accountCollection);
+            associationAction.Should().NotThrow();
+            
         }
 
         [Test]
@@ -78,9 +80,9 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 TestAccount1Duplicate
             };
 
-            Assert.DoesNotThrow(() =>
-                contact.Associate(orgService, "account_primary_contact", accountCollection));
-
+            Action associateAction = () => contact.Associate(orgService, "account_primary_contact", accountCollection);
+            associateAction.Should().NotThrow();
+            
         }
     }
 }

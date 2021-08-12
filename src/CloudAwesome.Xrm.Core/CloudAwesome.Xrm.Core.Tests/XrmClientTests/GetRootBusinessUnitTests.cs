@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
@@ -46,7 +47,7 @@ namespace CloudAwesome.Xrm.Core.Tests.XrmClientTests
 
             var retrievedRootBusinessUnit = XrmClient.GetRootBusinessUnit(orgService);
 
-            Assert.AreEqual(rootBusinessUnit.Id, retrievedRootBusinessUnit.Id);
+            retrievedRootBusinessUnit.Id.Should().Be(rootBusinessUnit.Id);
 
         }
     }

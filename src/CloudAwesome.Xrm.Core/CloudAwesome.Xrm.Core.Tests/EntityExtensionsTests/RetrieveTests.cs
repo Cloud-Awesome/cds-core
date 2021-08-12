@@ -2,6 +2,7 @@
 using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
@@ -21,9 +22,9 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var retrieveAccount = new Account {Id = createdEntity.Id};
             var retrievedAccount = retrieveAccount.Retrieve(orgService, new ColumnSet("name"));
             
-            Assert.AreEqual(createdEntity.Id, retrievedAccount.Id);
-            Assert.AreEqual(testAccount.Name, retrievedAccount["name"]);
-            Assert.AreEqual(2, retrievedAccount.Attributes.Count);
+            retrievedAccount.Id.Should().Be(createdEntity.Id);
+            retrievedAccount["name"].Should().Be(testAccount.Name);
+            retrievedAccount.Attributes.Count.Should().Be(2);
         }
 
         [Test]
@@ -38,8 +39,8 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var retrieveAccount = new Account { Id = createdEntity.Id };
             var retrievedAccount = retrieveAccount.Retrieve(orgService, new ColumnSet(true));
 
-            Assert.AreEqual(createdEntity.Id, retrievedAccount.Id);
-            Assert.IsNotNull(retrievedAccount["createdon"]);
+            retrieveAccount.Id.Should().Be(createdEntity.Id);
+            retrievedAccount["name"].Should().NotBeNull();
         }
 
         [Test]
@@ -49,8 +50,9 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             var orgService = context.GetOrganizationService();
 
             var retrieveAccount = new Account { };
-            Assert.Throws(typeof(OperationPreventedException), 
-                () => retrieveAccount.Retrieve(orgService, new ColumnSet(true)));
+
+            Action action = () => retrieveAccount.Retrieve(orgService, new ColumnSet(true));
+            action.Should().Throw<OperationPreventedException>();
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CloudAwesome.Xrm.Core.Exceptions;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
@@ -44,8 +46,9 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 
             contact.Associate(orgService, "account_primary_contact", accountCollection);
 
-            Assert.Throws<FeatureRequestException>(() =>
-                contact.Disassociate(orgService, "account_primary_contact", accountCollection));
+            Action action = () =>
+                contact.Disassociate(orgService, "account_primary_contact", accountCollection);
+            action.Should().Throw<FeatureRequestException>();
 
         }
 
@@ -83,9 +86,9 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 
             contact.Associate(orgService, "account_primary_contact", accountCollection);
 
-            Assert.Throws<FeatureRequestException>(() =>
-                contact.Disassociate(orgService, "account_primary_contact", accountCollection));
-
+            Action action = () =>
+                contact.Disassociate(orgService, "account_primary_contact", accountCollection);
+            action.Should().Throw<FeatureRequestException>();
         }
     }
 }

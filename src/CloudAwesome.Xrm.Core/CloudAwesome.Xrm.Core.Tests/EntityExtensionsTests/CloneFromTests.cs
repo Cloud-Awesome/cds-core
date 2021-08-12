@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -27,19 +28,19 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 LastOnHoldTime = DateTime.Now,
                 NumberOfEmployees = 1999
             };
-            var createdSourceAccountId = sourceAccount.Create(orgService);
+            var createdSourceAccount = sourceAccount.Create(orgService);
 
             var targetAccount = new Account();
             targetAccount.CloneFrom(sourceAccount);
-            var createdTargetAccountId = targetAccount.Create(orgService);
+            var createdTargetAccount = targetAccount.Create(orgService);
 
-            Assert.That(createdTargetAccountId, Is.Not.Null);
-            Assert.That(createdSourceAccountId, Is.Not.EqualTo(createdTargetAccountId));
+            createdTargetAccount.Id.Should().NotBeEmpty();
+            createdSourceAccount.Id.Should().NotBe(createdTargetAccount.Id);
 
-            Assert.That(sourceAccount.Name, Is.EqualTo(targetAccount.Name));
-            Assert.That(sourceAccount.AccountCategoryCode, Is.EqualTo(targetAccount.AccountCategoryCode));
-            Assert.That(sourceAccount.LastOnHoldTime, Is.EqualTo(targetAccount.LastOnHoldTime));
-            Assert.That(sourceAccount.NumberOfEmployees, Is.EqualTo(targetAccount.NumberOfEmployees));
+            targetAccount.Name.Should().Be(sourceAccount.Name);
+            targetAccount.AccountCategoryCode.Should().Be(sourceAccount.AccountCategoryCode);
+            targetAccount.LastOnHoldTime.Should().Be(sourceAccount.LastOnHoldTime);
+            targetAccount.NumberOfEmployees.Should().Be(sourceAccount.NumberOfEmployees);
         }
 
         [Test]
@@ -51,7 +52,8 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
             };
             var targetContact = new Contact();
 
-            Assert.Throws(typeof(OperationPreventedException), () => targetContact.CloneFrom(sourceAccount));
+            Action action = () => targetContact.CloneFrom(sourceAccount);
+            action.Should().Throw<OperationPreventedException>();
         }
 
         [Test]
@@ -78,12 +80,13 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 
             targetAccount.CloneFrom(sourceAccount, excludedAttributes);
 
-            Assert.AreEqual(sourceAccount.Name, targetAccount.Name);
+            targetAccount.Name.Should().Be(sourceAccount.Name);
 
-            Assert.AreNotEqual(sourceAccount.AccountNumber, targetAccount.AccountNumber);
-            Assert.AreNotEqual(sourceAccount.ParentAccountId, targetAccount.ParentAccountId);
-            Assert.AreNotEqual(sourceAccount.LastOnHoldTime, targetAccount.LastOnHoldTime);
-            Assert.AreNotEqual(sourceAccount.NumberOfEmployees, targetAccount.NumberOfEmployees);
+            targetAccount.AccountNumber.Should().NotBe(sourceAccount.AccountNumber);
+            targetAccount.ParentAccountId.Should().NotBe(sourceAccount.ParentAccountId);
+            targetAccount.LastOnHoldTime.HasValue.Should().Be(false);
+            targetAccount.NumberOfEmployees.Should().NotBe(sourceAccount.NumberOfEmployees);
+
         }
     }
 }

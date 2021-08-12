@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using FakeXrmEasy;
-
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
@@ -24,7 +24,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 
             account.CreateOrUpdate(orgService, SampleAccountQueryExpression);
 
-            Assert.IsNotNull(TestAccount1.Id);
+            TestAccount1.Id.Should().NotBeEmpty();
         }
 
         [Test]
@@ -40,7 +40,8 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 
             TestAccount1.CreateOrUpdate(orgService, SampleAccountQueryExpression);
 
-            Assert.IsNotNull(TestAccount1.Id);
+            TestAccount1.Id.Should().NotBeEmpty();
         }
+        
     }
 }

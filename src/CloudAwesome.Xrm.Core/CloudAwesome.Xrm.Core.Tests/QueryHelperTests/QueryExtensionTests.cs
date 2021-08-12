@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using FakeXrmEasy;
+using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
 
@@ -14,8 +15,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
             var orgService = context.GetOrganizationService();
             
             var retrievedAccount = (Account)SampleAccountQueryExpression.RetrieveSingleRecord(orgService);
-            
-            Assert.IsNull(retrievedAccount);
+
+            retrievedAccount.Should().BeNull();
         }
 
         [Test(Description = "Extension method to retrieve single record from QueryBase (QueryExpression test)")]
@@ -30,8 +31,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var retrievedAccount = (Account)SampleAccountQueryExpression.RetrieveSingleRecord(orgService);
 
-            Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
-            Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
+            retrievedAccount.Id.Should().Be(TestAccount1.Id);
+            retrievedAccount.Name.Should().Be(TestAccount1.Name);
         }
 
         [Test(Description = "Extension method to retrieve single record from QueryBase (QueryByAttribute test)")]
@@ -46,8 +47,8 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var retrievedAccount = (Account)SampleAccountQueryByAttribute.RetrieveSingleRecord(orgService);
 
-            Assert.AreEqual(TestAccount1.Id, retrievedAccount.Id);
-            Assert.AreEqual(TestAccount1.Name, retrievedAccount.Name);
+            retrievedAccount.Id.Should().Be(TestAccount1.Id);
+            retrievedAccount.Name.Should().Be(TestAccount1.Name);
         }
 
         [Test(Description = "Extension method to retrieve multiple records from Query Base (QueryExpression test)")]
@@ -63,7 +64,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var retrievedAccounts = SampleAccountQueryExpression.RetrieveMultiple(orgService);
 
-            Assert.AreEqual(2, retrievedAccounts.Entities.Count);
+            retrievedAccounts.Entities.Count.Should().Be(2);
         }
 
         [Test(Description = "Extension method to retrieve multiple records from Query Base (QueryByAttribute test)")]
@@ -79,7 +80,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
 
             var retrievedAccounts = SampleAccountQueryByAttribute.RetrieveMultiple(orgService);
 
-            Assert.AreEqual(2, retrievedAccounts.Entities.Count);
+            retrievedAccounts.Entities.Count.Should().Be(2);
         }
     }
 }
