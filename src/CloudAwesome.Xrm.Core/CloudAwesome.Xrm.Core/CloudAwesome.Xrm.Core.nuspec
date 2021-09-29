@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>Arthur Nicholson-Gumuła (@arthur82)</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectUrl>http://docs.cloudawesome.xyz/cds-core/index.html</projectUrl>
+    <projectUrl>https://github.com/Cloud-Awesome/cds-core</projectUrl>
     <description>Helpers and extension classes for Dynamics 365/Power Platform development</description>
     <releaseNotes>See changelog at https://github.com/Cloud-Awesome/cds-core/releases</releaseNotes>
     <copyright>Cloud Awesome Limited 2020</copyright>

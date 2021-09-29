@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CloudAwesome.Xrm.Core.Exceptions
 {
@@ -6,6 +7,7 @@ namespace CloudAwesome.Xrm.Core.Exceptions
     /// Exception thrown in validation or expected results from a CRM Query
     /// (QueryExpression, FetchQuery or QueryByAttribute)
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class QueryBaseException : Exception
     {
         /// <summary>

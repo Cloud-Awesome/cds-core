@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CloudAwesome.Xrm.Core.Exceptions
 {
+    [ExcludeFromCodeCoverage]
     public class FeatureRequestException : Exception
     {
         public FeatureRequestException() : base() {}
