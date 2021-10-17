@@ -5,8 +5,6 @@
 [![Build Status](https://dev.azure.com/cloud-awesome/CloudAwesome.Xrm/_apis/build/status/Cloud-Awesome.cds-core?branchName=master)](https://dev.azure.com/cloud-awesome/CloudAwesome.Xrm/_build/latest?definitionId=1&branchName=master)
 
 
-Documentation in progress... Hold your horses! ;)
-
 Core project for Dynamics 365/CDS extensions
 
 - [Entity Extensions](/documentation/EntityExtensions.md)
