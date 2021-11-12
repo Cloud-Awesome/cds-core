@@ -1,13 +1,22 @@
 ﻿using System;
+using FakeXrmEasy;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
+using NUnit.Framework;
 
 namespace CloudAwesome.Xrm.Core.Tests
 {
     public class BaseFakeXrmTest
     {
-        // TODO - * setup and tear down this for each test, and extract out of each existing test
-        //var context = new XrmFakedContext();
-        //var orgService = context.GetOrganizationService();
+        protected XrmFakedContext XrmContext;
+        protected IOrganizationService OrgService;
+        
+        [SetUp]
+        public void Init()
+        {
+            XrmContext = new XrmFakedContext();
+            OrgService = XrmContext.GetOrganizationService();
+        }
         
         // Any reporting set up and outputs..?
 

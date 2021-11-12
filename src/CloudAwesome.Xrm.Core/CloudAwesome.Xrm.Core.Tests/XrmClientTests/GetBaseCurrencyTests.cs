@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using FakeXrmEasy;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
@@ -8,14 +7,11 @@ using NUnit.Framework;
 namespace CloudAwesome.Xrm.Core.Tests.XrmClientTests
 {
     [TestFixture]
-    public class GetBaseCurrencyTests
+    public class GetBaseCurrencyTests: BaseFakeXrmTest
     {
         [Test]
         public void GetBaseCurrencyTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var baseCurrencyId = Guid.NewGuid();
             var baseCurrency = new Entity("organization")
             {
@@ -24,12 +20,12 @@ namespace CloudAwesome.Xrm.Core.Tests.XrmClientTests
                 ["basecurrencyid"] = new EntityReference("transactioncurrency", baseCurrencyId)
             };
 
-            context.Initialize(new List<Entity>()
+            XrmContext.Initialize(new List<Entity>()
             {
                 baseCurrency
             });
 
-            var retrievedBaseCurrency = XrmClient.GetBaseCurrency(orgService);
+            var retrievedBaseCurrency = XrmClient.GetBaseCurrency(OrgService);
             
             retrievedBaseCurrency.Id.Should().Be(baseCurrencyId);
         }

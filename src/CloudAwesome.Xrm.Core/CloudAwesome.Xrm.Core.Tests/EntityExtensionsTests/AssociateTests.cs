@@ -51,9 +51,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         [Test]
         public void BasicAssociateTestWithEnumerableRecords()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-            context.AddRelationship("account_primary_contact", new XrmFakedRelationship()
+            XrmContext.AddRelationship("account_primary_contact", new XrmFakedRelationship()
             {
                 RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany,
                 Entity1LogicalName = "contact",
@@ -62,7 +60,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 Entity2Attribute = "contactid"
             });
 
-            context.Initialize(new List<Entity>() {
+            XrmContext.Initialize(new List<Entity>() {
                 TestAccount1,
                 TestAccount1Duplicate
             });
@@ -72,7 +70,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 FirstName = "Jaroslaw",
                 LastName = "Czyz"
             };
-            contact.Create(orgService);
+            contact.Create(OrgService);
 
             IEnumerable<Account> accountCollection = new List<Account>()
             {
@@ -80,7 +78,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 TestAccount1Duplicate
             };
 
-            Action associateAction = () => contact.Associate(orgService, "account_primary_contact", accountCollection);
+            Action associateAction = () => contact.Associate(OrgService, "account_primary_contact", accountCollection);
             associateAction.Should().NotThrow();
             
         }

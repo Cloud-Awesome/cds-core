@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO.Abstractions;
 using System.IO.Abstractions.TestingHelpers;
 using CloudAwesome.Xrm.Core.Loggers;
 using FluentAssertions;

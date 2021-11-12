@@ -1,23 +1,19 @@
 ﻿using System;
 using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
-using FakeXrmEasy;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 {
     [TestFixture]
-    public class CreateTests
+    public class CreateTests: BaseFakeXrmTest
     {
         [Test]
         public void EarlyBoundCreateTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var testAccount = new Account {Name = "Test Account"};
-            var createdEntity = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(OrgService);
 
             Console.WriteLine($"ID of created entity: {createdEntity.Id}");
 
@@ -28,26 +24,20 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         [Test]
         public void FailCreateAndThrowValidExceptionIfLogicalNameNotProvided()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var testSomething = new Entity();
             testSomething["name"] = "Unknown Entity";
 
-            Action action = () => testSomething.Create(orgService);
+            Action action = () => testSomething.Create(OrgService);
             action.Should().Throw<OperationPreventedException>();
         }
 
         [Test]
         public void LateBoundCreateTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var testAccount = new Entity("account");
             testAccount["name"] = "Test Account";
 
-            var createdEntity = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(OrgService);
 
             Console.WriteLine($"ID of created entity: {createdEntity.Id}");
             

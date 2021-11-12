@@ -8,19 +8,16 @@ using Microsoft.Xrm.Sdk;
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 {
     [TestFixture]
-    public class UpdateTests
+    public class UpdateTests: BaseFakeXrmTest
     {
         [Test]
         public void EarlyBoundUpdateTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var testAccount = new Account { Name = "Test Account" };
-            var createdEntity = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(OrgService);
 
             testAccount.Name = "Updated Account";
-            testAccount.Update(orgService);
+            testAccount.Update(OrgService);
 
             Console.WriteLine($"ID of created entity: {createdEntity.Id}");
             
@@ -30,25 +27,19 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 
         [Test]
         public void FailUpdateAndThrowValidExceptionIfPrimaryGuidIsEmpty()
-        {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-            
+        {   
             var testAccount = new Account { Name = "Test Account" };
 
-            Action action = () => testAccount.Update(orgService);
+            Action action = () => testAccount.Update(OrgService);
             action.Should().Throw<OperationPreventedException>();
         }
 
         [Test]
         public void LateBoundCreateTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var testAccount = new Entity("account");
             testAccount["name"] = "Test Account";
-            var createdEntity = testAccount.Create(orgService);
+            var createdEntity = testAccount.Create(OrgService);
 
             testAccount["name"] = "Updated Account";
 

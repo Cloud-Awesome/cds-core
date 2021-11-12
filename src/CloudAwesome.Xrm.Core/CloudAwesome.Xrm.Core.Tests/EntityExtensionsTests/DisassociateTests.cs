@@ -14,10 +14,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         [Test(Description = "This is not completed due to a bug in execution. For now, it should throw a not implemented exception")]
         public void BasicDisassociateTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
-            context.AddRelationship("account_primary_contact", new XrmFakedRelationship()
+            XrmContext.AddRelationship("account_primary_contact", new XrmFakedRelationship()
             {
                 RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany,
                 Entity1LogicalName = "contact",
@@ -26,7 +23,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 Entity2Attribute = "contactid"
             });
 
-            context.Initialize(new List<Entity>() {
+            XrmContext.Initialize(new List<Entity>() {
                 TestAccount1,
                 TestAccount1Duplicate
             });
@@ -36,7 +33,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 FirstName = "Jaroslaw",
                 LastName = "Czyz"
             };
-            contact.Create(orgService);
+            contact.Create(OrgService);
 
             var accountCollection = new EntityReferenceCollection()
             {
@@ -44,10 +41,10 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 TestAccount1Duplicate.ToEntityReference()
             };
 
-            contact.Associate(orgService, "account_primary_contact", accountCollection);
+            contact.Associate(OrgService, "account_primary_contact", accountCollection);
 
             Action action = () =>
-                contact.Disassociate(orgService, "account_primary_contact", accountCollection);
+                contact.Disassociate(OrgService, "account_primary_contact", accountCollection);
             action.Should().Throw<FeatureRequestException>();
 
         }
@@ -55,9 +52,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         [Test(Description = "This is not completed due to a bug in execution. For now, it should throw a not implemented exception")]
         public void BasicDisassociateTestWithEnumerableRecords()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-            context.AddRelationship("account_primary_contact", new XrmFakedRelationship()
+            XrmContext.AddRelationship("account_primary_contact", new XrmFakedRelationship()
             {
                 RelationshipType = XrmFakedRelationship.enmFakeRelationshipType.OneToMany,
                 Entity1LogicalName = "contact",
@@ -66,7 +61,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 Entity2Attribute = "contactid"
             });
 
-            context.Initialize(new List<Entity>() {
+            XrmContext.Initialize(new List<Entity>() {
                 TestAccount1,
                 TestAccount1Duplicate
             });
@@ -76,7 +71,7 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 FirstName = "Jaroslaw",
                 LastName = "Czyz"
             };
-            contact.Create(orgService);
+            contact.Create(OrgService);
 
             IEnumerable<Account> accountCollection = new List<Account>()
             {
@@ -84,10 +79,10 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 TestAccount1Duplicate
             };
 
-            contact.Associate(orgService, "account_primary_contact", accountCollection);
+            contact.Associate(OrgService, "account_primary_contact", accountCollection);
 
             Action action = () =>
-                contact.Disassociate(orgService, "account_primary_contact", accountCollection);
+                contact.Disassociate(OrgService, "account_primary_contact", accountCollection);
             action.Should().Throw<FeatureRequestException>();
         }
     }

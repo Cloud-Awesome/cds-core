@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FakeXrmEasy;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
@@ -14,21 +13,18 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
         [Test]
         public void DeleteSingleRecordTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
-            context.Initialize(new List<Entity>() {
+            XrmContext.Initialize(new List<Entity>() {
                 TestAccount1
             });
 
-            var preAccounts = (from a in context.CreateQuery<Account>()
+            var preAccounts = (from a in XrmContext.CreateQuery<Account>()
                 select a).ToList();
 
-            Action preAction = () => SampleAccountQueryExpression.DeleteSingleRecord(orgService);
+            Action preAction = () => SampleAccountQueryExpression.DeleteSingleRecord(OrgService);
             preAccounts.Count.Should().Be(1);
             preAction.Should().NotThrow();
 
-            var postAccounts = (from a in context.CreateQuery<Account>()
+            var postAccounts = (from a in XrmContext.CreateQuery<Account>()
                 select a).ToList();
 
             postAccounts.Count.Should().Be(0);
@@ -37,10 +33,7 @@ namespace CloudAwesome.Xrm.Core.Tests.QueryHelperTests
         [Test]
         public void DeleteWithNoQueryResultsThrowsNoError()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
-            Action action = () => SampleAccountQueryExpression.DeleteSingleRecord(orgService);
+            Action action = () => SampleAccountQueryExpression.DeleteSingleRecord(OrgService);
             action.Should().NotThrow();
         }
     }

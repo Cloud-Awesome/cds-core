@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using FakeXrmEasy;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
 using NUnit.Framework;
@@ -14,9 +12,6 @@ namespace CloudAwesome.Xrm.Core.Tests.XrmClientTests
         [Test]
         public void GetRootBusinessUnitTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var rootBusinessUnit = new Entity("businessunit")
             {
                 Id = Guid.NewGuid(),
@@ -38,14 +33,14 @@ namespace CloudAwesome.Xrm.Core.Tests.XrmClientTests
                 ["parentbusinessunitid"] = rootBusinessUnit.Id
             };
 
-            context.Initialize(new List<Entity>()
+            XrmContext.Initialize(new List<Entity>()
             {
                 rootBusinessUnit,
                 childBusinessUnit1,
                 childBusinessUnit2
             });
 
-            var retrievedRootBusinessUnit = XrmClient.GetRootBusinessUnit(orgService);
+            var retrievedRootBusinessUnit = XrmClient.GetRootBusinessUnit(OrgService);
 
             retrievedRootBusinessUnit.Id.Should().Be(rootBusinessUnit.Id);
 

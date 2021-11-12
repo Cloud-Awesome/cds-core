@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using NUnit.Framework;
-using FakeXrmEasy;
-using CloudAwesome.Xrm.Core;
 using CloudAwesome.Xrm.Core.Exceptions;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
@@ -11,24 +8,21 @@ using Microsoft.Xrm.Sdk;
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 {
     [TestFixture]
-    public class DeleteTests
+    public class DeleteTests: BaseFakeXrmTest
     {
         [Test]
         public void BasicDeletionTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-            
             var testAccount = new Account
             {
                 Id = Guid.NewGuid(),
                 Name = "Test Account"
             };
-            context.Initialize(new List<Entity>() {
+            XrmContext.Initialize(new List<Entity>() {
                 testAccount
             });
 
-            testAccount.Delete(orgService);
+            testAccount.Delete(OrgService);
             Assert.IsTrue(true);
             
         }
@@ -36,12 +30,9 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
         [Test]
         public void FailDeleteAndThrowValidExceptionIfPrimaryGuidIsEmpty()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
             var testAccount = new Account(){ Name = "Test Account"};
 
-            Action action = () => testAccount.Delete(orgService);
+            Action action = () => testAccount.Delete(OrgService);
             action.Should().Throw<OperationPreventedException>();
         }
     }

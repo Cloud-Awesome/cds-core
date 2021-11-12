@@ -2,23 +2,17 @@
 using System.Collections.Generic;
 using CloudAwesome.Xrm.Core.Exceptions;
 using NUnit.Framework;
-using FakeXrmEasy;
 using FluentAssertions;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Query;
 
 namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
 {
     [TestFixture]
-    public class CloneFromTests
+    public class CloneFromTests: BaseFakeXrmTest
     {
         [Test]
         public void BasicCloneFromTest()
         {
-            var context = new XrmFakedContext();
-            var orgService = context.GetOrganizationService();
-
-
             var sourceAccount = new Account()
             {
                 Name = "Source Account",
@@ -28,11 +22,11 @@ namespace CloudAwesome.Xrm.Core.Tests.EntityExtensionsTests
                 LastOnHoldTime = DateTime.Now,
                 NumberOfEmployees = 1999
             };
-            var createdSourceAccount = sourceAccount.Create(orgService);
+            var createdSourceAccount = sourceAccount.Create(OrgService);
 
             var targetAccount = new Account();
             targetAccount.CloneFrom(sourceAccount);
-            var createdTargetAccount = targetAccount.Create(orgService);
+            var createdTargetAccount = targetAccount.Create(OrgService);
 
             createdTargetAccount.Id.Should().NotBeEmpty();
             createdSourceAccount.Id.Should().NotBe(createdTargetAccount.Id);
