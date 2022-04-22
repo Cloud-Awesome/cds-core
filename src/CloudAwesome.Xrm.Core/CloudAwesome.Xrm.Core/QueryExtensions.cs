@@ -3,6 +3,7 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
 using System.Linq;
+using Microsoft.Crm.Sdk.Messages;
 
 namespace CloudAwesome.Xrm.Core
 {
@@ -128,6 +129,20 @@ namespace CloudAwesome.Xrm.Core
 
             var response = (ExecuteMultipleResponse)organizationService.Execute(request);
             return !response.IsFaulted;
+        }
+
+        public static QueryExpression ToQueryExpression(this string fetchXml,
+            IOrganizationService organizationService)
+        {
+            var request = new FetchXmlToQueryExpressionRequest()
+            {
+                FetchXml = fetchXml
+            };
+
+            var response = (FetchXmlToQueryExpressionResponse) organizationService.Execute(request);
+            var queryExpression = response.Query;
+
+            return queryExpression;
         }
     }
 }

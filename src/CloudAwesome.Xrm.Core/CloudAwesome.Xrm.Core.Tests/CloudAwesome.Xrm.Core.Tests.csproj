@@ -167,6 +167,7 @@
     <Compile Include="EntityExtensionsTests\DeleteTests.cs" />
     <Compile Include="EarlyBoundClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHelperTests\ToQueryExpressionTests.cs" />
     <Compile Include="Stubs\StubLogger.cs" />
     <Compile Include="Stubs\StubTelemetryChannel.cs" />
     <Compile Include="TracingHelperTests.cs" />
