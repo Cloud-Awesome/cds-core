@@ -34,7 +34,6 @@ items:
     content: 'public class TextFileLogger : ILogger'
     content.vb: >-
       Public Class TextFileLogger
-
           Implements ILogger
   inheritance:
   - System.Object

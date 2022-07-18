@@ -5,6 +5,7 @@ items:
   id: TracingHelper
   parent: CloudAwesome.Xrm.Core
   children:
+  - CloudAwesome.Xrm.Core.TracingHelper.#ctor
   - CloudAwesome.Xrm.Core.TracingHelper.#ctor(CloudAwesome.Xrm.Core.Models.LoggingConfiguration)
   - CloudAwesome.Xrm.Core.TracingHelper.#ctor(Microsoft.Extensions.Logging.ILogger)
   - CloudAwesome.Xrm.Core.TracingHelper.Critical(System.String)
@@ -161,6 +162,38 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: CloudAwesome.Xrm.Core.TracingHelper.#ctor
+  commentId: M:CloudAwesome.Xrm.Core.TracingHelper.#ctor
+  id: '#ctor'
+  parent: CloudAwesome.Xrm.Core.TracingHelper
+  langs:
+  - csharp
+  - vb
+  name: TracingHelper()
+  nameWithType: TracingHelper.TracingHelper()
+  fullName: CloudAwesome.Xrm.Core.TracingHelper.TracingHelper()
+  type: Constructor
+  source:
+    remote:
+      path: src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+      branch: master
+      repo: https://github.com/Cloud-Awesome/cds-core
+    id: .ctor
+    path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
+    startLine: 47
+  assemblies:
+  - CloudAwesome.Xrm.Core
+  namespace: CloudAwesome.Xrm.Core
+  summary: "\nUsed to silently throw away any logs\nIf no traces/logs are required for whatever reason in the consuming application,\nconstruct an empty TracingHelper where one is required \n"
+  example: []
+  syntax:
+    content: public TracingHelper()
+    content.vb: Public Sub New
+  overload: CloudAwesome.Xrm.Core.TracingHelper.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: CloudAwesome.Xrm.Core.TracingHelper.Log(Microsoft.Extensions.Logging.LogLevel,System.String)
   commentId: M:CloudAwesome.Xrm.Core.TracingHelper.Log(Microsoft.Extensions.Logging.LogLevel,System.String)
   id: Log(Microsoft.Extensions.Logging.LogLevel,System.String)
@@ -179,7 +212,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Log
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
-    startLine: 47
+    startLine: 54
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -218,7 +251,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Debug
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
-    startLine: 56
+    startLine: 63
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -254,7 +287,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Info
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
-    startLine: 65
+    startLine: 72
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -290,7 +323,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Critical
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
-    startLine: 74
+    startLine: 81
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -326,7 +359,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Error
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
-    startLine: 83
+    startLine: 90
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -362,7 +395,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Trace
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
-    startLine: 92
+    startLine: 99
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -398,7 +431,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Warning
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/TracingHelper.cs
-    startLine: 101
+    startLine: 108
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core

@@ -22,7 +22,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: OperationPreventedException
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/OperationPreventedException.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -32,9 +32,7 @@ items:
     content: 'public class OperationPreventedException : Exception, ISerializable, _Exception'
     content.vb: >-
       Public Class OperationPreventedException
-
           Inherits Exception
-
           Implements ISerializable, _Exception
   inheritance:
   - System.Object
@@ -85,7 +83,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: .ctor
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/OperationPreventedException.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -117,7 +115,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: .ctor
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/OperationPreventedException.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -153,7 +151,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: .ctor
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/OperationPreventedException.cs
-    startLine: 35
+    startLine: 37
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions

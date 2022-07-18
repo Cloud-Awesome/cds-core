@@ -75,6 +75,7 @@
   "CloudAwesome.Xrm.Core.QueryExtensions.RetrieveRecordFromQuery``1(Microsoft.Xrm.Sdk.IOrganizationService,``0,System.Boolean)": "CloudAwesome.Xrm.Core.QueryExtensions.yml",
   "CloudAwesome.Xrm.Core.QueryExtensions.RetrieveSingleRecord(Microsoft.Xrm.Sdk.Query.QueryBase,Microsoft.Xrm.Sdk.IOrganizationService)": "CloudAwesome.Xrm.Core.QueryExtensions.yml",
   "CloudAwesome.Xrm.Core.TracingHelper": "CloudAwesome.Xrm.Core.TracingHelper.yml",
+  "CloudAwesome.Xrm.Core.TracingHelper.#ctor": "CloudAwesome.Xrm.Core.TracingHelper.yml",
   "CloudAwesome.Xrm.Core.TracingHelper.#ctor(CloudAwesome.Xrm.Core.Models.LoggingConfiguration)": "CloudAwesome.Xrm.Core.TracingHelper.yml",
   "CloudAwesome.Xrm.Core.TracingHelper.#ctor(Microsoft.Extensions.Logging.ILogger)": "CloudAwesome.Xrm.Core.TracingHelper.yml",
   "CloudAwesome.Xrm.Core.TracingHelper.Critical(System.String)": "CloudAwesome.Xrm.Core.TracingHelper.yml",

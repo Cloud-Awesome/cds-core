@@ -34,7 +34,6 @@ items:
     content: 'public class AppInsightsLogger : ILogger'
     content.vb: >-
       Public Class AppInsightsLogger
-
           Implements ILogger
   inheritance:
   - System.Object

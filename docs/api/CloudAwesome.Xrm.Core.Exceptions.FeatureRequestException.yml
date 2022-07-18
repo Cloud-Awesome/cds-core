@@ -24,7 +24,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: FeatureRequestException
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/FeatureRequestException.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -32,9 +32,7 @@ items:
     content: 'public class FeatureRequestException : Exception, ISerializable, _Exception'
     content.vb: >-
       Public Class FeatureRequestException
-
           Inherits Exception
-
           Implements ISerializable, _Exception
   inheritance:
   - System.Object
@@ -85,7 +83,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: .ctor
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/FeatureRequestException.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -115,7 +113,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: .ctor
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/FeatureRequestException.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -148,7 +146,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: .ctor
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/FeatureRequestException.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -183,7 +181,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: NotImplementedFeatureException
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/FeatureRequestException.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions
@@ -220,7 +218,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: PartiallyImplementedFeatureException
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/Exceptions/FeatureRequestException.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core.Exceptions

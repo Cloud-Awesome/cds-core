@@ -25,10 +25,12 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: QueryExtensions
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
+  summary: "\nExtensions and core helpers to the Xrm SDK QueryBase classes \n"
+  example: []
   syntax:
     content: public static class QueryExtensions
     content.vb: Public Module QueryExtensions
@@ -68,7 +70,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: RetrieveSingleRecord
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -120,7 +122,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: RetrieveMultiple
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -167,7 +169,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: RetrieveRecordFromQuery
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
-    startLine: 41
+    startLine: 44
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -176,7 +178,6 @@ items:
   syntax:
     content: >-
       public static Entity RetrieveRecordFromQuery<T>(IOrganizationService organizationService, T query, bool throwExceptionOnMultipleResults = true)
-
           where T : QueryBase
     parameters:
     - id: organizationService
@@ -226,7 +227,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: RetrieveMultipleFromQuery
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
-    startLine: 62
+    startLine: 65
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -235,7 +236,6 @@ items:
   syntax:
     content: >-
       public static EntityCollection RetrieveMultipleFromQuery<T>(IOrganizationService organizationService, T query)
-
           where T : QueryBase
     parameters:
     - id: organizationService
@@ -279,7 +279,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: DeleteSingleRecord
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
-    startLine: 73
+    startLine: 76
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -328,14 +328,14 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: DeleteAllResults
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/QueryExtensions.cs
-    startLine: 89
+    startLine: 92
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
   summary: "\nDeletes all records returned by this Query. Executed in a single Bulk Delete request\n"
   example: []
   syntax:
-    content: public static bool DeleteAllResults(this QueryBase query, IOrganizationService organizationService, int maxRecordsToDelete = 50, int? expectedResultsToDelete = default(int? ))
+    content: public static bool DeleteAllResults(this QueryBase query, IOrganizationService organizationService, int maxRecordsToDelete = 50, int? expectedResultsToDelete = null)
     parameters:
     - id: query
       type: Microsoft.Xrm.Sdk.Query.QueryBase

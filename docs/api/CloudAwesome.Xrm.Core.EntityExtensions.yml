@@ -30,10 +30,12 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: EntityExtensions
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 11
+    startLine: 14
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
+  summary: "\nExtensions to the Xrm SDK Entity class\n"
+  example: []
   syntax:
     content: public static class EntityExtensions
     content.vb: Public Module EntityExtensions
@@ -73,7 +75,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Create
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -125,7 +127,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Delete
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 36
+    startLine: 39
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -174,7 +176,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Update
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 52
+    startLine: 55
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -226,7 +228,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: CreateOrUpdate
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 69
+    startLine: 72
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -277,7 +279,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: ExecuteWorkflow
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 86
+    startLine: 89
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -322,7 +324,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Retrieve
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 101
+    startLine: 104
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -377,7 +379,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: CloneFrom
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 119
+    startLine: 122
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -435,7 +437,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Associate
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 140
+    startLine: 143
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -483,7 +485,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Associate
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 147
+    startLine: 150
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -528,7 +530,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Disassociate
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 154
+    startLine: 157
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
@@ -576,7 +578,7 @@ items:
       repo: https://github.com/Cloud-Awesome/cds-core
     id: Disassociate
     path: ../src/CloudAwesome.Xrm.Core/CloudAwesome.Xrm.Core/EntityExtensions.cs
-    startLine: 160
+    startLine: 163
   assemblies:
   - CloudAwesome.Xrm.Core
   namespace: CloudAwesome.Xrm.Core
