@@ -162,6 +162,7 @@
     <Compile Include="Exceptions\OperationPreventedException.cs" />
     <Compile Include="Exceptions\FeatureRequestException.cs" />
     <Compile Include="Exceptions\QueryBaseException.cs" />
+    <Compile Include="Helpers\XmlHelpers.cs" />
     <Compile Include="Loggers\AppInsightsLogger.cs" />
     <Compile Include="Loggers\ConsoleLogger.cs" />
     <Compile Include="Loggers\TextFileLogger.cs" />
@@ -178,7 +179,6 @@
     <None Include="CloudAwesome.Xrm.Core.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

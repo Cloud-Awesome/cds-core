@@ -1,9 +1,12 @@
-﻿using CloudAwesome.Xrm.Core.Exceptions;
+﻿using System.Activities.Expressions;
+using CloudAwesome.Xrm.Core.Exceptions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
 using System.Linq;
+using CloudAwesome.Xrm.Core.Helpers;
 using Microsoft.Crm.Sdk.Messages;
+using Microsoft.Extensions.Logging;
 
 namespace CloudAwesome.Xrm.Core
 {
@@ -63,10 +66,87 @@ namespace CloudAwesome.Xrm.Core
         /// </summary>
         /// <param name="query">QueryBase implementation (QueryExpression, QueryByAttribute, FetchQuery</param>
         /// <param name="organizationService">IOrganization implementation</param>
+        /// <param name="logger">ILogger implementation for logging and telemetry. Especially useful when paging over 5,00 records to track progress</param>
+        /// <param name="retrieveOver5000Records">Optional boolean parameter. Setting to true will use the paging cookie to loop through 5,000+ records to retrieve all records if more than 5,000 are expected</param>
         /// <returns>EntityCollection of all results returned</returns>
-        public static EntityCollection RetrieveMultipleFromQuery<T>(IOrganizationService organizationService, T query) where T : QueryBase
+        public static EntityCollection RetrieveMultipleFromQuery(IOrganizationService organizationService, QueryBase query, bool retrieveOver5000Records = false, ILogger logger = null)
         {
-            return organizationService.RetrieveMultiple(query);
+            if (!retrieveOver5000Records) return organizationService.RetrieveMultiple(query);
+
+            var records = new EntityCollection();
+            var queryCount = 5000;
+            var pageNumber = 1;
+            string pagingCookie = null;
+            
+            switch (query)
+            {
+                // TODO - Extract ^^ these out into their own methods
+                case QueryExpression queryExpression:
+                {
+                    logger?.LogDebug("Query is of type Query Expression");
+                    queryExpression.PageInfo = new PagingInfo
+                    {
+                        Count = queryCount,
+                        PageNumber = pageNumber,
+                        PagingCookie = null
+                    };
+
+                    while (true)
+                    {
+                        logger?.LogInformation("Looping through query paging. Page {PageNumber}", pageNumber);
+                        var pagedRecords = organizationService.RetrieveMultiple(query);
+                        records.TotalRecordCount += records.Entities.Count;
+                        records.Entities.AddRange(pagedRecords.Entities);
+
+                        if (pagedRecords.MoreRecords)
+                        {
+                            logger?.LogDebug("Looping through query paging, page {PageNumber} has more records.", pageNumber);
+                            queryExpression.PageInfo.PageNumber++;
+                            queryExpression.PageInfo.PagingCookie = pagedRecords.PagingCookie;
+                        }
+                        else
+                        {
+                            logger?.LogDebug("Looping through query paging, page {PageNumber} doesn't have more records.", pageNumber);
+                            break;
+                        }    
+                    }
+
+                    break;
+                }
+                case FetchExpression fetchExpression:
+                    logger?.LogDebug("Query is of type Fetch Expression");
+
+                    while (true)
+                    {
+                        logger?.LogInformation("Looping through query paging. Page {PageNumber}", pageNumber);
+                        
+                        fetchExpression.Query =
+                            fetchExpression.Query.AddPagingCookie(pagingCookie, pageNumber, queryCount);
+                    
+                        var fetchedRecords = organizationService.RetrieveMultiple(fetchExpression);
+                        records.TotalRecordCount += records.Entities.Count;
+                        records.Entities.AddRange(fetchedRecords.Entities);
+
+                        if (fetchedRecords.MoreRecords)
+                        {
+                            logger?.LogDebug("Looping through query paging, page {PageNumber} has more records.", pageNumber);
+                            
+                            pageNumber++;
+                            pagingCookie = fetchedRecords.PagingCookie;
+                        }
+                        else
+                        {
+                            logger?.LogDebug("Looping through query paging, page {PageNumber} doesn't have more records.", pageNumber);
+                            break;
+                        }
+                    }
+                    
+                    break;
+            }
+
+            // TODO - What about QueryByAttribute?
+
+            return records;
         }
 
         /// <summary>
