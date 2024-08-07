@@ -1,7 +1,6 @@
 # CloudAwesome.Xrm.Core
 
 [![Nuget](https://img.shields.io/nuget/v/CloudAwesome.Xrm.Core)](https://www.nuget.org/packages/CloudAwesome.Xrm.Core/)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=cds-core&metric=coverage)](https://sonarcloud.io/dashboard?id=cds-core)
 [![Build Status](https://dev.azure.com/cloud-awesome/CloudAwesome.Xrm/_apis/build/status/Cloud-Awesome.cds-core?branchName=master)](https://dev.azure.com/cloud-awesome/CloudAwesome.Xrm/_build/latest?definitionId=1&branchName=master)
 
 
